@@ -2,7 +2,7 @@
 
 
 
-lpwan                                                         S. Farrell
+lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
 Intended status: Informational                          October 22, 2016
 Expires: April 25, 2017
@@ -121,7 +121,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 Author's Address
 
-   Stephen Farrell
+   Stephen Farrell (editor)
    Trinity College Dublin
    Dublin  2
    Ireland
