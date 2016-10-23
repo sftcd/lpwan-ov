@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rfc SYSTEM 'rfc2629.dtd' [
+
+]>
+
+<?rfc symrefs="yes" ?>
+<?rfc sortrefs="yes" ?>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="4"?>
+<?rfc compact="yes" ?>
+<rfc category="info" docName="draft-pretend-contribs-00" ipr="trust200902">
+  <front>
+    <title abbrev="Pretend">Pretend</title>
+
+
+<author fullname="Jon Crowcroft" initials="J." surname="Crowcroft">
+<organization>University of Cambridge</organization>
+   <address>
+    <postal>
+   <street>JJ Thomson Avenue</street>
+    <city>Cambridge, CB3 0FD</city>
+    <country>United Kingdom</country>
+    </postal> 
+    <email>jon.crowcroft@cl.cam.ac.uk</email>
+  </address>
+</author>
+
+<author fullname="Carles Gomez" initials="C." surname="Gomez">
+<organization>UPC/i2CAT</organization>
+
+   <address>
+    <postal>
+   <street>C/Esteve Terradas, 7</street>
+
+
+    <city>Castelldefels 08860</city>
+
+    <country>Spain</country>
+    </postal> 
+    <email>carlesgo@entel.upc.edu</email>
+  </address>
+</author>
+
+<author fullname="Ana Minaburo" initials="A." surname="Minaburo">
+<organization>Acklio</organization>
+   <address>
+    <postal>
+   <street>2bis rue de la Chataigneraie</street>
+    <city>35510 Cesson-Sevigne Cedex</city>
+    <country>France</country>
+    </postal> 
+    <email>ana@ackl.io</email>
+  </address>
+</author>
+
+<author fullname="Josep PAradells" initials="J." surname="Paradells">
+<organization>UPC/i2CAT</organization>
+
+   <address>
+    <postal>
+   <street>C/Jordi Girona, 1-3</street>
+
+
+    <city>Barcelona 08034</city>
+
+    <country>Spain</country>
+    </postal> 
+    <email>josep.paradells@entel.upc.edu</email>
+  </address>
+</author>
+
+    <author fullname="Benoit Ponsard"
+            initials="B."
+            surname="Ponsard">
+      <organization abbrev="SIGFOX">
+        SIGFOX
+      </organization>
+      <address>
+        <postal>
+          <street>425 rue Jean Rostand</street>
+          <city>Labege</city>
+          <code>31670</code>
+          <country>France</country>
+        </postal>
+        <email>Benoit.Ponsard@sigfox.com</email>
+		<uri>http://www.sigfox.com/</uri>
+      </address>
+    </author>
+
+
+<author fullname="Antti Ratilainen" initials="A." surname="Ratilainen">
+	<organization>Ericsson</organization>
+   <address>
+	<postal>
+   	<street>Hirsalantie 11</street>
+   <city>Jorvas  02420</city>
+   <country>Finland</country>
+	</postal>
+   <email>antti.ratilainen@ericsson.com</email>
+   </address>
+</author>
+
+    <author fullname="Laurent Toutain" initials="L." surname="Toutain">
+      <organization>Institut MINES TELECOM ; TELECOM Bretagne</organization>
+      <address>
+        <postal>
+          <street>2 rue de la Chataigneraie</street>
+          <street>CS 17607</street>
+          <city>35576 Cesson-Sevigne Cedex</city>
+          <country>France</country>
+        </postal>
+        <email>Laurent.Toutain@telecom-bretagne.eu</email>
+      </address>
+    </author>
+
+   <author initials="A" surname="Yegin" fullname="Alper Yegin">
+      <organization>Actility</organization>
+      <address>
+         <postal>
+            <street></street>
+            <city>Paris</city>
+            <region>Paris</region>
+            <code></code>
+            <country>FR</country>
+         </postal>
+         <email>alper.yegin@actility.com</email>
+      </address>
+   </author>
+   
+
+    <author fullname="Juan Carlos Zuniga"
+            initials="JC."
+            surname="Zuniga">
+      <organization abbrev="SIGFOX">
+        SIGFOX
+      </organization>
+      <address>
+        <postal>
+          <street>425 rue Jean Rostand</street>
+          <city>Labege</city>
+          <code> 31670</code>
+          <country>France</country>
+        </postal>
+        <email>JuanCarlos.Zuniga@sigfox.com</email>
+        <uri>http://www.sigfox.com/</uri>
+      </address>
+    </author>
+
+    <date month="October" year="2016" />
+
+    <!--    <workgroup>lpwan Working Group </workgroup> -->
+
+    <abstract>
+      <t>    
+Pretend
+     </t>
+    </abstract>
+  </front>
+
+<middle>
+
+<section title="Pretend">
+<t>This is just so I can generate the contributor info for draft-farrell-lpwan-overivew
+from the "author" xml fragments people choose for themselves. The eventual text is just
+manually copied into the xml file for the LPWAN WG draft.</t>
+</section>
+
+</middle>
+<back>
+
+
+
+</back>
+
+</rfc>

@@ -1,0 +1,224 @@
+
+
+
+
+Network Working Group                                       J. Crowcroft
+Internet-Draft                                   University of Cambridge
+Intended status: Informational                                  C. Gomez
+Expires: April 26, 2017                                        UPC/i2CAT
+                                                             A. Minaburo
+                                                                  Acklio
+                                                            J. Paradells
+                                                               UPC/i2CAT
+                                                              B. Ponsard
+                                                                  SIGFOX
+                                                           A. Ratilainen
+                                                                Ericsson
+                                                              L. Toutain
+                               Institut MINES TELECOM ; TELECOM Bretagne
+                                                                A. Yegin
+                                                                Actility
+                                                              JC. Zuniga
+                                                                  SIGFOX
+                                                        October 23, 2016
+
+
+                                Pretend
+                       draft-pretend-contribs-00
+
+Abstract
+
+   Pretend
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on April 26, 2017.
+
+
+
+
+
+
+
+Crowcroft, et al.        Expires April 26, 2017                 [Page 1]
+
+Internet-Draft                   Pretend                    October 2016
+
+
+Copyright Notice
+
+   Copyright (c) 2016 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+Table of Contents
+
+   1.  Pretend . . . . . . . . . . . . . . . . . . . . . . . . . . .   2
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   2
+
+1.  Pretend
+
+   This is just so I can generate the contributor info for draft-
+   farrell-lpwan-overivew from the "author" xml fragments people choose
+   for themselves.  The eventual text is just manually copied into the
+   xml file for the LPWAN WG draft.
+
+Authors' Addresses
+
+   Jon Crowcroft
+   University of Cambridge
+   JJ Thomson Avenue
+   Cambridge, CB3 0FD
+   United Kingdom
+
+   Email: jon.crowcroft@cl.cam.ac.uk
+
+
+   Carles Gomez
+   UPC/i2CAT
+   C/Esteve Terradas, 7
+   Castelldefels 08860
+   Spain
+
+   Email: carlesgo@entel.upc.edu
+
+
+
+
+
+
+Crowcroft, et al.        Expires April 26, 2017                 [Page 2]
+
+Internet-Draft                   Pretend                    October 2016
+
+
+   Ana Minaburo
+   Acklio
+   2bis rue de la Chataigneraie
+   35510 Cesson-Sevigne Cedex
+   France
+
+   Email: ana@ackl.io
+
+
+   Josep PAradells
+   UPC/i2CAT
+   C/Jordi Girona, 1-3
+   Barcelona 08034
+   Spain
+
+   Email: josep.paradells@entel.upc.edu
+
+
+   Benoit Ponsard
+   SIGFOX
+   425 rue Jean Rostand
+   Labege  31670
+   France
+
+   Email: Benoit.Ponsard@sigfox.com
+   URI:   http://www.sigfox.com/
+
+
+   Antti Ratilainen
+   Ericsson
+   Hirsalantie 11
+   Jorvas  02420
+   Finland
+
+   Email: antti.ratilainen@ericsson.com
+
+
+   Laurent Toutain
+   Institut MINES TELECOM ; TELECOM Bretagne
+   2 rue de la Chataigneraie
+   CS 17607
+   35576 Cesson-Sevigne Cedex
+   France
+
+   Email: Laurent.Toutain@telecom-bretagne.eu
+
+
+
+
+
+
+Crowcroft, et al.        Expires April 26, 2017                 [Page 3]
+
+Internet-Draft                   Pretend                    October 2016
+
+
+   Alper Yegin
+   Actility
+   Paris, Paris
+   FR
+
+   Email: alper.yegin@actility.com
+
+
+   Juan Carlos Zuniga
+   SIGFOX
+   425 rue Jean Rostand
+   Labege  31670
+   France
+
+   Email: JuanCarlos.Zuniga@sigfox.com
+   URI:   http://www.sigfox.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crowcroft, et al.        Expires April 26, 2017                 [Page 4]

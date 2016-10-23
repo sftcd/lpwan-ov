@@ -5,7 +5,10 @@ DATE=`date +%s`
 
 all: core upload
 
-core:
+contribs: 
+	$(XML2RFC) draft-pretend-contribs.xml draft-pretend-contribs-00.txt
+
+core: 
 	$(XML2RFC) draft-farrell-lpwan-overview.xml draft-farrell-lpwan-overview-00.txt
 
 upload:
