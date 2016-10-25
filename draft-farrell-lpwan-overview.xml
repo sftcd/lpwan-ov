@@ -10,7 +10,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-farrell-lpwan-overview-00">
+<rfc category="info" ipr="trust200902" docName="draft-farrell-lpwan-overview-01">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -99,6 +99,58 @@ Such a section might be better before or after <xref target="inputs"/>, will
 see when text's added there. There
 is some text for this in the current "gaps" draft.]]</t>
 
+	<t>[[Maybe add text about the common/different goals, eg. NB-IoT has
+"improved indoor coverage" which is different, all have "low power
+consumption." If so, that'd start to look like <xref target="table-goals"/>.
+It may make more sense to eliminate rows of this table that are all
+"Y" entries and just say those are common goals in text or another
+table.]] </t>
+
+<texttable anchor="table-goals" title="Stated goals of LPWAN Technologies">
+    <ttcol align='left'>Goal</ttcol>
+    <ttcol align='center'>LoRa</ttcol>
+    <ttcol align='center'>NB-IoT</ttcol>
+    <ttcol align='center'>Sigfox</ttcol>
+    <ttcol align='center'>WI-SUN</ttcol>
+
+	<c>Improved indoor coverage</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+	<c>Massive number of low-throughput devices</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+	<c>Low delay sensitivity</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+	<c>Ultra-Low device cost</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+	<c>Low device power consumption</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+	<c>Optimized network architecture</c>
+	<c>-</c>
+	<c>Y</c>
+	<c>-</c>
+	<c>-</c>
+
+</texttable>
+
 	</section>
 
 
@@ -127,9 +179,210 @@ Alper is planned to be published Wed Oct 26]]</t>
 
 	</section>
 
-	<section anchor="nbiot" title="Narrowband IoT (nb-iot)">
+	<section anchor="nbiot" title="Narrowband IoT (NB-IoT)">
 
-	<t>[[Add text here from <xref target="I-D.ratilainen-lpwan-nb-iot"/>.]]</t>
+	<t>[[Text here is from <xref target="I-D.ratilainen-lpwan-nb-iot"/>.]]</t>
+
+	  <section anchor="nbiot-docs" title="Provenance and Documents">
+
+
+	  <t>Narrowband Internet of Things (NB-IoT) is developed and standardized
+by 3GPP.  The standardization of NB-IoT was finalized with 3GPP Release-13 in
+June 2016, but further enhancements for NB-IoT are worked on in the following
+releases, for example in the form of multicast support. For more information of
+what has been specified for NB-IoT, 3GPP specification 36.300 <xref
+target="TGPP36300"></xref> provides an overview and overall description of the
+E-UTRAN radio interface protocol architecture, while specifications 36.321
+<xref target="TGPP36321"></xref>, 36.322 <xref target="TGPP36322"></xref>,
+36.323 <xref target="TGPP36323"></xref> and 36.331 <xref
+target="TGPP36331"></xref> give  more detailed description of MAC, RLC, PDCP
+and RRC protocol layers respectively. The new versions of the specifications
+including NB-IoT are not yet available due to novelty of the feature, but
+should be shortly available in the 3GPP website.</t> 
+
+	  </section>
+
+	  <section anchor="nbiot-chars" title="Characteristics">
+
+<t>[[Editor notes: Not clear if all the radio info here is needed. Not
+clear what MTUs might be. Many 3GPP acronyms/terms to eliminate or
+explain.]]</t>
+
+<t>
+Specific targets for NB-IoT include: Less than 5$ module cost, extended
+coverage of 164 dB maximum coupling loss, battery life of over 10 years, ~55000
+devices per cell and uplink reporting latency of less than 10 seconds.</t>
+
+<t>NB-IoT supports Half Duplex FDD operation mode with 60 kbps peak rate in
+uplink and 30 kbps peak rate in downlink. 
+As the name suggests, NB-IoT uses narrowbands with
+the bandwidth of 180 kHz in both, downlink and uplink. The multiple access
+scheme used in the downlink is OFDMA with 15 kHz sub-carrier spacing. On uplink
+multi-tone SC-FDMA is used with 15 kHz tone spacing or as a special case of
+SC-FDMA single tone with either 15kHz or 3.75 kHz tone spacing may be used.
+</t>
+
+<t>NB-IoT can be deployed in three ways. In-band deployment means that the
+narrowband is multiplexed within normal LTE carrier. In Guard-band deployment
+the narrowband uses the unused resource blocks between two adjacent LTE
+carriers. Also standalone deployment is supported, where the narrowband can be
+located alone in dedicated spectrum, which makes it possible for example to
+refarm the GSM carrier at 850/900 MHz for NB-IoT. All three deployment modes
+are meant to be used in licensed bands. The maximum transmission power is
+either 20 or 23 dBm for uplink transmissions, while for downlink transmission
+the eNodeB may use higher transmission power, up to 46 dBm depending on the
+deployment.</t>
+
+<t>For signaling optimization, two options are introduced in addition to legacy
+RRC connection setup, mandatory Data-over-NAS (Control Plane optimization,
+solution 2 in <xref target="TGPP23720"></xref>) and optional RRC Suspend/Resume
+(User Plane optimization, solution 18 in <xref target="TGPP23720"></xref>). In
+the control plane optimization the data is sent over Non Access Stratum,
+directly from Mobility Management Entity (MME) in core network to the UE
+without interaction from base station. This means there are no Access Stratum
+security or header compression, as the Access Stratum is bypassed, and only
+limited RRC procedures.</t> <t>The RRC Suspend/Resume procedures reduce the
+signaling overhead required for UE state transition from Idle to Connected mode
+in order to have a user plane transaction with the network and back to Idle
+state by reducing the signaling messages required compared to legacy
+operation</t>
+
+<t>With extended DRX the RRC Connected mode DRX cycle is up to 10.24 seconds
+and in RRC Idle the DRX cycle can be up to 3 hours.</t>
+
+<t>NB-IoT has no channel access restrictions allowing up to a 100% duty-cycle.</t>
+
+<t>3GPP access security is specified in <xref target="TGPP33203"></xref>.</t>
+
+    <figure align="center" anchor="nbiot-diag" title="3GPP network architecture">
+       <artwork align="left"><![CDATA[
++--+
+|UE| \              +------+      +------+
++--+  \             | MME  |------| HSS  |
+       \          / +------+      +------+
++--+    \+-----+ /      |
+|UE| ----| eNB |-       |
++--+    /+-----+ \      |
+       /          \ +--------+
+      /            \|        |    +------+     Service PDN
++--+ /              |  S-GW  |----| P-GW |---- e.g. Internet
+|UE|                |        |    +------+
++--+                +--------+
+           ]]></artwork>
+     </figure>
+
+  <t>Mobility Management Entity (MME) is responsible for handling the mobility
+of the UE. MME tasks include tracking and paging UEs, session management,
+choosing the Serving gateway for the UE during initial attachment and
+authenticating the user. At MME, the Non Access Stratum (NAS) signaling from
+the UE is terminated.</t>
+
+  <t>Serving Gateway (S-GW) routes and forwards the user data packets through
+the access network and acts as a mobility anchor for UEs during handover
+between base stations known as eNodeBs and also during handovers between other
+3GPP technologies.</t>
+
+  <t>Packet Data Node Gateway (P-GW) works as an interface between 3GPP network
+and external networks.</t>
+
+  <t>Home Subscriber Server (HSS) contains user-related and
+subscription-related information. It is a database, which performs mobility
+management, session establishment support, user authentication and access
+authorization.</t>
+
+  <t>E-UTRAN consists of components of a single type, eNodeB. eNodeB is a base
+station, which controls the UEs in one or several cells.</t>
+
+  <t>The illustration of 3GPP radio protocol architecture can be seen from <xref target="nbiot-stack"></xref>.</t>
+
+
+    <figure align="center" anchor="nbiot-stack" title="3GPP radio protocol architecture">
+       <artwork align="left"><![CDATA[
++---------+                                       +---------+
+| NAS     |----|-----------------------------|----| NAS     |
++---------+    |    +---------+---------+    |    +---------+ 
+| RRC     |----|----| RRC     | S1-AP   |----|----| S1-AP   |
++---------+    |    +---------+---------+    |    +---------+
+| PDCP    |----|----| PDCP    | SCTP    |----|----| SCTP    |
++---------+    |    +---------+---------+    |    +---------+
+| RLC     |----|----| RLC     | IP      |----|----| IP      |
++---------+    |    +---------+---------+    |    +---------+
+| MAC     |----|----| MAC     | L2      |----|----| L2      |
++---------+    |    +---------+---------+    |    +---------+
+| PHY     |----|----| PHY     | PHY     |----|----| PHY     |
++---------+         +---------+---------+         +---------+
+            LTE-Uu                         S1-MME
+    UE                     eNodeB                     MME
+           ]]></artwork>
+     </figure>
+
+  <t>The radio protocol architecture of NB-IoT (and LTE) is separated into
+control plane and user plane. Control plane consists of protocols which control
+the radio access bearers and the connection between the UE and the network. The
+highest layer of control plane is called Non-Access Stratum (NAS), which
+conveys the radio signaling between the UE and the EPC, passing transparently
+through radio network. It is responsible for authentication, security control,
+mobility management and bearer management.</t>
+
+  <t>Access Stratum (AS) is the functional layer below NAS, and in control
+plane it consists of Radio Resource Control protocol (RRC) <xref
+target="TGPP36331"></xref>, which handles connection establishment and release
+functions, broadcast of system information, radio bearer establishment,
+reconfiguration and release. RRC configures the user and control planes
+according to the network status. There exists two RRC states, RRC_Idle or
+RRC_Connected, and RRC entity controls the switching between these states. In
+RRC_Idle, the network knows that the UE is present in the network and the UE
+can be reached in case of incoming call. In this state the UE monitors paging,
+performs cell measurements and cell selection and acquires system information.
+Also the UE can receive broadcast and multicast data, but it is not expected to
+transmit or receive singlecast data. In RRC_Connected the UE has a connection
+to the eNodeB, the network knows the UE location on cell level and the UE may
+receive and transmit singlecast data. RRC_Connected mode is established, when
+the UE is expected to be active in the network, to transmit or receive data.
+Connection is released, switching to RRC_Idle, when there is no traffic to save
+the UE battery and radio resources. However, a new feature was introduced for
+NB-IoT, as mentioned earlier, which allows data to be transmitted from the MME
+directly to the UE, while the UE is in RRC_Idle transparently to the
+eNodeB.</t>
+
+  <t>Packet Data Convergence Protocol's (PDCP) <xref target="TGPP36323"></xref>
+main services in control plane are transfer of control plane data, ciphering
+and integrity protection. </t>
+
+  <t>Radio Link Control protocol (RLC) <xref target="TGPP36322"></xref>
+performs transfer of upper layer PDUs and optionally error correction with
+Automatic Repeat reQuest (ARQ), concatenation, segmentation and reassembly of
+RLC SDUs, in-sequence delivery of upper layer PDUs, duplicate detection, RLC
+SDU discard, RLC-re-establishment and protocol error detection and recovery.
+</t>
+
+  <t>Medium Access Control protocol (MAC) <xref target="TGPP36321"></xref>
+provides mapping between logical channels and transport channels, multiplexing
+of MAC SDUs, scheduling information reporting, error correction with HARQ,
+priority handling and transport format selection. </t>
+
+  <t>Physical layer <xref target="TGPP36201"></xref> provides data transport
+services to higher layers. These include error detection and indication to
+higher layers, FEC encoding, HARQ soft-combining. Rate matching and mapping of
+the transport channels onto physical channels, power weighting and modulation
+of physical channels, frequency and time synchronization and radio
+characteristics measurements.</t>
+
+  <t>User plane is responsible for transferring the user data through the
+Access Stratum. It interfaces with IP and consists of PDCP, which in user plane
+performs header compression using Robust Header Compression (RoHC), transfer of
+user plane data between eNodeB and UE, ciphering and integrity protection.
+Lower layers in user plane are similarly RLC, MAC and physical layer performing
+tasks mentioned above.</t>
+
+<t>Under worst-case conditions, NB-IoT may achieve data rate of roughly 200
+bps.  For downlink with 164 dB coupling loss, NB-IoT may achieve higher data
+rates, depending on the deployment mode. Stand-alone operation may achieve the
+highest data rates, up to few kbps, while in-band and guard-band operations may
+reach several hundreds of bps. NB-IoT may even operate with higher maximum
+coupling loss than 170 dB with very low bit rates.</t>
+
+	  </section>
 
 	</section>
 
@@ -294,7 +547,7 @@ solely the editor's fault.
 	<t>Thanks to [your name here] for comments.</t>
 
 		<t>Stephen Farrell's work on this memo was supported by the
-Science Foundation Ireleand funded CONNECT centre 
+Science Foundation Ireland funded CONNECT centre 
 <eref target="https://connectcentre.ie/"/>.</t>
 	
    </section>
@@ -310,6 +563,102 @@ Science Foundation Ireleand funded CONNECT centre
 	&I-D.minaburo-lpwan-gap-analysis;
 	&I-D.zuniga-lpwan-sigfox-system-description;
 	&I-D.ratilainen-lpwan-nb-iot;
+
+     <reference anchor="TGPP36300">
+       <front>
+         <title>TS 36.300 v13.4.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+   <reference anchor="TGPP36321">
+       <front>
+         <title>TS 36.321 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Medium Access Control (MAC) protocol specification</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+   <reference anchor="TGPP36322">
+       <front>
+         <title>TS 36.322 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Link Control (RLC) protocol specification</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+   <reference anchor="TGPP36323">
+       <front>
+         <title>TS 36.323 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Packet Data Convergence Protocol (PDCP) specification (Not yet available)</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+   <reference anchor="TGPP36331">
+       <front>
+         <title>TS 36.331 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+   <reference anchor="TGPP36201">
+       <front>
+         <title>TS 36.201 v13.2.0 - Evolved Universal Terrestrial Radio Access (E-UTRA); LTE physical layer; General description</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+     <reference anchor="TGPP23720">
+       <front>
+         <title>TR 23.720 v13.0.0 - Study on architecture enhancements for Cellular Internet of Things</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
+
+     <reference anchor="TGPP33203">
+       <front>
+         <title>TS 33.203 v13.1.0 - 3G security; Access security for IP-based services</title>
+
+         <author>
+           <organization>3GPP</organization>
+         </author>
+
+         <date year="2016" />
+       </front>
+     </reference>
 
 	</references>
 
