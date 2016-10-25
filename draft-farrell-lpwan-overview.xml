@@ -110,7 +110,7 @@ table.]] </t>
     <ttcol align='left'>Goal</ttcol>
     <ttcol align='center'>LoRa</ttcol>
     <ttcol align='center'>NB-IoT</ttcol>
-    <ttcol align='center'>Sigfox</ttcol>
+    <ttcol align='center'>SIGFOX</ttcol>
     <ttcol align='center'>WI-SUN</ttcol>
 
 	<c>Improved indoor coverage</c>
@@ -122,25 +122,25 @@ table.]] </t>
 	<c>Massive number of low-throughput devices</c>
 	<c>-</c>
 	<c>Y</c>
-	<c>-</c>
+	<c>Y</c>
 	<c>-</c>
 
 	<c>Low delay sensitivity</c>
 	<c>-</c>
 	<c>Y</c>
-	<c>-</c>
+	<c>Y</c>
 	<c>-</c>
 
 	<c>Ultra-Low device cost</c>
 	<c>-</c>
 	<c>Y</c>
-	<c>-</c>
+	<c>Y</c>
 	<c>-</c>
 
 	<c>Low device power consumption</c>
 	<c>-</c>
 	<c>Y</c>
-	<c>-</c>
+	<c>Y</c>
 	<c>-</c>
 
 	<c>Optimized network architecture</c>
@@ -386,9 +386,218 @@ coupling loss than 170 dB with very low bit rates.</t>
 
 	</section>
 
-	<section anchor="sigfox" title="Sigfox">
+	<section anchor="sigfox" title="SIGFOX">
 
-	<t>[[Add text here from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>.]]</t>
+	<t>[[Text here is from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>.]]</t>
+	  <section anchor="sigfox-docs" title="Provenance and Documents">
+
+<t> The SIGFOX LPWAN is in line with the terminology and specifications being
+defined by the ETSI ERM TG28 Low Throughput Networks (LTN) group <xref
+target="etsi_ltn" />.  As of today, the SIGFOX LPWAN/LTN has been fully
+deployed in 6 countries, with ongoing deployments on 14 other countries, which
+in total will reach 316M people.</t>
+
+	  </section>
+
+	  <section anchor="sigfox-chars" title="Characteristics">
+
+<t>SIGFOX LPWAN autonomous battery-operated devices send only a few bytes per
+day, week or month, allowing them to remain on a single battery for up to 10-15
+years.</t>
+	   
+<t>The radio interface is compliant with the following regulations:</t>
+
+<t><list style="empty">
+	   <t>Spectrum allocation in the USA <xref target="fcc_ref" />,</t>
+	   <t>Spectrum allocation in Europe <xref target="etsi_ref" />,</t>
+	   <t>Spectrum allocation in Japan <xref target="arib_ref" />.</t>
+	   </list></t>
+	   
+	   
+<t>The SIGFOX LTN radio interface is also compliant with the local
+regulations of the following countries: Australia, Brazil, Canada, Kenya,
+Lebanon, Mauritius, Mexico, New Zealand, Oman, Peru, Singapore, South Africa,
+South Korea, and Thailand.</t>
+
+<t> The radio interface is based on Ultra Narrow Band (UNB) communications,
+which allow an increased transmission range by spending a limited amount of
+energy at the device. Moreover, UNB allows a large number of devices to coexist
+in a given cell without significantly increasing the spectrum interference.
+</t>
+
+<t>Both uplink and downlink communications are possible with the UNB solution.
+Due to spectrum optimizations, different uplink and downlink frames and time
+synchronization methods are needed.</t>
+
+<t>The main radio characteristics of the UNB uplink transmission are:</t>
+
+<t><list style="symbols">
+			  
+  <t>Channelization mask: 100 Hz (600 Hz in the USA)</t>
+
+  <t>Uplink baud rate: 100 baud (600 baud in the USA)</t>
+
+  <t>Modulation scheme: DBPSK</t>
+
+  <t>Uplink transmission power: compliant with local regulation</t>
+
+  <t>Link budget: 155 dB (or better)</t>
+
+  <t>Central frequency accuracy: not relevant, provided there is no significant
+frequency drift within an uplink packet</t>
+
+</list></t>
+			  
+<t>In Europe, the UNB uplink frequency band is limited to 868,00 to 868,60 MHz,
+with a maximum output power of 25 mW and a maximum mean transmission time of
+1%.  </t>
+
+
+<t>The format of the uplink frame is the following:</t>
+
+<figure anchor="fig:ul_frame" title="Uplink Frame Format">
+<artwork><![CDATA[
++--------+--------+--------+------------------+-------------+-----+
+|Preamble|  Frame | Dev ID |     Payload      |Msg Auth Code| FCS | 
+|        |  Sync  |        |                  |             |     |
++--------+--------+--------+------------------+-------------+-----+
+]]>
+</artwork>
+</figure> 
+
+<t>The uplink frame is composed of the following fields: </t>
+
+<t><list style="symbols">
+
+  <t>Preamble: 19 bits</t>
+  <t>Frame sync and header: 29 bits</t>
+  <t>Device ID: 32 bits</t>
+  <t>Payload: 0-96 bits</t>
+  <t>Authentication: 16-40 bits</t>
+  <t>Frame check sequence: 16 bits (CRC)</t>
+
+</list></t>
+			  
+<t>The main radio characteristics of the UNB downlink transmission are:</t>
+
+<t><list style="symbols">
+
+  <t>Channelization mask: 1.5 kHz</t>
+  <t>Downlink baud rate: 600 baud</t>
+  <t>Modulation scheme: GFSK</t>
+  <t>Downlink transmission power: 500 mW (4W in the USA)</t>
+  <t>Link budget: 153 dB (or better)</t>
+
+  <t>Central frequency accuracy: Centre frequency of downlink transmission are
+set by the network according to the corresponding uplink transmission.</t>
+
+</list></t>
+
+<t>In Europe, the UNB downlink frequency band is limited to 869,40 to 869,65
+MHz, with a maximum output power of 500 mW  with 10% duty cycle.  </t>
+
+<t> The format of the downlink frame is the following:</t>
+
+<figure anchor="fig:dl_frame" title="Downlink Frame Format" >
+<artwork><![CDATA[
++------------+-----+---------+------------------+-------------+-----+
+|  Preamble  |Frame|   ECC   |     Payload      |Msg Auth Code| FCS | 
+|            |Sync |         |                  |             |     |
++------------+-----+---------+------------------+-------------+-----+
+]]>
+</artwork>
+</figure> 
+
+<t>The downlink frame is composed of the following fields:</t>
+
+<t><list style="symbols">
+
+  <t>Preamble: 91 bits</t>
+  <t>Frame sync and header: 13 bits</t>
+  <t>Error Correcting Code (ECC): 32 bits</t>
+  <t>Payload: 0-64 bits</t>
+  <t>Authentication: 16 bits</t>
+  <t>Frame check sequence: 8 bits (CRC)</t>
+
+</list></t>
+
+<t> The radio interface is optimized for uplink transmissions, which are
+asynchronous. Downlink communications are achieved by querying the network for
+existing data from the device.  </t>
+
+<t> A device willing to receive downlink messages opens a fixed window for
+reception after sending an uplink transmission.  The delay and duration of this
+window have fixed values. The LTN network transmits the downlink message for a
+given device during the reception window. The LTN network selects the BS for
+transmitting the corresponding downlink message.  </t>
+
+<t> Uplink and downlink transmissions are unbalanced due to the regulatory
+constraints on the ISM bands. Under the strictest regulations, the system can
+allow a maximum of 140 uplink messages and 4 downlink messages per device.
+These restrictions can be slightly relaxed depending on system conditions and
+the specific regulatory domain of operation. </t>
+
+<figure anchor="sigfox-arch" title="ETSI LTN architecture" >
+<artwork><![CDATA[
+             +--+
+             |EP| *                    +------+
+             +--+   *                  |  RA  |
+                      *                +------+  
+             +--+       *                 |
+             |EP| * * *   *               |
+             +--+       *   +----+        |       
+                          * | BS | \  +--------+  
+             +--+       *   +----+  \ |        |   
+     DA -----|EP| * * *               |   SC   |----- NA
+             +--+       *           / |        |   
+                          * +----+ /  +--------+   
+             +--+       *   | BS |/                                 
+             |EP| * * *   * +----+    
+             +--+         * 
+                        *
+             +--+     *
+             |EP| * *
+             +--+
+]]></artwork>
+</figure> 
+	
+<t> <xref target="sigfox-arch" /> depicts the different elements of the SIGFOX
+architecture.  </t>
+
+<t> The architecture consists of a single core network, which allows global
+connectivity with minimal impact on the end device and radio access network.
+The core network elements are the Service Center (SC) and the Registration
+Authority (RA). The SC is in charge of the data connectivity between the Base
+Station (BS) and the Internet, as well as the control and management of the BSs
+and End Points.  The RA is in charge of the End Point network access
+authorization.</t>
+
+<t> The radio access network is comprised of several BSs connected directly to
+the SC. Each BS performs complex L1/L2 functions, leaving some L2 and L3
+functionalities to the SC.</t>
+
+<t> The devices or End Points (EPs) are the objects that communicate
+application data between local device applications (DAs) and network
+applications (NAs).</t>
+
+<t> EPs (or devices) can be static or nomadic, as they associate with the SC
+and they do not attach to a specific BS. Hence, they can communicate with the
+SC through one or many BSs.</t>
+
+<t> Due to constraints in the complexity of the EP, it is assumed that EPs host
+only one or very few device applications, which communicate to one single
+network application at a time.</t>     
+
+<t> The radio protocol provides mechanisms to authenticate and ensure integrity
+of the message. This is achieved by using a unique device ID and a message
+authentication code, which allow ensuring that the message has been generated
+and sent by the device with the ID claimed in the message. </t>
+
+<t> Security keys are independent for each device. These keys are associated
+with the device ID and they are pre-provisioned. Application data can be
+encrypted by the application provider.  </t>
+
+	  </section>
 
 	</section>
 	
@@ -659,6 +868,51 @@ Science Foundation Ireland funded CONNECT centre
          <date year="2016" />
        </front>
      </reference>
+
+      <reference anchor="etsi_ltn">
+        <front>
+          <title>ETSI Technical Committee on EMC and Radio Spectrum Matters (ERM) TG28 Low Throughput Networks (LTN)</title>
+          <author fullname="ETSI ERM TG28 LTN"/>
+          <date year="2015" month="February"/>
+        </front>
+      </reference>
+	  
+
+	  
+	  <reference anchor="fcc_ref">
+	    <front>
+		  <title>FCC CFR 47 Part 15.247 Telecommunication Radio Frequency Devices - Operation within the bands 902-928 MHz, 2400-2483.5 MHz, and 5725-5850 MHz.</title>
+		  <author fullname="FCC"/>
+		  <date year="2016" month="June"/>
+		</front>
+	  </reference>
+	  
+	  <reference anchor="etsi_ref">
+	    <front>
+		  <title>ETSI EN 300-220 (Parts 1 and 2): Electromagnetic compatibility and Radio spectrum Matters (ERM); Short Range 
+		  Devices (SRD); Radio equipment to be used in the 25 MHz to 1 000 MHz frequency range with power levels ranging up to 500 mW</title>
+		  <author fullname="ETSI"/>
+		  <date year="2016" month="May"/>
+		</front>
+	  </reference>	  
+<!--		  
+	  <reference anchor="gbt_ref">
+	    <front>
+		  <title>GB/T 15629.15-2010: Information technology - Telecommunications and information exchange between systems local and 
+		  metropolitan area networks - Specific requirements - Part 15.4: Wireless medium access control and physical layer (PHY) 
+		  specification for low rate wireless personal area networks.</title>
+		  <author fullname="GB/T"/>
+		  <date year="2010" month="January"/>
+		</front>
+	  </reference>	 
+-->	  
+	  <reference anchor="arib_ref">
+	    <front>
+		  <title>ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter, Telecontrol and data transmission radio equipment.</title>
+		  <author fullname="ARIB"/>
+		  <date year="2012" month="February"/>
+		</front>
+	  </reference>	
 
 	</references>
 
