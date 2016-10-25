@@ -9,7 +9,7 @@ contribs:
 	$(XML2RFC) draft-pretend-contribs.xml draft-pretend-contribs-00.txt
 
 core: 
-	$(XML2RFC) draft-farrell-lpwan-overview.xml draft-farrell-lpwan-overview-00.txt
+	$(XML2RFC) draft-farrell-lpwan-overview.xml draft-farrell-lpwan-overview-01.txt
 
 upload:
 	scp draft-farrell-lpwan-overview.txt  down.dsg.cs.tcd.ie:/var/www/misc/draft-farrell-lpwan-overview.txt
