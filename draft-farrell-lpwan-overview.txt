@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                          October 25, 2016
-Expires: April 28, 2017
+Intended status: Informational                          October 28, 2016
+Expires: May 1, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 28, 2017.
+   This Internet-Draft will expire on May 1, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 1]
+Farrell                    Expires May 1, 2017                  [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 2]
+Farrell                    Expires May 1, 2017                  [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 3]
+Farrell                    Expires May 1, 2017                  [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -189,9 +189,8 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 4.1.  LoRaWAN
 
-   [[Text TBD, I-D co-authored by the editor of this document and Alper
-   is planned to be published Wed Oct 26.  And yes, this section is too
-   long right now.  Will shorten.]]
+   [[Text here is from [I-D.farrell-lpwan-lora-overview] And yes, this
+   section is too long right now.  Will shorten.]]
 
 4.1.1.  Provenance and Documents
 
@@ -218,15 +217,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    LoRaWAN networks are typically organized in a star-of-stars topology
    in which gateways relay messages between end-devices and a central
+   "network server" in the backend.  Gateways are connected to the
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 4]
+Farrell                    Expires May 1, 2017                  [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
-   "network server" in the backend.  Gateways are connected to the
    network server via IP links while end-devices use single-hop LoRaWAN
    communication that can be received at one or more gateways.  All
    communication is generally bi-directional, although uplink
@@ -247,8 +246,8 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    +----------+       *   | Gateway +---+
    |End-device| * * *   * +---------+
    +----------+
-       Key: *      LoRaWAN MAC Radio
-            +---+  Internet connectivity
+       Key: *      LoRaWAN Radio
+            +---+  IP connectivity
 
                       Figure 1: LoRaWAN architecture
 
@@ -257,33 +256,31 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    o  Gateway: a radio on the infrastructure-side, sometimes called a
       concentrator or base-station.  Communicates with end-devices and,
-      via the Internet, with a network server.
+      via IP, with a network server.
 
    o  Network Server: The Network Server (NS) terminates the LoRaWAN MAC
       layer for the end-devices connected to the network.  It is the
       center of the star topology.
 
    o  Uplink message: refers to communications from end-device to
-      network server via one or more gateways.
+      network server or appliction via one or more gateways.
 
-   o  Downlink message: refers to communications from network server via
-      one gateway to a single end-device or a group of end-devices
-      (considering multicasting).
+   o  Downlink message: refers to communications from network server or
+      application via one gateway to a single end-device or a group of
+      end-devices (considering multicasting).
 
    o  Application: refers to application layer code both on the end-
       device and running "behind" the network server.  For LoRaWAN,
       there will generally only be one application running on most end-
+      devices.  Interfaces between the network server and application
+      are not further described here.
 
 
 
-
-Farrell                  Expires April 28, 2017                 [Page 5]
+Farrell                    Expires May 1, 2017                  [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
-
-      devices.  Interfaces between the network server and application
-      are not further described here.
 
    o  Classes A, B and C define different device capabilities and modes
       of operation for end-devices.  End-devices can transmit uplink
@@ -333,7 +330,10 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 6]
+
+
+
+Farrell                    Expires May 1, 2017                  [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 7]
+Farrell                    Expires May 1, 2017                  [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 8]
+Farrell                    Expires May 1, 2017                  [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                 [Page 9]
+Farrell                    Expires May 1, 2017                  [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 10]
+Farrell                    Expires May 1, 2017                 [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -613,7 +613,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 11]
+Farrell                    Expires May 1, 2017                 [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -669,7 +669,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 12]
+Farrell                    Expires May 1, 2017                 [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -725,7 +725,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 13]
+Farrell                    Expires May 1, 2017                 [Page 13]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -781,7 +781,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 14]
+Farrell                    Expires May 1, 2017                 [Page 14]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -837,7 +837,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 15]
+Farrell                    Expires May 1, 2017                 [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -893,7 +893,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 16]
+Farrell                    Expires May 1, 2017                 [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -949,7 +949,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 17]
+Farrell                    Expires May 1, 2017                 [Page 17]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1005,7 +1005,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 18]
+Farrell                    Expires May 1, 2017                 [Page 18]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1061,7 +1061,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 19]
+Farrell                    Expires May 1, 2017                 [Page 19]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1117,7 +1117,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                  Expires April 28, 2017                [Page 20]
+Farrell                    Expires May 1, 2017                 [Page 20]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1164,19 +1164,22 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    developed by the full set of contributors listed below.  The main
    input documents and their authors were:
 
+   o  The text on LoRaWAN was based on [I-D.farrell-lpwan-lora-overview]
+      co-authored by Alper Yegin and Stephen Farrell.
+
    o  Text for Section 4.2 was provided by Antti Ratilainen in
       [I-D.ratilainen-lpwan-nb-iot].
 
-   o  Text for Section 4.3 was provided by Juan Carlos Zuniga and Benoit
-      Ponsard in [I-D.zuniga-lpwan-sigfox-system-description].
 
 
 
-
-Farrell                  Expires April 28, 2017                [Page 21]
+Farrell                    Expires May 1, 2017                 [Page 21]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
+
+   o  Text for Section 4.3 was provided by Juan Carlos Zuniga and Benoit
+      Ponsard in [I-D.zuniga-lpwan-sigfox-system-description].
 
    o  Text for Section 5 was provided by Ana Minabiru, Carles Gomez,
       Laurent Toutain, Josep Paradells and Jon Crowcroft in
@@ -1223,17 +1226,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       Email: josep.paradells@entel.upc.edu
 
 
-      Benoit Ponsard
-      SIGFOX
-      425 rue Jean Rostand
 
 
 
-Farrell                  Expires April 28, 2017                [Page 22]
+Farrell                    Expires May 1, 2017                 [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
+      Benoit Ponsard
+      SIGFOX
+      425 rue Jean Rostand
       Labege  31670
       France
 
@@ -1282,10 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-
-
-
-Farrell                  Expires April 28, 2017                [Page 23]
+Farrell                    Expires May 1, 2017                 [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1306,6 +1306,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
+
+   [I-D.farrell-lpwan-lora-overview]
+              Farrell, S. and A. Yegin, "LoRaWAN Overview", draft-
+              farrell-lpwan-lora-overview-01 (work in progress), October
+              2016.
 
    [I-D.minaburo-lpwan-gap-analysis]
               Minaburo, A., Gomez, C., Toutain, L., Paradells, J., and
@@ -1333,18 +1338,18 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               Universal Terrestrial Radio Access (E-UTRA); Medium Access
               Control (MAC) protocol specification", 2016.
 
+
+
+
+Farrell                    Expires May 1, 2017                 [Page 24]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    [TGPP36322]
               3GPP, "TS 36.322 v13.2.0 (Available soon) - Evolved
               Universal Terrestrial Radio Access (E-UTRA); Radio Link
               Control (RLC) protocol specification", 2016.
-
-
-
-
-Farrell                  Expires April 28, 2017                [Page 24]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
    [TGPP36323]
               3GPP, "TS 36.323 v13.2.0 (Available soon) - Evolved
@@ -1386,6 +1391,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               MHz to 1 000 MHz frequency range with power levels ranging
               up to 500 mW", May 2016.
 
+
+
+
+
+
+
+Farrell                    Expires May 1, 2017                 [Page 25]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    [arib_ref]
               "ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter,
               Telecontrol and data transmission radio equipment.",
@@ -1394,13 +1410,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    [LoRaSpec]
               LoRa Alliance, "LoRaWAN Specification Version V1.0.2", Nov
               2016, <URL TBD>.
-
-
-
-Farrell                  Expires April 28, 2017                [Page 25]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
    [LoRaSpec1.0]
               LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
@@ -1444,13 +1453,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-Farrell                  Expires April 28, 2017                [Page 26]
+Farrell                    Expires May 1, 2017                 [Page 26]

@@ -168,8 +168,8 @@ on what text the WG find useful to include.]]</t>
 
 	<section anchor="lora" title="LoRaWAN">
 
-	<t>[[Text TBD, I-D co-authored by the editor of this document and
-Alper is planned to be published Wed Oct 26. And yes, this section
+	<t>[[Text here is from <xref target="I-D.farrell-lpwan-lora-overview"/>
+And yes, this section
 is too long right now. Will shorten.]]</t>
 
 	  <section anchor="lora-docs" title="Provenance and Documents">
@@ -221,8 +221,8 @@ LoRaWAN network. </t>
 +----------+       *   | Gateway +---+
 |End-device| * * *   * +---------+    
 +----------+         
-    Key: *      LoRaWAN MAC Radio 
-         +---+  Internet connectivity
+    Key: *      LoRaWAN Radio 
+         +---+  IP connectivity
   ]]></artwork>
 </figure> 
 	
@@ -233,18 +233,19 @@ LoRaWAN network. </t>
 	<t>End-device: a LoRa client device, sometimes called a mote. Communicates with gateways.</t>
 
 	<t>Gateway: a radio on the infrastructure-side, sometimes called a concentrator or base-station.
-	Communicates with end-devices and, via the Internet, with a network server. </t>
+	Communicates with end-devices and, via IP, with a network server. </t>
 
 	<t>Network Server: The Network Server (NS) terminates the LoRaWAN MAC layer
 for the end-devices connected to the network. It is the center of the star
 topology.
 </t>
 
-	<t>Uplink message: refers to communications from end-device to network server via one or
-more gateways. </t>
+	<t>Uplink message: refers to communications from end-device to network server or
+appliction via one or more gateways. </t>
 
-	<t>Downlink message: refers to communications from network server via one gateway to a single
-end-device or a group of end-devices (considering multicasting). </t>
+	<t>Downlink message: refers to communications from network server or
+application via one gateway to a single end-device or a group of end-devices
+(considering multicasting). </t>
 
 	<t>Application: refers to application layer code both on the end-device
 and running "behind" the network server. For LoRaWAN, there will generally 
@@ -1060,10 +1061,8 @@ their authors were:</t>
 
 <t><list style="symbols">
 
-<!--
 <t>The text on LoRaWAN was based on <xref target="I-D.farrell-lpwan-lora-overview"/>
 co-authored by Alper Yegin and Stephen Farrell.</t>
--->
 
 <t>Text for <xref target="nbiot"/> was provided by
 Antti Ratilainen in
@@ -1192,9 +1191,7 @@ Science Foundation Ireland funded CONNECT centre
 <back>
    <references title="Informative References">
    <?rfc include='reference.RFC.2119'?>
-<!--
-      &I-D.farrell-lpwan-lora-overview;
--->
+    &I-D.farrell-lpwan-lora-overview;
 	&I-D.minaburo-lpwan-gap-analysis;
 	&I-D.zuniga-lpwan-sigfox-system-description;
 	&I-D.ratilainen-lpwan-nb-iot;
