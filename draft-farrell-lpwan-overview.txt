@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                          October 28, 2016
-Expires: May 1, 2017
+Intended status: Informational                          October 29, 2016
+Expires: May 2, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 1, 2017.
+   This Internet-Draft will expire on May 2, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                    Expires May 1, 2017                  [Page 1]
+Farrell                    Expires May 2, 2017                  [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -66,14 +66,14 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Common Concerns . . . . . . . . . . . . . . . . . . . . . . .   3
-   4.  LPWAN Technologies  . . . . . . . . . . . . . . . . . . . . .   4
+   4.  LPWAN Technologies  . . . . . . . . . . . . . . . . . . . . .   3
      4.1.  LoRaWAN . . . . . . . . . . . . . . . . . . . . . . . . .   4
        4.1.1.  Provenance and Documents  . . . . . . . . . . . . . .   4
        4.1.2.  Characteristics . . . . . . . . . . . . . . . . . . .   4
-     4.2.  Narrowband IoT (NB-IoT) . . . . . . . . . . . . . . . . .  13
-       4.2.1.  Provenance and Documents  . . . . . . . . . . . . . .  13
-       4.2.2.  Characteristics . . . . . . . . . . . . . . . . . . .  13
-     4.3.  SIGFOX  . . . . . . . . . . . . . . . . . . . . . . . . .  17
+     4.2.  Narrowband IoT (NB-IoT) . . . . . . . . . . . . . . . . .  12
+       4.2.1.  Provenance and Documents  . . . . . . . . . . . . . .  12
+       4.2.2.  Characteristics . . . . . . . . . . . . . . . . . . .  12
+     4.3.  SIGFOX  . . . . . . . . . . . . . . . . . . . . . . . . .  16
        4.3.1.  Provenance and Documents  . . . . . . . . . . . . . .  17
        4.3.2.  Characteristics . . . . . . . . . . . . . . . . . . .  17
      4.4.  WI-SUN  . . . . . . . . . . . . . . . . . . . . . . . . .  21
@@ -81,7 +81,7 @@ Table of Contents
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .  21
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  21
    8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  21
-   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  24
+   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  23
    10. Informative References  . . . . . . . . . . . . . . . . . . .  24
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  26
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                    Expires May 1, 2017                  [Page 2]
+Farrell                    Expires May 2, 2017                  [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -135,46 +135,20 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    before or after Section 4, will see when text's added there.  There
    is some text for this in the current "gaps" draft.]]
 
-   [[Maybe add text about the common/different goals, eg.  NB-IoT has
-   "improved indoor coverage" which is different, all have "low power
-   consumption."  If so, that'd start to look like Table 1.  It may make
-   more sense to eliminate rows of this table that are all "Y" entries
-   and just say those are common goals in text or another table.]]
-
-   +---------------------------------+------+--------+--------+--------+
-   | Goal                            | LoRa | NB-IoT | SIGFOX | WI-SUN |
-   +---------------------------------+------+--------+--------+--------+
-   | Improved indoor coverage        |  -   |   Y    |   -    |   -    |
-   |                                 |      |        |        |        |
-   | Massive number of low-          |  Y   |   Y    |   Y    |   -    |
-   | throughput devices              |      |        |        |        |
-   |                                 |      |        |        |        |
-   | Low delay sensitivity           |  Y   |   Y    |   Y    |   -    |
-   |                                 |      |        |        |        |
-   | Ultra-Low device cost           |  Y   |   Y    |   Y    |   -    |
-   |                                 |      |        |        |        |
-   | Low device power consumption    |  Y   |   Y    |   Y    |   -    |
-   +---------------------------------+------+--------+--------+--------+
-
-                Table 1: Stated goals of LPWAN Technologies
-
-
-
-
-
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 3]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
+   Most technologies in this space aim for similar goals of supporting
+   large numbers of low-cost, low-throughput devices at very low-cost
+   and with very-low power consumption, so that even battery-powered
+   devices can be deployed for years.  And as the name implies, coverage
+   of large areas is also a common goal.  There are some differences
+   however, e.g., the Narrowband IoT specifications Section 4.2 also aim
+   for increased indoor coverage.  However, by and large, the different
+   technologies aim for deployment in very similar circumstances.
 
 4.  LPWAN Technologies
 
    This section provides an overview of the set of LPWAN technologies
    that are being considered in the LPWAN working group.  The text for
-   each was mainly contributed by the proponents of each technology.
+   each was mainly contributed by proponents of each technology.
 
    Note that this text is not intended to be normative in any sesne, but
    simply to help the reader in finding the relevant layer 2
@@ -186,6 +160,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    [[Editor's note: the goal here is 2-3 pages per technology.  If
    there's much more needed then we could add appendices I guess
    depending on what text the WG find useful to include.]]
+
+
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 3]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
 4.1.  LoRaWAN
 
@@ -208,24 +191,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    multiple gateways, so during nominal operation a network server may
    see multiple instances of the same uplink message from an end-device.
 
-   To maximize both battery life of end-devices and overall network
-   capacity, the LoRaWAN network infrastructure manages the data rate
-   and RF output power for each end-device individually by means of an
-   adaptive data rate (ADR) scheme.  End-devices may transmit on any
-   channel allowed by local regulation at any time, using any of the
-   currently available data rates.
+   The LoRaWAN network infrastructure manages the data rate and RF
+   output power for each end-device individually by means of an adaptive
+   data rate (ADR) scheme.  End-devices may transmit on any channel
+   allowed by local regulation at any time, using any of the currently
+   available data rates.
 
    LoRaWAN networks are typically organized in a star-of-stars topology
    in which gateways relay messages between end-devices and a central
    "network server" in the backend.  Gateways are connected to the
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 4]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    network server via IP links while end-devices use single-hop LoRaWAN
    communication that can be received at one or more gateways.  All
    communication is generally bi-directional, although uplink
@@ -234,6 +208,23 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    This section introduces some LoRaWAN terms.  Figure 1 shows the
    entities involved in a LoRaWAN network.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 4]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    +----------+
    |End-device| * * *
@@ -275,13 +266,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       devices.  Interfaces between the network server and application
       are not further described here.
 
-
-
-Farrell                    Expires May 1, 2017                  [Page 5]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    o  Classes A, B and C define different device capabilities and modes
       of operation for end-devices.  End-devices can transmit uplink
       messages at any time in any mode of operation (so long as e.g.,
@@ -290,6 +274,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       each uplink message transmission.  Class B allows the end-device
       to receive downlink messages at periodically scheduled timeslots.
       Class C allows receipt of downlink messages at anytime.  Class
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 5]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
       selection is based on the end-devices' application use case and
       its power supply.  (While Classes B and C are not further
       described here, readers may have seen those terms elsewhere so we
@@ -323,21 +315,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    of the associated receive windows.  When a device joins a LoRaWAN
    network, there are similar timeouts on parts of that process.
 
-
-
-
-
-
-
-
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 6]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    |----------------------------|         |--------|     |--------|
    |             Tx             |         |   Rx   |     |   Rx   |
    |----------------------------|         |--------|     |--------|
@@ -351,9 +328,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    Given the different regional requirements the detailed specification
    for the LoRaWAN physical layer (taking up more than 30 pages of the
    specification) is not reproduced here.  Instead and mainly to
-   illustrate the kinds of issue encountered, in Table 2 we present some
+   illustrate the kinds of issue encountered, in Table 1 we present some
    of the default settings for one ISM band (without fully explaining
-   those here) and in Table 3 we describe maxima and minima for some
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 6]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
+   those here) and in Table 2 we describe maxima and minima for some
    parameters of interest to those defining ways to use IETF protocols
    over the LoRaWAN MAC layer.
 
@@ -372,27 +357,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    |        channels        |                   kbps                   |
    +------------------------+------------------------------------------+
 
-                Table 2: Default settings for EU868MHz band
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 7]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
+                Table 1: Default settings for EU868MHz band
 
    +-----------------------------------------------+--------+----------+
    | Parameter/Notes                               |  Min   |   Max    |
@@ -413,7 +378,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    |                                               | octets |  octets  |
    +-----------------------------------------------+--------+----------+
 
-         Table 3: Minima and Maxima for various LoRaWAN Parameters
+         Table 2: Minima and Maxima for various LoRaWAN Parameters
 
    Note that in the case of the smallest frame size (19 octets), 8
    octets are required for LoRa MAC layer headers leaving only 11 octets
@@ -421,6 +386,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    do not apply for the join procedure - end-devices are required to use
    a channel that can send the 23 byte Join-request message for the join
    procedure.
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 7]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    Uplink and downlink higher layer data is carried in a MACPayload.
    There is a concept of "ports" (an optional 8 bit value) to handle
@@ -442,14 +414,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    LoRaWAN end-devices can choose various different data rates from a
    menu of available rates (dependent on the frequencies in use).  It is
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 8]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    however, recommended that end-devices set the Adaptive Data Rate
    ("ADR") bit in the MAC layer which is a signal that the network
    should control the data rate (via MAC commands to the end-device).
@@ -478,6 +442,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    radio channel settings.  For example, the link check response message
    allows the network server (in response to a request from an end-
    device) to inform an end-device about the signal attenuation seen
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 8]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    most recently at a gateway, and to also tell the end-device how many
    gateways received the corresponding link request MAC command.
 
@@ -498,14 +470,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    value zero.  If a network wishes to support "foreign" end-devices
    then the NwkID needs to be registered with the LoRA Alliance, in
    which case the NwkID is the seven least significant bits of a
-
-
-
-Farrell                    Expires May 1, 2017                  [Page 9]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    registered 24-bit NetID.  (Note however, that the methods for
    "roaming" are currently being enhanced within the LoRA Alliance, so
    the situation here is somewhat fluid.)
@@ -531,7 +495,16 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    channel information, somehow (pre-)provisioned, in which case the
    end-device can simply start transmitting.  This is achievable in many
    cases via out-of-band means given the nature of LoRaWAN networks.
-   Table 4 summarises these values.
+   Table 3 summarises these values.
+
+
+
+
+
+Farrell                    Expires May 2, 2017                  [Page 9]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    +---------+---------------------------------------------------------+
    | Value   | Description                                             |
@@ -546,7 +519,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    | AppSKey | 128 bit application session key for use with AES        |
    +---------+---------------------------------------------------------+
 
-              Table 4: Values required for nominal operation
+              Table 3: Values required for nominal operation
 
    As an alternative, end-devices can use the LoRaWAN join procedure in
    order to setup some of these values and dynamically gain access to
@@ -554,21 +527,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    To use the join procedure, an end-device must still know the AppEUI.
    In addition to the AppEUI, end-devices using the join procedure need
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 10]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    to also know a different (long-term) symmetric key that is bound to
    the AppEUI - this is the application key (AppKey), and is distinct
    from the application session key (AppSKey).  The AppKey is required
    to be specific to the device, that is, each end-device should have a
    different AppKey value.  And finally the end-device also needs a
    long-term identifier for itself, syntactically also an EUI-64, and
-   known as the device EUI or DevEUI.  Table 5 summarises these values.
+   known as the device EUI or DevEUI.  Table 4 summarises these values.
 
      +---------+----------------------------------------------------+
      | Value   | Description                                        |
@@ -580,7 +545,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
      | AppKey  | 128 bit long term application key for use with AES |
      +---------+----------------------------------------------------+
 
-                Table 5: Values required for join procedure
+                Table 4: Values required for join procedure
 
    The join procedure involves a special exchange where the end-device
    asserts the AppEUI and DevEUI (integrity protected with the long-term
@@ -589,9 +554,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    knows that AppKey to verify the Join-request.  All going well, a
    Join-accept downlink message is returned from the network server to
    the end-device that specifies the 24-bit NetID, 32-bit DevAddr and
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 10]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    channel information and from which the AppSKey and NwkSKey can be
    derived based on knowledge of the AppKey.  This provides the end-
-   device with all the values listed in Table 4.
+   device with all the values listed in Table 3.
 
    There is some special handling related to which channels to use and
    for multiple transmissions for the join-request which is intended to
@@ -609,14 +582,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    so that future IETF specifications can encompass the required
    security considerations.  The emphasis is on describing the
    externally visible characteristics of LoRaWAN.
-
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 11]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
    All payloads are encrypted and have data integrity.  Frame options
    (used for MAC commands) when sent as a payload (port zero) are
@@ -646,6 +611,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    When session keys are derived from the AppKey as a result of the join
    procedure the Join-accept message payload is specially handled.
 
+
+
+Farrell                    Expires May 2, 2017                 [Page 11]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    The long-term AppKey is directly used to protect the Join-accept
    message content, but the function used is not an aes-encrypt
    operation, but rather an aes-decrypt operation.  The justification is
@@ -667,13 +639,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    again using an ECB mode aes-encrypt operation, with the plaintext
    input being a maximum of 16 octets.
 
-
-
-Farrell                    Expires May 1, 2017                 [Page 12]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
 4.2.  Narrowband IoT (NB-IoT)
 
    [[Text here is from [I-D.ratilainen-lpwan-nb-iot].]]
@@ -690,28 +655,36 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    protocol architecture, while specifications 36.321 [TGPP36321],
    36.322 [TGPP36322], 36.323 [TGPP36323] and 36.331 [TGPP36331] give
    more detailed description of MAC, RLC, PDCP and RRC protocol layers
-   respectively.  The new versions of the specifications including NB-
-   IoT are not yet available due to novelty of the feature, but should
-   be shortly available in the 3GPP website.
+   respectively.
 
 4.2.2.  Characteristics
 
    [[Editor notes: Not clear if all the radio info here is needed.  Not
-   clear what MTUs might be.  Many 3GPP acronyms/terms to eliminate or
-   explain.]]
+   clear what minimum MTU might be.  Many 3GPP acronyms/terms to
+   eliminate or explain.]]
 
    Specific targets for NB-IoT include: Less than 5$ module cost,
    extended coverage of 164 dB maximum coupling loss, battery life of
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 12]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    over 10 years, ~55000 devices per cell and uplink reporting latency
    of less than 10 seconds.
 
    NB-IoT supports Half Duplex FDD operation mode with 60 kbps peak rate
-   in uplink and 30 kbps peak rate in downlink.  As the name suggests,
-   NB-IoT uses narrowbands with the bandwidth of 180 kHz in both,
-   downlink and uplink.  The multiple access scheme used in the downlink
-   is OFDMA with 15 kHz sub-carrier spacing.  On uplink multi-tone SC-
-   FDMA is used with 15 kHz tone spacing or as a special case of SC-FDMA
-   single tone with either 15kHz or 3.75 kHz tone spacing may be used.
+   in uplink and 30 kbps peak rate in downlink, and a maximum size MTU
+   of 1600 bytes.  As the name suggests, NB-IoT uses narrowbands with
+   the bandwidth of 180 kHz in both, downlink and uplink.  The multiple
+   access scheme used in the downlink is OFDMA with 15 kHz sub-carrier
+   spacing.  On uplink multi-tone SC-FDMA is used with 15 kHz tone
+   spacing or as a special case of SC-FDMA single tone with either 15kHz
+   or 3.75 kHz tone spacing may be used.
 
    NB-IoT can be deployed in three ways.  In-band deployment means that
    the narrowband is multiplexed within normal LTE carrier.  In Guard-
@@ -722,14 +695,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
    meant to be used in licensed bands.  The maximum transmission power
    is either 20 or 23 dBm for uplink transmissions, while for downlink
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 13]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    transmission the eNodeB may use higher transmission power, up to 46
    dBm depending on the deployment.
 
@@ -757,6 +722,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    3GPP access security is specified in [TGPP33203].
 
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 13]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    +--+
    |UE| \              +------+      +------+
    +--+  \             | MME  |------| HSS  |
@@ -778,14 +751,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    initial attachment and authenticating the user.  At MME, the Non
    Access Stratum (NAS) signaling from the UE is terminated.
 
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 14]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    Serving Gateway (S-GW) routes and forwards the user data packets
    through the access network and acts as a mobility anchor for UEs
    during handover between base stations known as eNodeBs and also
@@ -804,6 +769,22 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    The illustration of 3GPP radio protocol architecture can be seen from
    Figure 4.
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 14]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    +---------+                                       +---------+
    | NAS     |----|-----------------------------|----| NAS     |
@@ -834,14 +815,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    Access Stratum (AS) is the functional layer below NAS, and in control
    plane it consists of Radio Resource Control protocol (RRC)
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 15]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    [TGPP36331], which handles connection establishment and release
    functions, broadcast of system information, radio bearer
    establishment, reconfiguration and release.  RRC configures the user
@@ -860,6 +833,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    released, switching to RRC_Idle, when there is no traffic to save the
    UE battery and radio resources.  However, a new feature was
    introduced for NB-IoT, as mentioned earlier, which allows data to be
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 15]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    transmitted from the MME directly to the UE, while the UE is in
    RRC_Idle transparently to the eNodeB.
 
@@ -890,14 +872,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    Access Stratum.  It interfaces with IP and consists of PDCP, which in
    user plane performs header compression using Robust Header
    Compression (RoHC), transfer of user plane data between eNodeB and
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 16]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    UE, ciphering and integrity protection.  Lower layers in user plane
    are similarly RLC, MAC and physical layer performing tasks mentioned
    above.
@@ -913,6 +887,16 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 4.3.  SIGFOX
 
    [[Text here is from [I-D.zuniga-lpwan-sigfox-system-description].]]
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 16]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
 4.3.1.  Provenance and Documents
 
@@ -947,13 +931,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    allows a large number of devices to coexist in a given cell without
    significantly increasing the spectrum interference.
 
-
-
-Farrell                    Expires May 1, 2017                 [Page 17]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    Both uplink and downlink communications are possible with the UNB
    solution.  Due to spectrum optimizations, different uplink and
    downlink frames and time synchronization methods are needed.
@@ -969,6 +946,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    o  Uplink transmission power: compliant with local regulation
 
    o  Link budget: 155 dB (or better)
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 17]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    o  Central frequency accuracy: not relevant, provided there is no
       significant frequency drift within an uplink packet
@@ -1003,13 +987,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    The main radio characteristics of the UNB downlink transmission are:
 
-
-
-Farrell                    Expires May 1, 2017                 [Page 18]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    o  Channelization mask: 1.5 kHz
 
    o  Downlink baud rate: 600 baud
@@ -1023,6 +1000,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    o  Central frequency accuracy: Centre frequency of downlink
       transmission are set by the network according to the corresponding
       uplink transmission.
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 18]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    In Europe, the UNB downlink frequency band is limited to 869,40 to
    869,65 MHz, with a maximum output power of 500 mW with 10% duty
@@ -1058,14 +1044,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    A device willing to receive downlink messages opens a fixed window
    for reception after sending an uplink transmission.  The delay and
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 19]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    duration of this window have fixed values.  The LTN network transmits
    the downlink message for a given device during the reception window.
    The LTN network selects the BS for transmitting the corresponding
@@ -1077,6 +1055,16 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    and 4 downlink messages per device.  These restrictions can be
    slightly relaxed depending on system conditions and the specific
    regulatory domain of operation.
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 19]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
                 +--+
                 |EP| *                    +------+
@@ -1114,14 +1102,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    directly to the SC.  Each BS performs complex L1/L2 functions,
    leaving some L2 and L3 functionalities to the SC.
 
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 20]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    The devices or End Points (EPs) are the objects that communicate
    application data between local device applications (DAs) and network
    applications (NAs).
@@ -1133,6 +1113,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    Due to constraints in the complexity of the EP, it is assumed that
    EPs host only one or very few device applications, which communicate
    to one single network application at a time.
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 20]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
    The radio protocol provides mechanisms to authenticate and ensure
    integrity of the message.  This is achieved by using a unique device
@@ -1170,14 +1158,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    o  Text for Section 4.2 was provided by Antti Ratilainen in
       [I-D.ratilainen-lpwan-nb-iot].
 
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 21]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    o  Text for Section 4.3 was provided by Juan Carlos Zuniga and Benoit
       Ponsard in [I-D.zuniga-lpwan-sigfox-system-description].
 
@@ -1188,6 +1168,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    The full list of contributors are:
 
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 21]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
       Jon Crowcroft
@@ -1226,14 +1214,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       Email: josep.paradells@entel.upc.edu
 
 
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 22]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
       Benoit Ponsard
       SIGFOX
       425 rue Jean Rostand
@@ -1246,6 +1226,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
       Antti Ratilainen
       Ericsson
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 22]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
       Hirsalantie 11
       Jorvas  02420
       Finland
@@ -1282,14 +1270,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 23]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
 9.  Acknowledgements
 
    Thanks to all those listed in Section 8 for the excellent text.
@@ -1299,6 +1279,16 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    Stephen Farrell's work on this memo was supported by the Science
    Foundation Ireland funded CONNECT centre <https://connectcentre.ie/>.
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 23]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
 10.  Informative References
 
@@ -1328,39 +1318,38 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               ratilainen-lpwan-nb-iot-00 (work in progress), July 2016.
 
    [TGPP36300]
-              3GPP, "TS 36.300 v13.4.0 (Available soon) - Evolved
-              Universal Terrestrial Radio Access (E-UTRA) and Evolved
-              Universal Terrestrial Radio Access Network (E-UTRAN);
-              Overall description; Stage 2", 2016.
+              3GPP, "TS 36.300 v13.4.0 Evolved Universal Terrestrial
+              Radio Access (E-UTRA) and Evolved Universal Terrestrial
+              Radio Access Network (E-UTRAN); Overall description; Stage
+              2", 2016,
+              <http://www.3gpp.org/ftp/Specs/2016-09/Rel-14/36_series/>.
 
    [TGPP36321]
-              3GPP, "TS 36.321 v13.2.0 (Available soon) - Evolved
-              Universal Terrestrial Radio Access (E-UTRA); Medium Access
-              Control (MAC) protocol specification", 2016.
+              3GPP, "TS 36.321 v13.2.0 Evolved Universal Terrestrial
+              Radio Access (E-UTRA); Medium Access Control (MAC)
+              protocol specification", 2016.
+
+   [TGPP36322]
+              3GPP, "TS 36.322 v13.2.0 Evolved Universal Terrestrial
+              Radio Access (E-UTRA); Radio Link Control (RLC) protocol
+              specification", 2016.
+
+   [TGPP36323]
+              3GPP, "TS 36.323 v13.2.0 Evolved Universal Terrestrial
+              Radio Access (E-UTRA); Packet Data Convergence Protocol
+              (PDCP) specification (Not yet available)", 2016.
 
 
 
-
-Farrell                    Expires May 1, 2017                 [Page 24]
+Farrell                    Expires May 2, 2017                 [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
-   [TGPP36322]
-              3GPP, "TS 36.322 v13.2.0 (Available soon) - Evolved
-              Universal Terrestrial Radio Access (E-UTRA); Radio Link
-              Control (RLC) protocol specification", 2016.
-
-   [TGPP36323]
-              3GPP, "TS 36.323 v13.2.0 (Available soon) - Evolved
-              Universal Terrestrial Radio Access (E-UTRA); Packet Data
-              Convergence Protocol (PDCP) specification (Not yet
-              available)", 2016.
-
    [TGPP36331]
-              3GPP, "TS 36.331 v13.2.0 (Available soon) - Evolved
-              Universal Terrestrial Radio Access (E-UTRA); Radio
-              Resource Control (RRC); Protocol specification", 2016.
+              3GPP, "TS 36.331 v13.2.0 Evolved Universal Terrestrial
+              Radio Access (E-UTRA); Radio Resource Control (RRC);
+              Protocol specification", 2016.
 
    [TGPP36201]
               3GPP, "TS 36.201 v13.2.0 - Evolved Universal Terrestrial
@@ -1391,17 +1380,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               MHz to 1 000 MHz frequency range with power levels ranging
               up to 500 mW", May 2016.
 
-
-
-
-
-
-
-Farrell                    Expires May 1, 2017                 [Page 25]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
    [arib_ref]
               "ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter,
               Telecontrol and data transmission radio equipment.",
@@ -1415,6 +1393,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
               2015, <https://www.lora-alliance.org/portals/0/specs/
               LoRaWAN%20Specification%201R0.pdf>.
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 25]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
 Author's Address
 
@@ -1453,4 +1439,18 @@ Author's Address
 
 
 
-Farrell                    Expires May 1, 2017                 [Page 26]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                    Expires May 2, 2017                 [Page 26]

@@ -99,6 +99,8 @@ Such a section might be better before or after <xref target="inputs"/>, will
 see when text's added there. There
 is some text for this in the current "gaps" draft.]]</t>
 
+
+<!--
 	<t>[[Maybe add text about the common/different goals, eg. NB-IoT has
 "improved indoor coverage" which is different, all have "low power
 consumption." If so, that'd start to look like <xref target="table-goals"/>.
@@ -144,6 +146,18 @@ table.]] </t>
 	<c>-</c>
 
 </texttable>
+-->
+
+
+	<t>Most technologies in this space aim for similar goals of supporting
+large numbers of low-cost, low-throughput devices at very low-cost and
+with very-low power consumption, so that even battery-powered devices 
+can be deployed for years. And as the name implies, coverage of large
+areas is also a common goal. There are some differences however, e.g.,
+the Narrowband IoT specifications <xref target="nbiot"/> also aim for
+increased indoor coverage. However, by and large, the different 
+technologies aim for deployment in very similar circumstances.</t>
+
 
 	</section>
 
@@ -152,7 +166,7 @@ table.]] </t>
 
 	<t>This section provides an overview of the set of LPWAN technologies
 that are being considered in the LPWAN working group. The text for
-each was mainly contributed by the proponents of each technology.</t>
+each was mainly contributed by proponents of each technology.</t>
 
 <t>Note that this text is not intended to be normative in any sesne, but
 simply to help the reader in finding the relevant layer 2 specifications
@@ -190,8 +204,8 @@ update this draft when that has happened. For now, version 1.0 is available at
 gateways, so during nominal operation a network server may see multiple
 instances of the same uplink message from an end-device.</t>
 
-<t>To maximize both battery life of end-devices and overall network capacity,
-the LoRaWAN network infrastructure manages the data rate and RF output power
+<t>
+The LoRaWAN network infrastructure manages the data rate and RF output power
 for each end-device individually by means of an adaptive data rate (ADR)
 scheme.  End-devices may transmit on any channel allowed by local regulation at
 any time, using any of the currently available data rates.  </t>
@@ -623,16 +637,14 @@ E-UTRAN radio interface protocol architecture, while specifications 36.321
 <xref target="TGPP36321"></xref>, 36.322 <xref target="TGPP36322"></xref>,
 36.323 <xref target="TGPP36323"></xref> and 36.331 <xref
 target="TGPP36331"></xref> give  more detailed description of MAC, RLC, PDCP
-and RRC protocol layers respectively. The new versions of the specifications
-including NB-IoT are not yet available due to novelty of the feature, but
-should be shortly available in the 3GPP website.</t> 
+and RRC protocol layers respectively.</t> 
 
 	  </section>
 
 	  <section anchor="nbiot-chars" title="Characteristics">
 
 <t>[[Editor notes: Not clear if all the radio info here is needed. Not
-clear what MTUs might be. Many 3GPP acronyms/terms to eliminate or
+clear what minimum MTU might be. Many 3GPP acronyms/terms to eliminate or
 explain.]]</t>
 
 <t>
@@ -641,7 +653,7 @@ coverage of 164 dB maximum coupling loss, battery life of over 10 years, ~55000
 devices per cell and uplink reporting latency of less than 10 seconds.</t>
 
 <t>NB-IoT supports Half Duplex FDD operation mode with 60 kbps peak rate in
-uplink and 30 kbps peak rate in downlink. 
+uplink and 30 kbps peak rate in downlink, and a maximum size MTU of 1600 bytes. 
 As the name suggests, NB-IoT uses narrowbands with
 the bandwidth of 180 kHz in both, downlink and uplink. The multiple access
 scheme used in the downlink is OFDMA with 15 kHz sub-carrier spacing. On uplink
@@ -1196,9 +1208,9 @@ Science Foundation Ireland funded CONNECT centre
 	&I-D.zuniga-lpwan-sigfox-system-description;
 	&I-D.ratilainen-lpwan-nb-iot;
 
-     <reference anchor="TGPP36300">
+     <reference anchor="TGPP36300" target="http://www.3gpp.org/ftp/Specs/2016-09/Rel-14/36_series/">
        <front>
-         <title>TS 36.300 v13.4.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2</title>
+         <title>TS 36.300 v13.4.0 Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2</title>
 
          <author>
            <organization>3GPP</organization>
@@ -1210,7 +1222,7 @@ Science Foundation Ireland funded CONNECT centre
 
    <reference anchor="TGPP36321">
        <front>
-         <title>TS 36.321 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Medium Access Control (MAC) protocol specification</title>
+         <title>TS 36.321 v13.2.0 Evolved Universal Terrestrial Radio Access (E-UTRA); Medium Access Control (MAC) protocol specification</title>
 
          <author>
            <organization>3GPP</organization>
@@ -1222,7 +1234,7 @@ Science Foundation Ireland funded CONNECT centre
 
    <reference anchor="TGPP36322">
        <front>
-         <title>TS 36.322 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Link Control (RLC) protocol specification</title>
+         <title>TS 36.322 v13.2.0 Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Link Control (RLC) protocol specification</title>
 
          <author>
            <organization>3GPP</organization>
@@ -1234,7 +1246,7 @@ Science Foundation Ireland funded CONNECT centre
 
    <reference anchor="TGPP36323">
        <front>
-         <title>TS 36.323 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Packet Data Convergence Protocol (PDCP) specification (Not yet available)</title>
+         <title>TS 36.323 v13.2.0 Evolved Universal Terrestrial Radio Access (E-UTRA); Packet Data Convergence Protocol (PDCP) specification (Not yet available)</title>
 
          <author>
            <organization>3GPP</organization>
@@ -1246,7 +1258,7 @@ Science Foundation Ireland funded CONNECT centre
 
    <reference anchor="TGPP36331">
        <front>
-         <title>TS 36.331 v13.2.0 (Available soon) - Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification</title>
+         <title>TS 36.331 v13.2.0 Evolved Universal Terrestrial Radio Access (E-UTRA); Radio Resource Control (RRC); Protocol specification</title>
 
          <author>
            <organization>3GPP</organization>
