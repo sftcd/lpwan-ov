@@ -9,7 +9,7 @@ Expires: May 2, 2017
 
 
                              LPWAN Overview
-                    draft-farrell-lpwan-overview-01
+                    draft-farrell-lpwan-overview-02
 
 Abstract
 
@@ -96,7 +96,7 @@ Table of Contents
    specifications.
 
    This document is largely the work of the people listed in Section 8.
-   Discussion of this document should take place on the lpwan@ietf.org
+   Discussion of this document should take place on the lp-wan@ietf.org
    list.
 
    [[Editor's note: the eventual fate of this draft is a topic for the

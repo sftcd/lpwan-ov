@@ -10,7 +10,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-farrell-lpwan-overview-01">
+<rfc category="info" ipr="trust200902" docName="draft-farrell-lpwan-overview-02">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -65,7 +65,7 @@ IETF specifications.</t>
 
 	<t>This document is largely the work of the
 people listed in <xref target="contribs"/>. Discussion of this
-document should take place on the lpwan@ietf.org list.</t>
+document should take place on the lp-wan@ietf.org list.</t>
 
 	<t>[[Editor's note: the eventual fate of this draft is a
 topic for the WG to consider - it might end up as a useful
