@@ -1043,9 +1043,144 @@ encrypted by the application provider.  </t>
 
 	</section>
 	
-	<section anchor="wisun" title="WI-SUN">
+	<section anchor="wisun" title="Wi-SUN Alliance Field Area Network (FAN)">
 
-	<t>[[Add text here when available. Source = bheile@ieee.org]]</t>
+	<t>[[Text here is via personal communication from Bob Heile
+(bheile@ieee.org) and was authored by Bob and Sum Chin Sean. As there is no I-D
+on which this is based, I've just cut'n'pasted the text provided in here with
+no editing so far. Some editing will of course be needed, as will references to
+specifications.]]</t>
+
+	  <section anchor="wisun-docs" title="Provenance and Documents">
+
+<t> The Wi-SUN Alliance is an industry alliance promoting global
+interoperability and compliance to open-standards for smart city, smart grid,
+smart utility, and a broad set of general IoT applications. The Wi-SUN Alliance
+Field Area Network (FAN) profile is open standards based (primarily on IETF and
+IEEE802 standards) and was developed to address applications like smart
+municipality/city infrastructure monitoring and management, electric vehicle
+(EV) infrastructure, advanced metering infrastructure (AMI), distribution
+automation (DA), supervisory control and data acquisition (SCADA)
+protection/management, distributed generation monitoring and management, and
+many more IoT applications. These applications, although quite different in
+many respects, share a common set of system requirements such as high network
+robustness, high scalability and superior security, which the Wi-SUN FAN
+addresses. Additionally, the Alliance has created a certification program to
+promote global multi-vendor interoperability.  </t>
+
+<t>The FAN profile is an IPv6 frequency hopping wireless mesh network with
+enterprise level security. The frequency hopping wireless mesh topology has
+multiple advantages such as superior network robustness, reliability due to
+high redundancy, good scalability due to the flexible mesh configuration and
+good resilience to interference. All these attributes address the industrial
+grade requirements set forth by various IoT application scenarios.  Very low
+power modes are in development permitting long term battery operation of
+network nodes.</t>
+
+
+	  </section>
+
+	  <section anchor="wisun-chars" title="Characteristics">
+
+<t>The FAN profile is an IPv6 frequency hopping wireless mesh network with
+enterprise level security. The frequency hopping wireless mesh topology has
+multiple advantages such as superior network robustness, reliability due to
+high redundancy, good scalability due to the flexible mesh configuration and
+good resilience to interference. All these attributes address the industrial
+grade requirements set forth by various IoT application scenarios.  Very low
+power modes are in development permitting long term battery operation of
+network nodes.  </t>
+
+<t> As indicated above, the FAN profile is based on various open standards in
+IETF, IEEE802 and ANSI/TIA for low power and lossy networks. The FAN profile
+specification provides an application-independent IPv6-based transport service
+for both connectionless (i.e. UDP) and connection-oriented (i.e. TCP) services.
+There are two possible methods for establishing the IPv6 packet routing:
+mandatory Routing Protocol for Low-Power and Lossy Networks (RPL) at the
+Network layer or optional Multi-Hop Delivery Service (MHDS) at the Data Link
+layer. Refer to Figure 1 for a pictorial overview of the FAN protocol stack.
+</t>
+
+
+<texttable anchor="table-wisun" title="Wi-SUN Stack Overivew">
+    <ttcol align='left'>Layer</ttcol>
+    <ttcol align='left'>Description</ttcol>
+<c>IPv6 protocol suite</c> <c>TCP/UDP</c>
+<c></c><c>6LoWPAN Adaptation + Header Compression</c>
+<c></c><c>DHCPv6 for IP address management.</c>
+<c></c><c>Routing using RPL.</c>
+<c></c><c>ICMPv6.</c>
+<c></c><c>Unicast and Multicast forwarding. </c>
+
+<c>MAC based on IEEE 802.15.4e + IE extensions</c><c>Frequency hopping</c>
+<c></c><c>Discovery and Join</c>
+<c></c><c>Protocol Dispatch (IEEE 802.15.9)</c>
+<c></c><c>Several Frame Exchange patterns</c>
+<c></c><c>Optional Mesh Under routing (ANSI 4957.210).</c>
+
+<c>PHY based on 802.15.4g</c><c> Various data rates and regions</c>
+
+<c>Security</c><c>802.1X/EAP-TLS/PKI  Authentication.</c>
+<c></c><c>802.11i Group Key Management</c>
+<c></c><c>Optional ETSI-TS-102-887-2 Node 2 Node Key Management</c>
+
+</texttable>
+ 
+<t> The Transport service is based on User Datagram Protocol (UDP) defined in
+RFC768 or Transmission Control Protocol (TCP) defined in RFC793.  </t>
+
+<t> The Network service is provided by IPv6 defined in RFC2460 with 6LoWPAN
+adaptation as defined in RC4944 and RFC6282. Additionally, ICMPv6 as defined in
+RFC4443 is used for control plane in information exchange.  </t>
+
+<t>The Data Link service provides both control/management of the Physical layer
+and data transfer/management services to the Network layer. These services are
+divided into Media Access Control (MAC) and Logical Link Control (LLC)
+sub-layers. The LLC sub-layer provides a protocol dispatch service which
+supports 6LoWPAN and an optional MAC sub-layer mesh service. The MAC sub-layer
+is constructed using data structures defined in IEEE802.15.4-2015. Multiple
+modes of frequency hopping are defined. The entire MAC payload is encapsulated
+in an IEEE802.15.9 Information Element to enable LLC protocol dispatch between
+upper layer 6LoWPAN processing, MAC sublayer mesh processing, etc. These areas
+will be expanded once IEEE802.15.12 is completed </t>
+
+<t>The PHY service is derived from a sub-set of the SUN FSK specification in
+IEEE802.15.4-2015. The 2-FSK modulation schemes, with channel spacing range
+from 200 to 600 kHz, are defined to provide data rates from 50 to 300 kbps,
+with Forward Error Coding (FEC) as an optional feature. Towards enabling
+ultra-low-power applications, the PHY layer design is also extendable to low
+energy and critical infrastructure monitoring networks, such as IEEE802.15.4k.
+</t>
+
+<t>The FAN security supports Data Link layer network access control, mutual
+authentication, and establishment of a secure pairwise link between a FAN node
+and its Border Router, which is implemented with an adaptation of IEEE802.1X
+and EAP-TLS as described in RFC5216 using secure device identity as described
+in IEEE802.1AR. Certificate formats are based upon RFC5280. A secure group link
+between a Border Router and a set of FAN nodes is established using an
+adaptation of the IEEE802.11 Four-Way Handshake. A set of 4 group keys are
+maintained within the network, one of which is the current transmit key. Secure
+node to node links are supported between one-hop FAN neighbors using an
+adaptation of ETSI-TS-102-887-2. FAN nodes implement Frame Security as
+specified in IEEE802.15.4-2015.  </t>
+
+<t>The Wi-Sun Alliance FAN spec was developed to serve the LPWAN space among
+others. It already includes most needed networking elements as a result of the
+longstanding working relationships between the IETF and IEEE802. Nonetheless,
+the Alliance feels there is significant value to this LPWAN effort in IETF and
+strongly supports its objectives. Some of the things the Alliance hopes to
+accomplish through its participation are awareness (in the event changes are
+needed in the FAN spec), to help ensure consistency of approach, share relevant
+experience, and to address co-existence issues and potential interoperability
+since these solutions will be used in the same markets in complementary ways.
+Because it is IP based, the Wi-SUN FAN already readily interconnects to
+Ethernet and WiFi through routers. It would be useful if the same could be
+accomplished with other approaches.  </t>
+
+
+	  </section>
+
+
 
 	</section>
 
@@ -1401,8 +1536,9 @@ their authors were:</t>
 
 <t><list style="symbols">
 
-<t>The text on LoRaWAN was based on <xref target="I-D.farrell-lpwan-lora-overview"/>
-co-authored by Alper Yegin and Stephen Farrell.</t>
+<t>Text for <xref target="lora"/>  was provieded
+by Alper Yegin and Stephen Farrell
+in <xref target="I-D.farrell-lpwan-lora-overview"/>.</t>
 
 <t>Text for <xref target="nbiot"/> was provided by
 Antti Ratilainen in
@@ -1411,6 +1547,10 @@ Antti Ratilainen in
 <t>Text for <xref target="sigfox"/> was provided by 
 Juan Carlos Zuniga and Benoit Ponsard in 
 <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>.</t>
+
+<t>Text for <xref target="wisun"/> was provided via personal communication
+from Bob Heile (bheile@ieee.org) and was authored by Bob and Sum Chin Sean.
+There is no Internet draft for that at present.</t>
 
 <t>Text for <xref target="gaps"/> was provided by Ana Minabiru, Carles Gomez,
 Laurent Toutain, Josep Paradells and Jon Crowcroft in 
@@ -1508,6 +1648,8 @@ text from that draft is also used elsewhere above.</t>
 
   ]]>
 </artwork></figure>
+
+<t>[[Ed: Need to add Wi-SUN contributors once I have the info.]]</t>
 
 </section>
 
