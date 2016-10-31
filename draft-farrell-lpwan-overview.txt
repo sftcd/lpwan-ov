@@ -806,7 +806,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    designed to last several years, some of them even buried underground.
    The coverage of the cell also depends on the link budget and on the
    type of deployment (urban, rural, etc.), which can vary from sending
-   less than one message per device per day to about ten messages per
+   less than one message per device per day to dozens of messages per
    device per day.
 
    The radio interface is compliant with the following regulations:
