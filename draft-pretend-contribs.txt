@@ -5,7 +5,9 @@
 Network Working Group                                       J. Crowcroft
 Internet-Draft                                   University of Cambridge
 Intended status: Informational                                  C. Gomez
-Expires: April 26, 2017                                        UPC/i2CAT
+Expires: May 4, 2017                                           UPC/i2CAT
+                                                                B. Heile
+                                                         Wi-Sun Alliance
                                                              A. Minaburo
                                                                   Acklio
                                                             J. Paradells
@@ -14,13 +16,15 @@ Expires: April 26, 2017                                        UPC/i2CAT
                                                                   SIGFOX
                                                            A. Ratilainen
                                                                 Ericsson
+                                                                C-S. SUM
+                                                         Wi-Sun Alliance
                                                               L. Toutain
                                Institut MINES TELECOM ; TELECOM Bretagne
                                                                 A. Yegin
                                                                 Actility
                                                               JC. Zuniga
                                                                   SIGFOX
-                                                        October 23, 2016
+                                                        October 31, 2016
 
 
                                 Pretend
@@ -45,15 +49,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 26, 2017.
+   This Internet-Draft will expire on May 4, 2017.
 
 
 
-
-
-
-
-Crowcroft, et al.        Expires April 26, 2017                 [Page 1]
+Crowcroft, et al.          Expires May 4, 2017                  [Page 1]
 
 Internet-Draft                   Pretend                    October 2016
 
@@ -109,9 +109,19 @@ Authors' Addresses
 
 
 
-Crowcroft, et al.        Expires April 26, 2017                 [Page 2]
+Crowcroft, et al.          Expires May 4, 2017                  [Page 2]
 
 Internet-Draft                   Pretend                    October 2016
+
+
+   Bob Heile
+   Wi-Sun Alliance
+   11 Robert Toner Blvd, Suite 5-301
+   North Attleboro, MA  02763
+   USA
+
+   Phone: +1-781-929-4832
+   Email: bheile@ieee.org
 
 
    Ana Minaburo
@@ -151,6 +161,24 @@ Internet-Draft                   Pretend                    October 2016
    Email: antti.ratilainen@ericsson.com
 
 
+
+
+
+
+Crowcroft, et al.          Expires May 4, 2017                  [Page 3]
+
+Internet-Draft                   Pretend                    October 2016
+
+
+   Chin-Sean SUM
+   Wi-Sun Alliance
+   20, Science Park Rd
+   Singapore  117674
+
+   Phone: +65 6771 1011
+   Email: sum@wi-sun.org
+
+
    Laurent Toutain
    Institut MINES TELECOM ; TELECOM Bretagne
    2 rue de la Chataigneraie
@@ -159,15 +187,6 @@ Internet-Draft                   Pretend                    October 2016
    France
 
    Email: Laurent.Toutain@telecom-bretagne.eu
-
-
-
-
-
-
-Crowcroft, et al.        Expires April 26, 2017                 [Page 3]
-
-Internet-Draft                   Pretend                    October 2016
 
 
    Alper Yegin
@@ -202,23 +221,4 @@ Internet-Draft                   Pretend                    October 2016
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Crowcroft, et al.        Expires April 26, 2017                 [Page 4]
+Crowcroft, et al.          Expires May 4, 2017                  [Page 4]

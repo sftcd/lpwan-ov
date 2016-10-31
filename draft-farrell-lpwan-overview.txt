@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                          October 30, 2016
-Expires: May 3, 2017
+Intended status: Informational                          October 31, 2016
+Expires: May 4, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 3, 2017.
+   This Internet-Draft will expire on May 4, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 1]
+Farrell                    Expires May 4, 2017                  [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -99,7 +99,7 @@ Table of Contents
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .  32
    7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  32
    8.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  32
-   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  34
+   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  35
    10. Informative References  . . . . . . . . . . . . . . . . . . .  35
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  37
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 2]
+Farrell                    Expires May 4, 2017                  [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 3]
+Farrell                    Expires May 4, 2017                  [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -221,7 +221,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 4]
+Farrell                    Expires May 4, 2017                  [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -277,7 +277,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 5]
+Farrell                    Expires May 4, 2017                  [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -333,7 +333,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 6]
+Farrell                    Expires May 4, 2017                  [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 7]
+Farrell                    Expires May 4, 2017                  [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 8]
+Farrell                    Expires May 4, 2017                  [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                  [Page 9]
+Farrell                    Expires May 4, 2017                  [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 10]
+Farrell                    Expires May 4, 2017                 [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -613,7 +613,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 11]
+Farrell                    Expires May 4, 2017                 [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -669,7 +669,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 12]
+Farrell                    Expires May 4, 2017                 [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -725,7 +725,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 13]
+Farrell                    Expires May 4, 2017                 [Page 13]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -781,7 +781,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 14]
+Farrell                    Expires May 4, 2017                 [Page 14]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -837,7 +837,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 15]
+Farrell                    Expires May 4, 2017                 [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -893,7 +893,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 16]
+Farrell                    Expires May 4, 2017                 [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -949,7 +949,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 17]
+Farrell                    Expires May 4, 2017                 [Page 17]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1005,7 +1005,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 18]
+Farrell                    Expires May 4, 2017                 [Page 18]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1061,7 +1061,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 19]
+Farrell                    Expires May 4, 2017                 [Page 19]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1117,7 +1117,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 20]
+Farrell                    Expires May 4, 2017                 [Page 20]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1173,7 +1173,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 21]
+Farrell                    Expires May 4, 2017                 [Page 21]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1229,7 +1229,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 22]
+Farrell                    Expires May 4, 2017                 [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1285,7 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 23]
+Farrell                    Expires May 4, 2017                 [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1341,7 +1341,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 24]
+Farrell                    Expires May 4, 2017                 [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1397,7 +1397,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 25]
+Farrell                    Expires May 4, 2017                 [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1453,7 +1453,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 26]
+Farrell                    Expires May 4, 2017                 [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1509,7 +1509,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 27]
+Farrell                    Expires May 4, 2017                 [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1565,7 +1565,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 28]
+Farrell                    Expires May 4, 2017                 [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1621,7 +1621,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 29]
+Farrell                    Expires May 4, 2017                 [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1677,7 +1677,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 30]
+Farrell                    Expires May 4, 2017                 [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1733,7 +1733,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 31]
+Farrell                    Expires May 4, 2017                 [Page 31]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
@@ -1783,18 +1783,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    The full list of contributors are:
 
 
-
       Jon Crowcroft
       University of Cambridge
+      JJ Thomson Avenue
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 32]
+Farrell                    Expires May 4, 2017                 [Page 32]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
-      JJ Thomson Avenue
       Cambridge, CB3 0FD
       United Kingdom
 
@@ -1808,6 +1807,16 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       Spain
 
       Email: carlesgo@entel.upc.edu
+
+
+      Bob Heile
+      Wi-Sun Alliance
+      11 Robert Toner Blvd, Suite 5-301
+      North Attleboro, MA  02763
+      USA
+
+      Phone: +1-781-929-4832
+      Email: bheile@ieee.org
 
 
       Ana Minaburo
@@ -1834,6 +1843,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       Labege  31670
       France
 
+
+
+Farrell                    Expires May 4, 2017                 [Page 33]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
       Email: Benoit.Ponsard@sigfox.com
       URI:   http://www.sigfox.com/
 
@@ -1842,17 +1858,18 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
       Ericsson
       Hirsalantie 11
       Jorvas  02420
-
-
-
-Farrell                    Expires May 3, 2017                 [Page 33]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
-
       Finland
 
       Email: antti.ratilainen@ericsson.com
+
+
+      Chin-Sean SUM
+      Wi-Sun Alliance
+      20, Science Park Rd
+      Singapore  117674
+
+      Phone: +65 6771 1011
+      Email: sum@wi-sun.org
 
 
       Laurent Toutain
@@ -1884,7 +1901,10 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 
 
-   [[Ed: Need to add Wi-SUN contributors once I have the info.]]
+Farrell                    Expires May 4, 2017                 [Page 34]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
 
 9.  Acknowledgements
 
@@ -1895,16 +1915,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
    Stephen Farrell's work on this memo was supported by the Science
    Foundation Ireland funded CONNECT centre <https://connectcentre.ie/>.
-
-
-
-
-
-
-Farrell                    Expires May 3, 2017                 [Page 34]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
 10.  Informative References
 
@@ -1943,6 +1953,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               Energy", RFC 7668, DOI 10.17487/RFC7668, October 2015,
               <http://www.rfc-editor.org/info/rfc7668>.
 
+
+
+
+
+Farrell                    Expires May 4, 2017                 [Page 35]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    [I-D.farrell-lpwan-lora-overview]
               Farrell, S. and A. Yegin, "LoRaWAN Overview", draft-
               farrell-lpwan-lora-overview-01 (work in progress), October
@@ -1953,14 +1972,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               J. Crowcroft, "LPWAN Survey and GAP Analysis", draft-
               minaburo-lpwan-gap-analysis-02 (work in progress), October
               2016.
-
-
-
-
-Farrell                    Expires May 3, 2017                 [Page 35]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
    [I-D.zuniga-lpwan-sigfox-system-description]
               Zuniga, J. and B. PONSARD, "SIGFOX System Description",
@@ -1998,6 +2009,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
               Radio Access (E-UTRA); Radio Resource Control (RRC);
               Protocol specification", 2016.
 
+
+
+
+
+Farrell                    Expires May 4, 2017                 [Page 36]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    [TGPP36201]
               3GPP, "TS 36.201 v13.2.0 - Evolved Universal Terrestrial
               Radio Access (E-UTRA); LTE physical layer; General
@@ -2010,13 +2030,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
    [TGPP33203]
               3GPP, "TS 33.203 v13.1.0 - 3G security; Access security
               for IP-based services", 2016.
-
-
-
-Farrell                    Expires May 3, 2017                 [Page 36]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2016
-
 
    [etsi_ltn]
               "ETSI Technical Committee on EMC and Radio Spectrum
@@ -2050,6 +2063,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2016
 
 Author's Address
 
+
+
+
+
+
+
+Farrell                    Expires May 4, 2017                 [Page 37]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2016
+
+
    Stephen Farrell (editor)
    Trinity College Dublin
    Dublin  2
@@ -2069,4 +2093,36 @@ Author's Address
 
 
 
-Farrell                    Expires May 3, 2017                 [Page 37]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                    Expires May 4, 2017                 [Page 38]

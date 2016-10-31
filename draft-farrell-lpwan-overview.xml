@@ -1563,7 +1563,6 @@ text from that draft is also used elsewhere above.</t>
 
 <figure><artwork>
 <![CDATA[
-
    Jon Crowcroft
    University of Cambridge
    JJ Thomson Avenue
@@ -1580,6 +1579,16 @@ text from that draft is also used elsewhere above.</t>
    Spain
 
    Email: carlesgo@entel.upc.edu
+
+
+   Bob Heile
+   Wi-Sun Alliance
+   11 Robert Toner Blvd, Suite 5-301
+   North Attleboro, MA  02763
+   USA
+
+   Phone: +1-781-929-4832
+   Email: bheile@ieee.org
 
 
    Ana Minaburo
@@ -1619,6 +1628,15 @@ text from that draft is also used elsewhere above.</t>
    Email: antti.ratilainen@ericsson.com
 
 
+   Chin-Sean SUM
+   Wi-Sun Alliance
+   20, Science Park Rd
+   Singapore  117674
+
+   Phone: +65 6771 1011
+   Email: sum@wi-sun.org
+
+
    Laurent Toutain
    Institut MINES TELECOM ; TELECOM Bretagne
    2 rue de la Chataigneraie
@@ -1645,11 +1663,9 @@ text from that draft is also used elsewhere above.</t>
 
    Email: JuanCarlos.Zuniga@sigfox.com
    URI:   http://www.sigfox.com/
-
   ]]>
 </artwork></figure>
 
-<t>[[Ed: Need to add Wi-SUN contributors once I have the info.]]</t>
 
 </section>
 

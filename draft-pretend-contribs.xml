@@ -42,6 +42,25 @@
   </address>
 </author>
 
+    <author fullname="Bob Heile"
+            initials="B."
+            surname="Heile">
+      <organization abbrev="Wi-Sun Alliance">
+         Wi-Sun Alliance
+      </organization>
+      <address>
+        <postal>
+		  <street>11 Robert Toner Blvd, Suite 5-301</street>
+		  <city>North Attleboro</city>
+		  <region>MA</region>
+		  <code>02763</code>
+		  <country>USA</country>
+        </postal>
+		<phone>+1-781-929-4832</phone>
+        <email>bheile@ieee.org</email>
+      </address>
+    </author>
+
 <author fullname="Ana Minaburo" initials="A." surname="Minaburo">
 <organization>Acklio</organization>
    <address>
@@ -100,6 +119,23 @@
    <email>antti.ratilainen@ericsson.com</email>
    </address>
 </author>
+
+    <author fullname="Chin-Sean SUM"
+            initials="C-S."
+            surname="SUM">
+      <organization abbrev="Wi-Sun Alliance">
+         Wi-Sun Alliance
+      </organization>
+      <address>
+        <postal>
+		  <street>20, Science Park Rd</street>
+		  <city>Singapore</city>
+		  <code>117674</code>
+        </postal>
+		<phone>+65 6771 1011</phone>
+        <email>sum@wi-sun.org</email>
+      </address>
+    </author>
 
     <author fullname="Laurent Toutain" initials="L." surname="Toutain">
       <organization>Institut MINES TELECOM ; TELECOM Bretagne</organization>
