@@ -9,17 +9,17 @@ contribs:
 	$(XML2RFC) draft-pretend-contribs.xml draft-pretend-contribs-00.txt
 
 core: 
-	$(XML2RFC) draft-farrell-lpwan-overview.xml draft-farrell-lpwan-overview.txt
+	$(XML2RFC) draft-ietf-lpwan-overview.xml draft-ietf-lpwan-overview.txt
 
 upload:
-	scp draft-farrell-lpwan-overview.txt  down.dsg.cs.tcd.ie:/var/www/misc/draft-farrell-lpwan-overview.txt
-	scp draft-farrell-lpwan-overview.xml  down.dsg.cs.tcd.ie:/var/www/misc/draft-farrell-lpwan-overview.xml
+	scp draft-ietf-lpwan-overview.txt  down.dsg.cs.tcd.ie:/var/www/misc/draft-ietf-lpwan-overview.txt
+	scp draft-ietf-lpwan-overview.xml  down.dsg.cs.tcd.ie:/var/www/misc/draft-ietf-lpwan-overview.xml
 
 backuup:
 	- mkdir backups
-	cp draft-farrell-lpwan-overview.txt backups/draft-farrell-lpwan-overview-$(DATE).txt
-	cp draft-farrell-lpwan-overview.xml backups/draft-farrell-lpwan-overview-$(DATE).xml
+	cp draft-ietf-lpwan-overview.txt backups/draft-ietf-lpwan-overview-$(DATE).txt
+	cp draft-ietf-lpwan-overview.xml backups/draft-ietf-lpwan-overview-$(DATE).xml
 
 clean:
-	rm -f   draft-farrell-lpwan-overview-00.txt *~
+	rm -f   draft-ietf-lpwan-overview-00.txt *~
 
