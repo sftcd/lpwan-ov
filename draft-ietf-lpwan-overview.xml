@@ -56,11 +56,7 @@ needs of those technologies and the goal of running IP in LPWANs.
 <middle>
    <section title="Introduction">
 
-	<t>[[Ed: Editor comments/queries are in double square brackets like this.
-Note that the eventual fate of this draft is a topic for the WG to consider -
-it might end up as a useful RFC, or it might be best maintained as a draft only
-until its utility has dissapated. FWIW, the editor doesn't mind what outcome
-the WG choose.]]</t>
+	<t>[[Ed: Editor comments/queries are in double square brackets like this.]]</t>
 
 	<t>This document provides background material and an overview of
 the technologies being considered in the IETF's Low Power Wide-Area
@@ -150,7 +146,7 @@ industrial interest in these technolgies.  As of today, [[Ed: with the possible
 exception of Wi-SUN devices?]] essentially no LPWAN devices have IP capabilities.
 Connecting LPWANs to the Internet would provide significant benefits to these
 networks in terms of interoperability, application deployment, and management,
-among others.  The goal of the LPWAN WG is to adapt IETF defined protocols,
+among others.  The goal of the LPWAN WG is to, where necessary, adapt IETF defined protocols,
 addressing schemes and naming to this particular constrained environment. 
 </t>
 
@@ -171,21 +167,12 @@ each was mainly contributed by proponents of each technology.</t>
 simply to help the reader in finding the relevant layer 2 specifications
 and in understanding how those integrate with IETF-defined technologies.
 Similarly, there is no attempt here to set out the pros and cons of the
-relevant technologies. [[Ed: I assume that's the right target here.
-Please comment if you disagree.]]
+relevant technologies. 
 </t>
 
 	<t>[[Ed: the goal here is 2-3 pages per technology. If
 there's much more needed then we could add appendices I guess depending
 on what text the WG find useful to include.]]</t>
-
-	<t>[[Ed: A lot of the radio frequency related details
-below could disappear I think - for the purposes of this WG, I think
-a lot of that is extraneous detail. Haven't yet done that though, in
-case I'm missing something. It might also further imbalance the level
-of description of the different technologies, to the extent that the
-WG care explicitly about that.]]</t>
-
 
 	<section anchor="lora" title="LoRaWAN">
 
@@ -1913,6 +1900,22 @@ Science Foundation Ireland funded CONNECT centre
       </reference>
 
 	</references>
+	<section title="Changes">
+
+	<section title="From -00 to -01">
+
+	<t><list style="symbols">
+
+	<t>WG have stated they want this to be an RFC.</t>
+
+	<t>WG clearly want to keep the RF details.</t>
+
+	</list></t>
+
+
+	</section>
+
+	</section>
 
  </back>
 </rfc>
