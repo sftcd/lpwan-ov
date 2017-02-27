@@ -131,7 +131,12 @@ table.]] </t>
 	<t>Most technologies in this space aim for similar goals of supporting
 large numbers of low-cost, low-throughput devices at very low-cost and with
 very-low power consumption, so that even battery-powered devices can be
-deployed for years. And as the name implies, coverage of large areas is also a
+deployed for years. LPWAN devices also tend to be constrained in their
+use of bandwidth, for example with limited frequencies being allowed to
+be used within limited duty-cycles (usually expressed as a percentage
+of time/hour that the device is allowed to transmit.) [[Ed: is that
+right?]]
+And as the name implies, coverage of large areas is also a
 common goal.  So, by and large, the different technologies aim for deployment
 in very similar circumstances.</t>
 
@@ -170,13 +175,16 @@ Similarly, there is no attempt here to set out the pros and cons of the
 relevant technologies. 
 </t>
 
+<!--
 	<t>[[Ed: the goal here is 2-3 pages per technology. If
 there's much more needed then we could add appendices I guess depending
 on what text the WG find useful to include.]]</t>
+-->
 
 	<section anchor="lora" title="LoRaWAN">
 
-	<t>[[Ed: Text here is from <xref target="I-D.farrell-lpwan-lora-overview"/>]]</t>
+	<t>Text here is largely from <xref target="I-D.farrell-lpwan-lora-overview"/>
+which may have been updated since this was published.</t>
 
 	  <section anchor="lora-docs" title="Provenance and Documents">
 
@@ -184,9 +192,8 @@ on what text the WG find useful to include.]]</t>
 low-data-rate applications developed by the LoRa Alliance, a membership
 consortium.  <eref target="https://www.lora-alliance.org/"/> This draft is
 based on version 1.0.2 <xref target="LoRaSpec"/> of the LoRa specification.
-(Version 1.0.2 is expected to be published in a few weeks. We will
-when that has happened. For now, version 1.0 is available at
-<xref target="LoRaSpec1.0"/>) </t>
+Version 1.0, which has also seen some deployment, is available at
+<xref target="LoRaSpec1.0"/>.</t>
 	
 	  </section>
 
@@ -277,8 +284,9 @@ those terms elsewhere so we include them for clarity.)
 
 </list></t>
 
-	<t>LoRaWAN radios make use of ISM bands, for example, 433MHz and 868MHz
-within the European Union and 915MHz in the Americas.</t>
+	<t>LoRaWAN radios make use of industrial, scientific and medical (ISM)
+bands, for example, 433MHz and 868MHz within the European Union and 915MHz in
+the Americas.</t>
 
 	<t>The end-device changes channel in a pseudo-random fashion for every
 transmission to help make the system more robust to interference and/or to
@@ -617,7 +625,8 @@ the plaintext input being a maximum of 16 octets.</t>
 
 	<section anchor="nbiot" title="Narrowband IoT (NB-IoT)">
 
-	<t>[[Ed: Text here is from <xref target="I-D.ratilainen-lpwan-nb-iot"/>.]]</t>
+	<t>Text here is largely from <xref target="I-D.ratilainen-lpwan-nb-iot"/>
+which may have been updated since this was published.</t>
 
 	  <section anchor="nbiot-docs" title="Provenance and Documents">
 
@@ -632,18 +641,17 @@ E-UTRAN radio interface protocol architecture, while specifications 36.321
 <xref target="TGPP36321"></xref>, 36.322 <xref target="TGPP36322"></xref>,
 36.323 <xref target="TGPP36323"></xref> and 36.331 <xref
 target="TGPP36331"></xref> give  more detailed description of MAC, RLC, PDCP
-and RRC protocol layers respectively.</t> 
+and RRC protocol layers respectively. Note that the description below
+assumes familiarity with numerous 3GPP terms.</t> 
 
 	  </section>
 
 	  <section anchor="nbiot-chars" title="Characteristics">
 
-<t>[[Ed: Not 
-clear what minimum/worst-case MTU might be. There are many 3GPP acronyms/terms to eliminate or
-explain.]]</t>
+<t>[[Ed: Not clear what minimum/worst-case MTU might be.]]</t>
 
 <t>
-Specific targets for NB-IoT include: Less than 5$ module cost, extended
+Specific targets for NB-IoT include: Less than US$5 module cost, extended
 coverage of 164 dB maximum coupling loss, battery life of over 10 years, ~55000
 devices per cell and uplink reporting latency of less than 10 seconds.</t>
 
@@ -822,7 +830,8 @@ coupling loss than 170 dB with very low bit rates.</t>
 
 	<section anchor="sigfox" title="SIGFOX">
 
-	<t>[[Ed: Text here is from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>.]]</t>
+	<t>Text here is largely from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>
+which may have been updated since this was published.</t>
 
 	  <section anchor="sigfox-docs" title="Provenance and Documents">
 
@@ -969,17 +978,18 @@ existing data from the device.  </t>
 
 <t> A device willing to receive downlink messages opens a fixed window for
 reception after sending an uplink transmission.  The delay and duration of this
-window have fixed values. The LTN network transmits the downlink message for a
-given device during the reception window. The LTN network selects the BS for
+window have fixed values. The LTN transmits the downlink message for a
+given device during the reception window. The LTN selects the base station (BS) for
 transmitting the corresponding downlink message.  </t>
 
 <t> Uplink and downlink transmissions are unbalanced due to the regulatory
 constraints on the ISM bands. Under the strictest regulations, the system can
 allow a maximum of 140 uplink messages and 4 downlink messages per device.
+[[Ed: in what duration?]]
 These restrictions can be slightly relaxed depending on system conditions and
 the specific regulatory domain of operation. </t>
 
-<figure anchor="sigfox-arch" title="ETSI LTN architecture" >
+<figure anchor="sigfox-arch" title="SIGFOX architecture" >
 <artwork><![CDATA[
              +--+
              |EP| *                    +------+
@@ -1070,7 +1080,7 @@ Additionally, the Alliance has
 created a certification program to promote global multi-vendor
 interoperability.  </t>
 
-<t>The FAN profile [[Ed: reference needed!]] is an IPv6 frequency hopping
+<t>The FAN profile [[Ed: reference (really really:-) needed!]] is an IPv6 frequency hopping
 wireless mesh network with support for enterprise level security. The frequency hopping
 wireless mesh topology aims to offer superior network
 robustness, reliability due to high redundancy, good scalability due to the
@@ -1167,8 +1177,6 @@ specified in IEEE802.15.4-2015.  </t>
 
 	<section anchor="terms" title="Generic Terminology">
 
-<t>[[Ed: Text here is from <xref target="I-D.minaburo-lpwan-gap-analysis"/>.]]</t>
-
 <t> LPWAN technologies, such as those discussed above, have similar
 architectures but different terminology. We can identify different types of
 entities in a typical LPWAN network:</t>
@@ -1232,11 +1240,16 @@ Gateway or Network Application.</t> </list> </t>
 ]]></artwork>
 </figure>
 
+	<t>In addition to the names of entities, LPWANs are also subject
+to possibly regional frequency band regulations. Those may include
+restrictions on the duty-cycle, for example requiring that hosts
+only transmit for a certain percentage of each hour. [[Ed: Are these
+duty-cycle percentages always per-hour? Could a host amortise it's
+transmits per day?]]</t>
+
 	</section>
 
 <section anchor="gaps" title="Gap Analysis">
-
-<t>[[Ed: Text here is from <xref target="I-D.minaburo-lpwan-gap-analysis"/>.]]</t>
 
 <section anchor="naive" title="Naive application of IPv6">
 
@@ -1250,8 +1263,8 @@ Gateway or Network Application.</t> </list> </t>
 </t>
 
 <t>
-IPv6 needs a configuration protocol (neighbor discovery protocol, 
-NDP <xref target='RFC4861'/>) for a node to learn network parameters
+IPv6 has a configuration protocol - neighbor discovery protocol, 
+(NDP) <xref target='RFC4861'/>). For a node to learn network parameters
 NDP generates regular traffic with 
 a relatively large message size that does not fit LPWAN constraints.
 </t>
@@ -1260,8 +1273,21 @@ a relatively large message size that does not fit LPWAN constraints.
 the network topology is a star, the solution and considerations of section 3.2.5 of
 <xref target='RFC7668'/> may be applied.</t>
 
-<t> [[Ed: other things to maybe mention: IPsec, DHCPv6, anything with even 1
-regular RTT needed, e.g. DNS.]] </t>
+<t> 
+Other key protocols such as DHCPv6 <xref target="RFC3315"/>,
+IPsec  <xref target="RFC4301"/> 
+and TLS <xref target="RFC5246"/>
+have similarly problematic properties
+in this context. Each of those require relatively
+frequent round-trips between the host and some
+other host on the network. In the case of cryptographic
+protocols such as IPsec and TLS, in addition to the
+round-trips required for secure session
+establishment, cryptographic operations can require
+padding and addition of authenticators that are
+problematic when considering LPWAN lower layers.
+</t>
+
 
 </section>
 
@@ -1401,11 +1427,20 @@ address Registration Lifetime. However, for the latter LPWANs mentioned above,
 
 <section anchor="Sixlo" title="6lo">
 
-<t>The 6lo WG has been reusing and adapting 6LoWPAN to enable IPv6 support
-over link layer technologies such as Bluetooth Low Energy (BTLE), ITU-T G.9959,
-DECT-ULE, MS/TP-RS485, NFC or IEEE 802.11ah.  These technologies are similar in
-several aspects to IEEE 802.15.4, which was the original 6LoWPAN target
-technology. [[Ed: refs?]]</t> 
+<t>The 6lo WG 
+has been
+reusing and adapting 6LoWPAN to enable IPv6 support over link layer
+technologies such as 
+Bluetooth Low Energy (BTLE), 
+ITU-T G.9959,  
+DECT-ULE, 
+MS/TP-RS485,  
+NFC 
+IEEE 802.11ah. (See 
+<eref target="https://tools.ietf.org/wg/6lo"/> for details.) 
+These technologies are similar in several
+aspects to IEEE 802.15.4, which was the original 6LoWPAN target technology.
+</t>
 
 <t>6lo has mostly used the subset of 6LoWPAN techniques best suited for each
 lower layer technology, and has provided additional optimizations for
@@ -1421,8 +1456,9 @@ the information provided in this section - is more needed?.]]  </t>
 <section anchor="SIXtisch" title="6tisch">
 
 <t>The 6tisch solution is dedicated to mesh networks that operate using
-802.15.4e MAC with a deterministic slotted channel.  The TSCH [[Ed:
-expand on 1st use]] can help to
+802.15.4e MAC with a deterministic slotted channel.  The time slot
+channel (TSCH) 
+can help to
 reduce collisions and to enable a better balance over the channels. It improves
 the battery life by avoiding the idle listening time for the return
 channel.</t>
@@ -1436,26 +1472,51 @@ LPWAN networks probably will not support synchronization like the one used in
 
 <section anchor="ROHC" title="RoHC">
 
-<t>RoHC [[Ed: expand on 1st use]] header compression mechanisms were defined
+<!--
+this is the old version new is from a mail from Ana
+<t>RoHC mechanisms were defined
 for point to point multimedia channels, to reduce the header overhead of RTP
 flows. RoHC can also reduce the overhead of IPv4 or IPv6 or UDP headers. It is
-based on shared context which does not require any state but compressed packets
+based on shared context which does not require any state, but compressed packets
 are not routable.  The context is initialised at the beginning of the
-communication or when it [[Ed: which "it"?]] is lost.  The compression is
+communication or when communication is lost.  The compression is
 managed using a sequence number (SN) which is encoded using a windowing
-algorithm allowing for reduction of the SN to 4 bits instead of 2 bytes. [[Ed:
-is that the 2 bytes as per 6lowPAN?]]  But this window needs to be updated each
+algorithm allowing for reduction of the SN to 4 bits instead of 2 bytes. 
+This window however needs to be updated every
 15 packets which implies larger headers.  When RoHC is used we talk about an
 average header compression size to give the performance of compression. For
 example, RoHC starts sending bigger packets than the original (52 bytes) to
-reduce the header up to 4 bytes (it stays here only for 15 packets, which
+reduce the header up to 4 bytes (it stays there only for 15 packets, which
 correspond to the window size). Each time the context is lost or needs to be
 synchronised, packets of about 15 to 43 bytes are sent.  [[Ed: the above isn't
 that cleaar to me.]] </t>
+-->
 
-<t>RoHC is not adapted to the constrained nodes of the LPWAN networks: it does
-not take into account the energy limitations and the transmission rate, and
-context is synchronised during the transmission, which does not allow a better
+<t>
+Robust header compression (RoHC) is a header compression mechanism <xref
+target="RFC3095"/> developed for multimedia
+flows in a point to point channel. RoHC uses 3 levels of
+compression, each level having its own header format. 
+In the first level, RoHC sends  52 bytes of header, in the
+second level the header could be from 34 to 15 bytes and in the third level
+header size could be from 7 to 2 bytes. The level of compression is managed by
+a sequence number, which varies in size from 2 bytes to 4 bits in the minimal
+compression. SN compression is done with an algorithm called W-LSB (Window-
+Least Signifiant Bits). This window has a 4 bit size representing 15
+packets, so every 15 packets RoHC needs to slide the window in order to receive
+the correct sequence number, and sliding the window implies a reduction of the
+level of compression. When packets are lost or errored, the decompressor loses
+context and drops packets until a bigger header is sent with more complete
+information.
+To estimate the performance of RoHC, an average header size is used. This
+average depends on the transmission conditions, but most of the time 
+is between 3 and 4 bytes.
+</t>
+
+<t>RoHC has not been adapted specifically to the constrained hosts and networks
+of LPWANs: it does
+not take into account energy limitations nor the transmission rate, and
+RoHC context is synchronised during transmission, which does not allow better
 compression. [[Ed: this seems to conflict a bit with what was said about 6tisch
 which puzzled me.]]</t>
 
@@ -1468,7 +1529,7 @@ which eliminates the need for routing at that layer. Future work may address
 additional use-cases that may require adaptation of existing routing protocols
 or the definition of new ones. As of the time of writing, work similar to that
 done in the ROLL WG  and other routing protocols are out of scope of the LPWAN
-WG.  </t> 
+WG. </t> 
 
 </section>
 
@@ -1501,7 +1562,7 @@ down.  The mobility will imply most of the time a group of devices, which
 represent a network itself. The mobility concerns more the gateway than the
 devices.  </t>
 
-<t> NEMO [[Ed: refs?]] Mobility solutions may be used in the case where some
+<t> NEMO <xref target="RFC3963"/> Mobility solutions may be used in the case where some
 hosts belonging to the same Network gateway will move from one point to another
 and that they are not aware of this mobility.  </t>
 
@@ -1510,13 +1571,23 @@ and that they are not aware of this mobility.  </t>
 
 <section anchor="DNS" title="DNS and LPWAN">
 
-<t>The purpose of the DNS is to enable applications to name things that have a
-global unique name.  Lots of protocols are using DNS to identify the objects,
-especially REST and applications using CoAP. Therefore, hosts (things), or the 
-named services they use, should be
-registered in DNS.  DNS is probably a good topic of research for LPWAN
-technologies, while the matching of the name and the IP information can be used
-to configure the LPWAN devices. [[Ed: I'm not sure what that last bit means.]]  </t>
+<t>[[Ed: the WG probably need to decide what to say about DNS,
+there's not much content here so far.]]</t>
+
+<t>The 
+Domain Name System (DNS) 
+DNS <xref target="RFC1035"/>,
+enables applications to name things with a
+globallly resolvable name.  Many protocols use the DNS to identify hosts
+for example applications using CoAP. </t>
+
+<t>
+The DNS query/answer protocol as a pre-cursor to other communication
+within the time-to-live (TTL) of a DNS answer is clearly problematic
+in an LPWAN, say where only one round-trip per hour can be used, and
+with a TTL that is less than 3600.
+It is currently unclear [[Ed: to me anyway:-)]] whether and hw
+DNS-like functionality  might be provided in LPWANs.</t>
 
 </section>
 
@@ -1719,10 +1790,16 @@ Science Foundation Ireland funded CONNECT centre
 <!--
    <?rfc include='reference.RFC.2119'?>
 -->
+   <?rfc include='reference.RFC.1035'?>
    <?rfc include='reference.RFC.2460'?>
    <?rfc include='reference.RFC.2904'?>
+   <?rfc include='reference.RFC.3095'?>
+   <?rfc include='reference.RFC.3315'?>
+   <?rfc include='reference.RFC.3963'?>
+   <?rfc include='reference.RFC.4301'?>
    <?rfc include='reference.RFC.4861'?>
    <?rfc include='reference.RFC.4944'?>
+   <?rfc include='reference.RFC.5246'?>
    <?rfc include='reference.RFC.6282'?>
    <?rfc include='reference.RFC.6775'?>
    <?rfc include='reference.RFC.7252'?>
@@ -1874,7 +1951,7 @@ Science Foundation Ireland funded CONNECT centre
 		</front>
 	  </reference>	
 
-      <reference anchor="LoRaSpec" target="URL TBD">
+      <reference anchor="LoRaSpec" target="http://portal.lora-alliance.org/DesktopModules/Inventures_Document/FileDownload.aspx?ContentID=1398">
          <front>
             <title>
                LoRaWAN Specification Version V1.0.2
@@ -1882,7 +1959,7 @@ Science Foundation Ireland funded CONNECT centre
             <author>
                <organization>LoRa Alliance</organization>
             </author>
-            <date month="Nov" year="2016"/>
+            <date month="July" year="2016"/>
          </front>
       </reference>
 
@@ -1909,7 +1986,13 @@ Science Foundation Ireland funded CONNECT centre
 
 	<t>WG clearly want to keep the RF details.</t>
 
+	<t>Various changes made to remove/resolve a number of 
+	editorial notes from
+	-00 (in some cases as per suggestions from Ana Minaburo)</t>
+
 	<t>Merged PR's: #1...</t>
+
+	<t>Github repo is at: https://github.com/sftcd/lpwan-ov</t>
 
 	</list></t>
 

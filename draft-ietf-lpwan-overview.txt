@@ -84,22 +84,22 @@ Table of Contents
        4.2.1.  Header Compression  . . . . . . . . . . . . . . . . .  25
        4.2.2.  Address Autoconfiguration . . . . . . . . . . . . . .  26
        4.2.3.  Fragmentation . . . . . . . . . . . . . . . . . . . .  26
-       4.2.4.  Neighbor Discovery  . . . . . . . . . . . . . . . . .  26
+       4.2.4.  Neighbor Discovery  . . . . . . . . . . . . . . . . .  27
      4.3.  6lo . . . . . . . . . . . . . . . . . . . . . . . . . . .  27
-     4.4.  6tisch  . . . . . . . . . . . . . . . . . . . . . . . . .  27
+     4.4.  6tisch  . . . . . . . . . . . . . . . . . . . . . . . . .  28
      4.5.  RoHC  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     4.6.  ROLL  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     4.7.  CoAP  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
+     4.6.  ROLL  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     4.7.  CoAP  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
      4.8.  Mobility  . . . . . . . . . . . . . . . . . . . . . . . .  29
      4.9.  DNS and LPWAN . . . . . . . . . . . . . . . . . . . . . .  29
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  29
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  30
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  30
    7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  30
    8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  33
    9.  Informative References  . . . . . . . . . . . . . . . . . . .  33
-   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  36
-     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  36
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  36
+   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  37
+     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  37
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  37
 
 1.  Introduction
 
@@ -123,9 +123,13 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    Most technologies in this space aim for similar goals of supporting
    large numbers of low-cost, low-throughput devices at very low-cost
    and with very-low power consumption, so that even battery-powered
-   devices can be deployed for years.  And as the name implies, coverage
-   of large areas is also a common goal.  So, by and large, the
-   different technologies aim for deployment in very similar
+   devices can be deployed for years.  LPWAN devices also tend to be
+   constrained in their use of bandwidth, for example with limited
+   frequencies being allowed to be used within limited duty-cycles
+   (usually expressed as a percentage of time/hour that the device is
+   allowed to transmit.)  [[Ed: is that right?]] And as the name
+   implies, coverage of large areas is also a common goal.  So, by and
+   large, the different technologies aim for deployment in very similar
    circumstances.
 
    Existing pilot deployments have shown huge potential and created much
@@ -154,10 +158,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    defined technologies.  Similarly, there is no attempt here to set out
    the pros and cons of the relevant technologies.
 
-   [[Ed: the goal here is 2-3 pages per technology.  If there's much
-   more needed then we could add appendices I guess depending on what
-   text the WG find useful to include.]]
-
 
 
 
@@ -172,16 +172,16 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 2.1.  LoRaWAN
 
-   [[Ed: Text here is from [I-D.farrell-lpwan-lora-overview]]]
+   Text here is largely from [I-D.farrell-lpwan-lora-overview] which may
+   have been updated since this was published.
 
 2.1.1.  Provenance and Documents
 
    LoRaWAN is a wireless technology for long-range low-power low-data-
    rate applications developed by the LoRa Alliance, a membership
    consortium.  <https://www.lora-alliance.org/> This draft is based on
-   version 1.0.2 [LoRaSpec] of the LoRa specification.  (Version 1.0.2
-   is expected to be published in a few weeks.  We will when that has
-   happened.  For now, version 1.0 is available at [LoRaSpec1.0])
+   version 1.0.2 [LoRaSpec] of the LoRa specification.  Version 1.0,
+   which has also seen some deployment, is available at [LoRaSpec1.0].
 
 2.1.2.  Characteristics
 
@@ -266,13 +266,13 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       devices.  Interfaces between the network server and application
       are not further described here.
 
-   LoRaWAN radios make use of ISM bands, for example, 433MHz and 868MHz
-   within the European Union and 915MHz in the Americas.
+   LoRaWAN radios make use of industrial, scientific and medical (ISM)
+   bands, for example, 433MHz and 868MHz within the European Union and
+   915MHz in the Americas.
 
    The end-device changes channel in a pseudo-random fashion for every
    transmission to help make the system more robust to interference and/
    or to conform to local regulations.
-
 
 
 
@@ -564,7 +564,8 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 2.2.  Narrowband IoT (NB-IoT)
 
-   [[Ed: Text here is from [I-D.ratilainen-lpwan-nb-iot].]]
+   Text here is largely from [I-D.ratilainen-lpwan-nb-iot] which may
+   have been updated since this was published.
 
 2.2.1.  Provenance and Documents
 
@@ -578,14 +579,14 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    protocol architecture, while specifications 36.321 [TGPP36321],
    36.322 [TGPP36322], 36.323 [TGPP36323] and 36.331 [TGPP36331] give
    more detailed description of MAC, RLC, PDCP and RRC protocol layers
-   respectively.
+   respectively.  Note that the description below assumes familiarity
+   with numerous 3GPP terms.
 
 2.2.2.  Characteristics
 
-   [[Ed: Not clear what minimum/worst-case MTU might be.  There are many
-   3GPP acronyms/terms to eliminate or explain.]]
+   [[Ed: Not clear what minimum/worst-case MTU might be.]]
 
-   Specific targets for NB-IoT include: Less than 5$ module cost,
+   Specific targets for NB-IoT include: Less than US$5 module cost,
    extended coverage of 164 dB maximum coupling loss, battery life of
    over 10 years, ~55000 devices per cell and uplink reporting latency
    of less than 10 seconds.
@@ -608,8 +609,7 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
    meant to be used in licensed bands.  The maximum transmission power
    is either 20 or 23 dBm for uplink transmissions, while for downlink
-   transmission the eNodeB may use higher transmission power, up to 46
-   dBm depending on the deployment.
+
 
 
 
@@ -617,6 +617,9 @@ Farrell                  Expires August 31, 2017               [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
+
+   transmission the eNodeB may use higher transmission power, up to 46
+   dBm depending on the deployment.
 
    For signaling optimization, two options are introduced in addition to
    legacy RRC connection setup, mandatory Data-over-NAS (Control Plane
@@ -663,9 +666,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    initial attachment and authenticating the user.  At MME, the Non
    Access Stratum (NAS) signaling from the UE is terminated.
 
-   Serving Gateway (S-GW) routes and forwards the user data packets
-   through the access network and acts as a mobility anchor for UEs
-
 
 
 
@@ -674,6 +674,8 @@ Farrell                  Expires August 31, 2017               [Page 12]
 Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
+   Serving Gateway (S-GW) routes and forwards the user data packets
+   through the access network and acts as a mobility anchor for UEs
    during handover between base stations known as eNodeBs and also
    during handovers between other 3GPP technologies.
 
@@ -720,8 +722,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
    Access Stratum (AS) is the functional layer below NAS, and in control
    plane it consists of Radio Resource Control protocol (RRC)
-   [TGPP36331], which handles connection establishment and release
-   functions, broadcast of system information, radio bearer
 
 
 
@@ -730,6 +730,8 @@ Farrell                  Expires August 31, 2017               [Page 13]
 Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
+   [TGPP36331], which handles connection establishment and release
+   functions, broadcast of system information, radio bearer
    establishment, reconfiguration and release.  RRC configures the user
    and control planes according to the network status.  There exists two
    RRC states, RRC_Idle or RRC_Connected, and RRC entity controls the
@@ -776,8 +778,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    Access Stratum.  It interfaces with IP and consists of PDCP, which in
    user plane performs header compression using Robust Header
    Compression (RoHC), transfer of user plane data between eNodeB and
-   UE, ciphering and integrity protection.  Lower layers in user plane
-
 
 
 
@@ -786,6 +786,7 @@ Farrell                  Expires August 31, 2017               [Page 14]
 Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
+   UE, ciphering and integrity protection.  Lower layers in user plane
    are similarly RLC, MAC and physical layer performing tasks mentioned
    above.
 
@@ -799,8 +800,9 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 2.3.  SIGFOX
 
-   [[Ed: Text here is from
-   [I-D.zuniga-lpwan-sigfox-system-description].]]
+   Text here is largely from
+   [I-D.zuniga-lpwan-sigfox-system-description] which may have been
+   updated since this was published.
 
 2.3.1.  Provenance and Documents
 
@@ -832,8 +834,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       Spectrum allocation in Europe [etsi_ref]
 
       Spectrum allocation in Japan [arib_ref]
-
-
 
 
 
@@ -966,17 +966,17 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
    A device willing to receive downlink messages opens a fixed window
    for reception after sending an uplink transmission.  The delay and
-   duration of this window have fixed values.  The LTN network transmits
-   the downlink message for a given device during the reception window.
-   The LTN network selects the BS for transmitting the corresponding
+   duration of this window have fixed values.  The LTN transmits the
+   downlink message for a given device during the reception window.  The
+   LTN selects the base station (BS) for transmitting the corresponding
    downlink message.
 
    Uplink and downlink transmissions are unbalanced due to the
    regulatory constraints on the ISM bands.  Under the strictest
    regulations, the system can allow a maximum of 140 uplink messages
-   and 4 downlink messages per device.  These restrictions can be
-   slightly relaxed depending on system conditions and the specific
-   regulatory domain of operation.
+   and 4 downlink messages per device.  [[Ed: in what duration?]] These
+   restrictions can be slightly relaxed depending on system conditions
+   and the specific regulatory domain of operation.
 
                 +--+
                 |EP| *                    +------+
@@ -998,7 +998,7 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
                 |EP| * *
                 +--+
 
-                      Figure 7: ETSI LTN architecture
+                       Figure 7: SIGFOX architecture
 
    Figure 7 depicts the different elements of the SIGFOX architecture.
 
@@ -1076,14 +1076,14 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    Additionally, the Alliance has created a certification program to
    promote global multi-vendor interoperability.
 
-   The FAN profile [[Ed: reference needed!]] is an IPv6 frequency
-   hopping wireless mesh network with support for enterprise level
-   security.  The frequency hopping wireless mesh topology aims to offer
-   superior network robustness, reliability due to high redundancy, good
-   scalability due to the flexible mesh configuration and good
-   resilience to interference.  Very low power modes are in development
-   permitting long term battery operation of network nodes.  [[Ed:
-   details welcome.]]
+   The FAN profile [[Ed: reference (really really:-) needed!]] is an
+   IPv6 frequency hopping wireless mesh network with support for
+   enterprise level security.  The frequency hopping wireless mesh
+   topology aims to offer superior network robustness, reliability due
+   to high redundancy, good scalability due to the flexible mesh
+   configuration and good resilience to interference.  Very low power
+   modes are in development permitting long term battery operation of
+   network nodes.  [[Ed: details welcome.]]
 
 2.4.2.  Characteristics
 
@@ -1242,8 +1242,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 3.  Generic Terminology
 
-   [[Ed: Text here is from [I-D.minaburo-lpwan-gap-analysis].]]
-
    LPWAN technologies, such as those discussed above, have similar
    architectures but different terminology.  We can identify different
    types of entities in a typical LPWAN network:
@@ -1267,6 +1265,8 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
    o  At last we have the Application Server, known also as Packet Data
       Node Gateway or Network Application.
+
+
 
 
 
@@ -1324,20 +1324,20 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
                        Figure 9: LPWAN Architecture
 
-4.  Gap Analysis
+   In addition to the names of entities, LPWANs are also subject to
+   possibly regional frequency band regulations.  Those may include
+   restrictions on the duty-cycle, for example requiring that hosts only
+   transmit for a certain percentage of each hour.  [[Ed: Are these
+   duty-cycle percentages always per-hour?  Could a host amortise it's
+   transmits per day?]]
 
-   [[Ed: Text here is from [I-D.minaburo-lpwan-gap-analysis].]]
+4.  Gap Analysis
 
 4.1.  Naive application of IPv6
 
    IPv6 [RFC2460] has been designed to allocate addresses to all the
    nodes connected to the Internet.  Nevertheless, the header overhead
    of at least 40 bytes introduced by the protocol is incompatible with
-   LPWAN constraints.  If IPv6 with no further optimization were used,
-   several LPWAN frames would be needed just to carry the IP header.
-   Another problem arises from IPv6 MTU requirements, which require the
-   layer below to support at least 1280 byte packets [RFC2460].
-
 
 
 
@@ -1346,17 +1346,28 @@ Farrell                  Expires August 31, 2017               [Page 24]
 Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
-   IPv6 needs a configuration protocol (neighbor discovery protocol, NDP
-   [RFC4861]) for a node to learn network parameters NDP generates
-   regular traffic with a relatively large message size that does not
-   fit LPWAN constraints.
+   LPWAN constraints.  If IPv6 with no further optimization were used,
+   several LPWAN frames would be needed just to carry the IP header.
+   Another problem arises from IPv6 MTU requirements, which require the
+   layer below to support at least 1280 byte packets [RFC2460].
+
+   IPv6 has a configuration protocol - neighbor discovery protocol,
+   (NDP) [RFC4861]).  For a node to learn network parameters NDP
+   generates regular traffic with a relatively large message size that
+   does not fit LPWAN constraints.
 
    In some LPWAN technologies, layer two multicast is not supported.  In
    that case, if the network topology is a star, the solution and
    considerations of section 3.2.5 of [RFC7668] may be applied.
 
-   [[Ed: other things to maybe mention: IPsec, DHCPv6, anything with
-   even 1 regular RTT needed, e.g.  DNS.]]
+   Other key protocols such as DHCPv6 [RFC3315], IPsec [RFC4301] and TLS
+   [RFC5246] have similarly problematic properties in this context.
+   Each of those require relatively frequent round-trips between the
+   host and some other host on the network.  In the case of
+   cryptographic protocols such as IPsec and TLS, in addition to the
+   round-trips required for secure session establishment, cryptographic
+   operations can require padding and addition of authenticators that
+   are problematic when considering LPWAN lower layers.
 
 4.2.  6LoWPAN
 
@@ -1383,6 +1394,14 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    6LoWPAN header compression reduces IPv6 (and UDP) header overhead by
    eliding header fields when they can be derived from the link layer,
    and by assuming that some of the header fields will frequently carry
+
+
+
+Farrell                  Expires August 31, 2017               [Page 25]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    expected values. 6LoWPAN provides both stateless and stateful header
    compression.  In the latter, all nodes of a 6LoWPAN are assumed to
    share compression context.  In the best case, the IPv6 header for
@@ -1394,14 +1413,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    compressed).  These headers are large considering the link layer
    payload size of LPWAN technologies, and in some cases are even bigger
    than the LPWAN PDUs. 6LoWPAN has been initially designed for IEEE
-
-
-
-Farrell                  Expires August 31, 2017               [Page 25]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
-
    802.15.4 networks with a frame size up to 127 bytes and a throughput
    of up to 250 kb/s, which may or may not be duty-cycled.
 
@@ -1439,6 +1450,14 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    field is expressed in increments of eight octets.  In some LPWAN
    technologies, the 6LoWPAN fragmentation header plus eight octets from
    the original datagram exceeds the available space in the layer two
+
+
+
+Farrell                  Expires August 31, 2017               [Page 26]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    payload.  In addition, the MTU in the LPWAN networks could be
    variable which implies a variable fragmentation solution.
 
@@ -1450,14 +1469,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    technologies.  The optimizations comprise host-initiated interactions
    to allow for sleeping hosts, replacement of multicast-based address
    resolution for hosts by an address registration mechanism, multihop
-
-
-
-Farrell                  Expires August 31, 2017               [Page 26]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
-
    extensions for prefix distribution and duplicate address detection
    (note that these are not needed in a star topology network), and
    support for 6LoWPAN header compression.
@@ -1484,14 +1495,24 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
    The 6lo WG has been reusing and adapting 6LoWPAN to enable IPv6
    support over link layer technologies such as Bluetooth Low Energy
-   (BTLE), ITU-T G.9959, DECT-ULE, MS/TP-RS485, NFC or IEEE 802.11ah.
-   These technologies are similar in several aspects to IEEE 802.15.4,
-   which was the original 6LoWPAN target technology.  [[Ed: refs?]]
+   (BTLE), ITU-T G.9959, DECT-ULE, MS/TP-RS485, NFC IEEE 802.11ah.  (See
+   <https://tools.ietf.org/wg/6lo> for details.)  These technologies are
+   similar in several aspects to IEEE 802.15.4, which was the original
+   6LoWPAN target technology.
 
    6lo has mostly used the subset of 6LoWPAN techniques best suited for
    each lower layer technology, and has provided additional
    optimizations for technologies where the star topology is used, such
    as BTLE or DECT-ULE.
+
+
+
+
+
+Farrell                  Expires August 31, 2017               [Page 27]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
 
    The main constraint in these networks comes from the nature of the
    devices (constrained devices), whereas in LPWANs it is the network
@@ -1502,17 +1523,10 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 4.4.  6tisch
 
    The 6tisch solution is dedicated to mesh networks that operate using
-   802.15.4e MAC with a deterministic slotted channel.  The TSCH [[Ed:
-   expand on 1st use]] can help to reduce collisions and to enable a
-   better balance over the channels.  It improves the battery life by
-   avoiding the idle listening time for the return channel.
-
-
-
-Farrell                  Expires August 31, 2017               [Page 27]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
+   802.15.4e MAC with a deterministic slotted channel.  The time slot
+   channel (TSCH) can help to reduce collisions and to enable a better
+   balance over the channels.  It improves the battery life by avoiding
+   the idle listening time for the return channel.
 
    A key element of 6tisch is the use of synchronization to enable
    determinism.  TSCH and 6TiSCH may provide a standard scheduling
@@ -1521,31 +1535,40 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 4.5.  RoHC
 
-   RoHC [[Ed: expand on 1st use]] header compression mechanisms were
-   defined for point to point multimedia channels, to reduce the header
-   overhead of RTP flows.  RoHC can also reduce the overhead of IPv4 or
-   IPv6 or UDP headers.  It is based on shared context which does not
-   require any state but compressed packets are not routable.  The
-   context is initialised at the beginning of the communication or when
-   it [[Ed: which "it"?]] is lost.  The compression is managed using a
-   sequence number (SN) which is encoded using a windowing algorithm
-   allowing for reduction of the SN to 4 bits instead of 2 bytes.  [[Ed:
-   is that the 2 bytes as per 6lowPAN?]]  But this window needs to be
-   updated each 15 packets which implies larger headers.  When RoHC is
-   used we talk about an average header compression size to give the
-   performance of compression.  For example, RoHC starts sending bigger
-   packets than the original (52 bytes) to reduce the header up to 4
-   bytes (it stays here only for 15 packets, which correspond to the
-   window size).  Each time the context is lost or needs to be
-   synchronised, packets of about 15 to 43 bytes are sent.  [[Ed: the
-   above isn't that cleaar to me.]]
+   Robust header compression (RoHC) is a header compression mechanism
+   [RFC3095] developed for multimedia flows in a point to point channel.
+   RoHC uses 3 levels of compression, each level having its own header
+   format.  In the first level, RoHC sends 52 bytes of header, in the
+   second level the header could be from 34 to 15 bytes and in the third
+   level header size could be from 7 to 2 bytes.  The level of
+   compression is managed by a sequence number, which varies in size
+   from 2 bytes to 4 bits in the minimal compression.  SN compression is
+   done with an algorithm called W-LSB (Window- Least Signifiant Bits).
+   This window has a 4 bit size representing 15 packets, so every 15
+   packets RoHC needs to slide the window in order to receive the
+   correct sequence number, and sliding the window implies a reduction
+   of the level of compression.  When packets are lost or errored, the
+   decompressor loses context and drops packets until a bigger header is
+   sent with more complete information.  To estimate the performance of
+   RoHC, an average header size is used.  This average depends on the
+   transmission conditions, but most of the time is between 3 and 4
+   bytes.
 
-   RoHC is not adapted to the constrained nodes of the LPWAN networks:
-   it does not take into account the energy limitations and the
-   transmission rate, and context is synchronised during the
-   transmission, which does not allow a better compression.  [[Ed: this
+   RoHC has not been adapted specifically to the constrained hosts and
+   networks of LPWANs: it does not take into account energy limitations
+   nor the transmission rate, and RoHC context is synchronised during
+   transmission, which does not allow better compression.  [[Ed: this
    seems to conflict a bit with what was said about 6tisch which puzzled
    me.]]
+
+
+
+
+
+Farrell                  Expires August 31, 2017               [Page 28]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
 
 4.6.  ROLL
 
@@ -1562,13 +1585,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    to run on constrained IP networks.  It may be necessary to adapt CoAP
    or related protocols to take into account for the extreme duty cycles
    and the potentially extremely limited throughput of LPWANs.
-
-
-
-Farrell                  Expires August 31, 2017               [Page 28]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
 
    For example, some of the timers in CoAP may need to be redefined.
    Taking into account CoAP acknowledgements may allow the reduction of
@@ -1590,20 +1606,32 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    of the time a group of devices, which represent a network itself.
    The mobility concerns more the gateway than the devices.
 
-   NEMO [[Ed: refs?]] Mobility solutions may be used in the case where
-   some hosts belonging to the same Network gateway will move from one
-   point to another and that they are not aware of this mobility.
+   NEMO [RFC3963] Mobility solutions may be used in the case where some
+   hosts belonging to the same Network gateway will move from one point
+   to another and that they are not aware of this mobility.
 
 4.9.  DNS and LPWAN
 
-   The purpose of the DNS is to enable applications to name things that
-   have a global unique name.  Lots of protocols are using DNS to
-   identify the objects, especially REST and applications using CoAP.
-   Therefore, hosts (things), or the named services they use, should be
-   registered in DNS.  DNS is probably a good topic of research for
-   LPWAN technologies, while the matching of the name and the IP
-   information can be used to configure the LPWAN devices.  [[Ed: I'm
-   not sure what that last bit means.]]
+   [[Ed: the WG probably need to decide what to say about DNS, there's
+   not much content here so far.]]
+
+   The Domain Name System (DNS) DNS [RFC1035], enables applications to
+   name things with a globallly resolvable name.  Many protocols use the
+   DNS to identify hosts for example applications using CoAP.
+
+
+
+Farrell                  Expires August 31, 2017               [Page 29]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
+   The DNS query/answer protocol as a pre-cursor to other communication
+   within the time-to-live (TTL) of a DNS answer is clearly problematic
+   in an LPWAN, say where only one round-trip per hour can be used, and
+   with a TTL that is less than 3600.  It is currently unclear [[Ed: to
+   me anyway:-)]] whether and hw DNS-like functionality might be
+   provided in LPWANs.
 
 5.  Security Considerations
 
@@ -1617,14 +1645,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    confidentiality and to ponder the impact of more than one layer of
    encryption in this context.  Text below is basically from the "gaps"
    draft.]]
-
-
-
-
-Farrell                  Expires August 31, 2017               [Page 29]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
 
    Most LPWAN technologies integrate some authentication or encryption
    mechanisms that were defined outside the IETF.  The working group may
@@ -1654,6 +1674,14 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    o  Text for Section 2.2 was provided by Antti Ratilainen in
       [I-D.ratilainen-lpwan-nb-iot].
 
+
+
+
+Farrell                  Expires August 31, 2017               [Page 30]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    o  Text for Section 2.3 was provided by Juan Carlos Zuniga and Benoit
       Ponsard in [I-D.zuniga-lpwan-sigfox-system-description].
 
@@ -1674,13 +1702,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       JJ Thomson Avenue
       Cambridge, CB3 0FD
       United Kingdom
-
-
-
-Farrell                  Expires August 31, 2017               [Page 30]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
 
       Email: jon.crowcroft@cl.cam.ac.uk
 
@@ -1710,6 +1731,13 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       35510 Cesson-Sevigne Cedex
       France
 
+
+
+Farrell                  Expires August 31, 2017               [Page 31]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
       Email: ana@ackl.io
 
 
@@ -1730,12 +1758,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
       Email: Benoit.Ponsard@sigfox.com
       URI:   http://www.sigfox.com/
-
-
-
-Farrell                  Expires August 31, 2017               [Page 31]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
       Antti Ratilainen
@@ -1766,6 +1788,12 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       Email: Laurent.Toutain@telecom-bretagne.eu
 
 
+
+Farrell                  Expires August 31, 2017               [Page 32]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
       Alper Yegin
       Actility
       Paris, Paris
@@ -1784,16 +1812,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       URI:   http://www.sigfox.com/
 
 
-
-
-
-
-
-Farrell                  Expires August 31, 2017               [Page 32]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
-
 8.  Acknowledgements
 
    Thanks to all those listed in Section 7 for the excellent text.
@@ -1807,6 +1825,10 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 9.  Informative References
 
+   [RFC1035]  Mockapetris, P., "Domain names - implementation and
+              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
+              November 1987, <http://www.rfc-editor.org/info/rfc1035>.
+
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, DOI 10.17487/RFC2460,
               December 1998, <http://www.rfc-editor.org/info/rfc2460>.
@@ -1817,6 +1839,39 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
               DOI 10.17487/RFC2904, August 2000,
               <http://www.rfc-editor.org/info/rfc2904>.
 
+
+
+
+
+
+
+Farrell                  Expires August 31, 2017               [Page 33]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
+   [RFC3095]  Bormann, C., Burmeister, C., Degermark, M., Fukushima, H.,
+              Hannu, H., Jonsson, L-E., Hakenberg, R., Koren, T., Le,
+              K., Liu, Z., Martensson, A., Miyazaki, A., Svanbro, K.,
+              Wiebke, T., Yoshimura, T., and H. Zheng, "RObust Header
+              Compression (ROHC): Framework and four profiles: RTP, UDP,
+              ESP, and uncompressed", RFC 3095, DOI 10.17487/RFC3095,
+              July 2001, <http://www.rfc-editor.org/info/rfc3095>.
+
+   [RFC3315]  Droms, R., Ed., Bound, J., Volz, B., Lemon, T., Perkins,
+              C., and M. Carney, "Dynamic Host Configuration Protocol
+              for IPv6 (DHCPv6)", RFC 3315, DOI 10.17487/RFC3315, July
+              2003, <http://www.rfc-editor.org/info/rfc3315>.
+
+   [RFC3963]  Devarapalli, V., Wakikawa, R., Petrescu, A., and P.
+              Thubert, "Network Mobility (NEMO) Basic Support Protocol",
+              RFC 3963, DOI 10.17487/RFC3963, January 2005,
+              <http://www.rfc-editor.org/info/rfc3963>.
+
+   [RFC4301]  Kent, S. and K. Seo, "Security Architecture for the
+              Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
+              December 2005, <http://www.rfc-editor.org/info/rfc4301>.
+
    [RFC4861]  Narten, T., Nordmark, E., Simpson, W., and H. Soliman,
               "Neighbor Discovery for IP version 6 (IPv6)", RFC 4861,
               DOI 10.17487/RFC4861, September 2007,
@@ -1826,6 +1881,11 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
               "Transmission of IPv6 Packets over IEEE 802.15.4
               Networks", RFC 4944, DOI 10.17487/RFC4944, September 2007,
               <http://www.rfc-editor.org/info/rfc4944>.
+
+   [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
+              (TLS) Protocol Version 1.2", RFC 5246,
+              DOI 10.17487/RFC5246, August 2008,
+              <http://www.rfc-editor.org/info/rfc5246>.
 
    [RFC6282]  Hui, J., Ed. and P. Thubert, "Compression Format for IPv6
               Datagrams over IEEE 802.15.4-Based Networks", RFC 6282,
@@ -1838,17 +1898,18 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
               RFC 6775, DOI 10.17487/RFC6775, November 2012,
               <http://www.rfc-editor.org/info/rfc6775>.
 
+
+
+
+Farrell                  Expires August 31, 2017               [Page 34]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
               <http://www.rfc-editor.org/info/rfc7252>.
-
-
-
-Farrell                  Expires August 31, 2017               [Page 33]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
 
    [RFC7668]  Nieminen, J., Savolainen, T., Isomaki, M., Patil, B.,
               Shelby, Z., and C. Gomez, "IPv6 over BLUETOOTH(R) Low
@@ -1892,19 +1953,19 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
               2", 2016,
               <http://www.3gpp.org/ftp/Specs/2016-09/Rel-14/36_series/>.
 
+
+
+
+
+Farrell                  Expires August 31, 2017               [Page 35]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    [TGPP36321]
               3GPP, "TS 36.321 v13.2.0 Evolved Universal Terrestrial
               Radio Access (E-UTRA); Medium Access Control (MAC)
               protocol specification", 2016.
-
-
-
-
-
-Farrell                  Expires August 31, 2017               [Page 34]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
 
    [TGPP36322]
               3GPP, "TS 36.322 v13.2.0 Evolved Universal Terrestrial
@@ -1950,21 +2011,23 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
               MHz to 1 000 MHz frequency range with power levels ranging
               up to 500 mW", May 2016.
 
+
+
+Farrell                  Expires August 31, 2017               [Page 36]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
+
    [arib_ref]
               "ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter,
               Telecontrol and data transmission radio equipment.",
               February 2012.
 
-
-
-Farrell                  Expires August 31, 2017               [Page 35]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
-
-
    [LoRaSpec]
-              LoRa Alliance, "LoRaWAN Specification Version V1.0.2", Nov
-              2016, <URL TBD>.
+              LoRa Alliance, "LoRaWAN Specification Version V1.0.2",
+              July 2016, <http://portal.lora-
+              alliance.org/DesktopModules/Inventures_Document/
+              FileDownload.aspx?ContentID=1398>.
 
    [LoRaSpec1.0]
               LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
@@ -1979,7 +2042,12 @@ A.1.  From -00 to -01
 
    o  WG clearly want to keep the RF details.
 
+   o  Various changes made to remove/resolve a number of editorial notes
+      from -00 (in some cases as per suggestions from Ana Minaburo)
+
    o  Merged PR's: #1...
+
+   o  Github repo is at: https://github.com/sftcd/lpwan-ov
 
 Author's Address
 
@@ -2001,16 +2069,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Farrell                  Expires August 31, 2017               [Page 36]
+Farrell                  Expires August 31, 2017               [Page 37]
