@@ -382,14 +382,14 @@ avoid congestion.</c>
 8 octets are required for LoRa MAC layer headers leaving only
 11 octets for payload (including MAC layer options). However, those
 settings do not apply for the join procedure - end-devices are
-required to use a channel that can send the 23 byte Join-request
-message for the 
-join procedure.</t>
+required to use a channel and data rate that can send the 23 byte Join-request
+message for the join procedure.</t>
 
 	<t>Uplink and downlink higher layer data is carried in a MACPayload.  There
 is a concept of "ports" (an optional 8 bit value) to handle different
 applications on an end-device. Port zero is reserved for LoRaWAN specific
-messaging, such as the join procedure.</t> 
+messaging, such as the configuration of device's network parameters 
+(available channels, data rates, ADR parameters, RX1/2 delay, etc.).</t> 
 
 <!--
 <t>The header also distinguishes the uplink/downlink
@@ -438,7 +438,7 @@ are set to zero.)</t>
 -->
 
 	<t>There are a number of MAC commands for:
-	Link and device status checking, ADR and duty-cycle negotiation,
+	link and device status checking, ADR and duty-cycle negotiation,
 managing the RX windows and radio channel settings. For example,
 the link check response message allows the network server (in
 response to a request from an end-device) to
@@ -449,7 +449,7 @@ command.</t>
 
 <t>Some MAC commands are initiated by the network server.
 For example, one command allows the network server
-to ask an end-device to reduce it's duty-cycle to only
+to ask an end-device to reduce its duty-cycle to only
 use a proportion of the maximum allowed in a region. 
 Another allows the network server to query the
 end-device's power status with the response from
@@ -471,8 +471,7 @@ a network wishes to support "foreign" end-devices then the NwkID
 needs to be registered with the LoRA Alliance, in which case the
 NwkID is the seven least significant bits of a registered 24-bit
 NetID. (Note however, that
-the methods for "roaming" are currently being enhanced
-within the LoRA Alliance, so the situation here is somewhat fluid.)</t>
+the methods for "roaming" are defined in the upcoming LoRaWAN 1.1 specification.</t>
 
 	<t>In order to operate nominally on a LoRaWAN network, a device needs a 
 32-bit device address, which is the catentation of the NwkID and a
@@ -487,7 +486,7 @@ identified by a 64-bit AppEUI, which is assumed
 to be a registered IEEE EUI64 value.
 	In addition, a device needs to have two symmetric session
 keys, one for protecting network artefacts (port=0), the NwkSKey,
-and another for protecting appliction layer traffic, the 
+and another for protecting application layer traffic, the 
 AppSKey. Both keys are used for 128 bit AES cryptographic
 operations. 
 	So, one option is for an end-device to have all of the above,
@@ -513,12 +512,12 @@ of these values and dynamically gain access to the network.
 	To use the join procedure, an end-device must still
 know the AppEUI, and 
 	in addition, 
-a different (long-term) symmetric key  that
+a different (long-term) symmetric key that
 is bound to the AppEUI - this is the application key (AppKey),
 and is distinct from the application session key (AppSKey). The
 AppKey is required to be specific to the device, that is, 
 each end-device should have a different AppKey value. And
-finally the end-device also needs a long-term identifier for
+finally, the end-device also needs a long-term identifier for
 itself, syntactically also an EUI-64, and known as the 
 device EUI or DevEUI. <xref target="table-join"/> summarises
 these values.</t> 
