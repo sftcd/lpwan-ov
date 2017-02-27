@@ -9,7 +9,7 @@ Expires: August 31, 2017
 
 
                              LPWAN Overview
-                      draft-ietf-lpwan-overview-01
+                      draft-ietf-lpwan-overview-02
 
 Abstract
 
