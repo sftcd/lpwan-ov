@@ -185,16 +185,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 2.1.2.  Characteristics
 
-   In LoRaWAN networks, end-device transmissions may be received at
-   multiple gateways, so during nominal operation a network server may
-   see multiple instances of the same uplink message from an end-device.
-
-   The LoRaWAN network infrastructure manages the data rate and RF
-   output power for each end-device individually by means of an adaptive
-   data rate (ADR) scheme.  End-devices may transmit on any channel
-   allowed by local regulation at any time, using any of the currently
-   available data rates.
-
    LoRaWAN networks are typically organized in a star-of-stars topology
    in which gateways relay messages between end-devices and a central
    "network server" in the backend.  Gateways are connected to the
@@ -205,25 +195,6 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    terms of overall bandwidth availability.
 
    Figure 1 shows the entities involved in a LoRaWAN network.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Farrell                  Expires August 31, 2017                [Page 4]
-
-Internet-Draft   Low Power Wide Area Networking Overview   February 2017
 
 
    +----------+
@@ -241,6 +212,15 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
             +---+  IP connectivity
 
                       Figure 1: LoRaWAN architecture
+
+
+
+
+
+Farrell                  Expires August 31, 2017                [Page 4]
+
+Internet-Draft   Low Power Wide Area Networking Overview   February 2017
+
 
    o  End-device: a LoRa client device, sometimes called a mote.
       Communicates with gateways.
@@ -266,6 +246,16 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
       devices.  Interfaces between the network server and application
       are not further described here.
 
+   In LoRaWAN networks, end-device transmissions may be received at
+   multiple gateways, so during nominal operation a network server may
+   see multiple instances of the same uplink message from an end-device.
+
+   The LoRaWAN network infrastructure manages the data rate and RF
+   output power for each end-device individually by means of an Adaptive
+   Data Rate (ADR) scheme.  End-devices may transmit on any channel
+   allowed by local regulation at any time, using any of the currently
+   available data rates.
+   
    LoRaWAN radios make use of industrial, scientific and medical (ISM)
    bands, for example, 433MHz and 868MHz within the European Union and
    915MHz in the Americas.
@@ -408,10 +398,10 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    then the NwkID needs to be registered with the LoRA Alliance, in
    which case the NwkID is the seven least significant bits of a
    registered 24-bit NetID.  (Note however, that the methods for
-   "roaming" are defined in the upcoming LoRaWAN 1.1 specification.
+   "roaming" are defined in the upcoming LoRaWAN 1.1 specification).
 
    In order to operate nominally on a LoRaWAN network, a device needs a
-   32-bit device address, which is the catentation of the NwkID and a
+   32-bit "device address", which is the catentation of the NwkID and a
    25-bit device-specific network address that is assigned when the
    device "joins" the network (see below for the join procedure) or that
    is pre-provisioned into the device.
@@ -1630,8 +1620,16 @@ Internet-Draft   Low Power Wide Area Networking Overview   February 2017
    within the time-to-live (TTL) of a DNS answer is clearly problematic
    in an LPWAN, say where only one round-trip per hour can be used, and
    with a TTL that is less than 3600.  It is currently unclear [[Ed: to
-   me anyway:-)]] whether and hw DNS-like functionality might be
+   me anyway:-)]] whether and how DNS-like functionality might be
    provided in LPWANs.
+
+   In the case of LoRaWAN, as described in 2.1.1, during the "join" 
+   procedure, the network server has to interact with an entity (server)
+   that knows the AppKey to verify the join-request. This interaction is
+   done by the DNS, based on the AppEUI. Further, in LoRaWAN specification
+   1.1 where roaming comes into play, DNS is needed to identify the 
+   appropriate network server, when the end-device moves to a "foreign"
+   network server.
 
 5.  Security Considerations
 
