@@ -199,16 +199,6 @@ Version 1.0, which has also seen some deployment, is available at
 
 	  <section anchor="lora-chars" title="Characteristics">
 
-<t>In LoRaWAN networks, end-device transmissions may be received at multiple
-gateways, so during nominal operation a network server may see multiple
-instances of the same uplink message from an end-device.</t>
-
-<t>
-The LoRaWAN network infrastructure manages the data rate and RF output power
-for each end-device individually by means of an adaptive data rate (ADR)
-scheme.  End-devices may transmit on any channel allowed by local regulation at
-any time, using any of the currently available data rates.  </t>
-
 <t> LoRaWAN networks are typically organized in a star-of-stars topology in
 which gateways relay messages between end-devices and a central "network
 server" in the backend.  Gateways are connected to the network server via IP
@@ -283,6 +273,16 @@ those terms elsewhere so we include them for clarity.)
 
 
 </list></t>
+
+<t>In LoRaWAN networks, end-device transmissions may be received at multiple
+gateways, so during nominal operation a network server may see multiple
+instances of the same uplink message from an end-device.</t>
+
+<t>
+The LoRaWAN network infrastructure manages the data rate and RF output power
+for each end-device individually by means of an adaptive data rate (ADR)
+scheme.  End-devices may transmit on any channel allowed by local regulation at
+any time, using any of the currently available data rates.  </t>
 
 	<t>LoRaWAN radios make use of industrial, scientific and medical (ISM)
 bands, for example, 433MHz and 868MHz within the European Union and 915MHz in
@@ -472,14 +472,14 @@ rates). Of course, these must also remain within the
 bands assigned by local regulation.</t>
 -->
 
-	<t>A LoRaWAN network has a short network identifier ("NwkID") which is a 
-seven bit value.  A private network (common for LoRaWAN) can use the value 
-zero. If
-a network wishes to support "foreign" end-devices then the NwkID
-needs to be registered with the LoRA Alliance, in which case the
-NwkID is the seven least significant bits of a registered 24-bit
-NetID. (Note however, that
-the methods for "roaming" are defined in the upcoming LoRaWAN 1.1 specification.</t>
+	<t>A LoRaWAN network has a short network identifier ("NwkID") which is a
+seven bit value.  A private network (common for LoRaWAN) can use the value
+zero. If a network wishes to support "foreign" end-devices then the NwkID needs
+to be registered with the LoRA Alliance, in which case the NwkID is the seven
+least significant bits of a registered 24-bit NetID. (Note however, that the
+methods for "roaming" are defined in the upcoming LoRaWAN 1.1
+specification.)</t>
+
 
 	<t>In order to operate nominally on a LoRaWAN network, a device needs a 
 32-bit device address, which is the catentation of the NwkID and a
@@ -1586,7 +1586,7 @@ The DNS query/answer protocol as a pre-cursor to other communication
 within the time-to-live (TTL) of a DNS answer is clearly problematic
 in an LPWAN, say where only one round-trip per hour can be used, and
 with a TTL that is less than 3600.
-It is currently unclear [[Ed: to me anyway:-)]] whether and hw
+It is currently unclear [[Ed: to me anyway:-)]] whether and how
 DNS-like functionality  might be provided in LPWANs.</t>
 
 </section>
@@ -1991,6 +1991,9 @@ Science Foundation Ireland funded CONNECT centre
 	-00 (in some cases as per suggestions from Ana Minaburo)</t>
 
 	<t>Merged PR's: #1...</t>
+
+	<t>Rejected PR's: #2 (change was made to .txt not .xml but was
+	replicated manually by editor)</t>
 
 	<t>Github repo is at: https://github.com/sftcd/lpwan-ov</t>
 
