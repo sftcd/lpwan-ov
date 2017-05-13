@@ -250,8 +250,7 @@ Internet-Draft   Low Power Wide Area Networking Overview      March 2017
    The LoRaWAN network infrastructure manages the data rate and RF
    output power for each end-device individually by means of an adaptive
    data rate (ADR) scheme.  End-devices may transmit on any channel
-   allowed by local regulation at any time, using any of the currently
-   available data rates.
+   allowed by local regulation at any time.
 
    LoRaWAN radios make use of industrial, scientific and medical (ISM)
    bands, for example, 433MHz and 868MHz within the European Union and
