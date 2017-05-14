@@ -1630,16 +1630,6 @@ DNS-like functionality might be provided in LPWANs.</t>
 
    <section anchor="sec-cons" title="Security Considerations">
 
-	<t>[[Ed: be good to add stuff here about a) privacy and b)
-difficulties with getting current security protocols to work in this context.
-For a) maybe try find nice illustrations, e.g. extremecom instrumeted-igloo
-traces (temperature change allowing one to infer when someone took a pee:-).
-For b) things like IPsec/(D)TLS/OCSP and NTP to work in these environments.
-Not sure how much of that is known or useful for the WG. Probably worth noting
-the IAB statement on confidentiality and to ponder the impact of more than one
-layer of encryption in this context. Text below is basically from the "gaps"
-draft.]]</t>
-
 <t> Most LPWAN technologies integrate some authentication or encryption
 mechanisms that were defined outside the IETF.  The working group may need to
 do work to integrate these mechanisms to unify management.  A standardized
@@ -1650,6 +1640,33 @@ use in LPWANs, for example <xref target="I-D.garcia-dime-diameter-lorawan"/>
 and <xref target="I-D.garcia-radext-radius-lorawan"/> suggest possible security
 processes for a LoRaWAN network. Similar mechanisms may be useful to explore
 for other LPWAN technologies.  </t>
+
+<t>Some applications using LPWANs may raise few or no privacy considerations.
+For example, temperature sensors in a large office building may not raise
+privacy issues. However, the same sensors, if deployed in a home environment
+and especially if triggered due to human presence, can raise significant
+privacy issues - if an end-device emits (an encrypted) packet every time
+someone enters a room in a home, then that traffic is privacy sensitive. And
+the more that the existence of that traffic is visible to network entities, the
+more privacy sensitivities arise. At this point, it is not clear whether 
+there are workable mitigations for problems like this - in a more typical
+network, one would cosider defining padding mechanisms and allowing for
+cover traffic. In some LPWANs, those mechanisms may not be feasible. Nonetheless,
+the privacy challenges do exist and can be real and so some solutions will
+be needed. Note that many aspects of solutions in this space may not be visible in
+IETF specifications, but can be e.g. implementation or deployment
+specific.</t>
+
+<t>Another challenge for LPWANs will be how to handle key management
+and associated protocols. In a more traditional network (e.g. the web),
+servers can stable OCSP responses in order to allow browsers to 
+check revocation status for presented certificates. <xref target="RFC6961"/>
+While the 
+"stapling" approach is likely something that would help in an LPWAN,
+as it avoids an RTT, certificates and OCSP responses are bulky items
+and will prove challenging to handle in LPWANs with bounded bandwidth.</t>
+
+
 
    </section>
 
@@ -1840,6 +1857,7 @@ Science Foundation Ireland funded CONNECT centre
    <?rfc include='reference.RFC.5280'?>
    <?rfc include='reference.RFC.6282'?>
    <?rfc include='reference.RFC.6775'?>
+   <?rfc include='reference.RFC.6961'?>
    <?rfc include='reference.RFC.7252'?>
    <?rfc include='reference.RFC.7668'?>
     &I-D.farrell-lpwan-lora-overview;
