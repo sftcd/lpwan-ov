@@ -134,8 +134,7 @@ very-low power consumption, so that even battery-powered devices can be
 deployed for years. LPWAN devices also tend to be constrained in their
 use of bandwidth, for example with limited frequencies being allowed to
 be used within limited duty-cycles (usually expressed as a percentage
-of time/hour that the device is allowed to transmit.) [[Ed: is that
-right?]]
+of time per-hour that the device is allowed to transmit.) 
 And as the name implies, coverage of large areas is also a
 common goal.  So, by and large, the different technologies aim for deployment
 in very similar circumstances.</t>
@@ -147,8 +146,8 @@ increased indoor coverage.
 -->
 
 <t> Existing pilot deployments have shown huge potential and created much
-industrial interest in these technolgies.  As of today, [[Ed: with the possible
-exception of Wi-SUN devices?]] essentially no LPWAN devices have IP capabilities.
+industrial interest in these technolgies.  As of today, 
+essentially no LPWAN devices have IP capabilities.
 Connecting LPWANs to the Internet would provide significant benefits to these
 networks in terms of interoperability, application deployment, and management,
 among others.  The goal of the LPWAN WG is to, where necessary, adapt IETF defined protocols,
@@ -282,7 +281,7 @@ instances of the same uplink message from an end-device.</t>
 The LoRaWAN network infrastructure manages the data rate and RF output power
 for each end-device individually by means of an adaptive data rate (ADR)
 scheme.  End-devices may transmit on any channel allowed by local regulation at
-any time, using any of the currently available data rates.  </t>
+any time.  </t>
 
 	<t>LoRaWAN radios make use of industrial, scientific and medical (ISM)
 bands, for example, 433MHz and 868MHz within the European Union and 915MHz in
@@ -984,8 +983,9 @@ transmitting the corresponding downlink message.  </t>
 
 <t> Uplink and downlink transmissions are unbalanced due to the regulatory
 constraints on the ISM bands. Under the strictest regulations, the system can
-allow a maximum of 140 uplink messages and 4 downlink messages per device.
-[[Ed: in what duration?]]
+allow a maximum of 140 uplink messages and 4 downlink messages per device
+per day. 
+<!-- "per day" is according to https://ask.sigfox.com/questions/1182/limit-of-140-messages.html -->
 These restrictions can be slightly relaxed depending on system conditions and
 the specific regulatory domain of operation. </t>
 
@@ -1061,8 +1061,9 @@ encrypted by the application provider.  </t>
 
 	<t>[[Ed: Text here is via personal communication from Bob Heile
 (bheile@ieee.org) and was authored by Bob and Sum Chin Sean. 
-Many references to
-specifications are still needed here.]]</t>
+The editor thanks Paul Duffy (paduffy@cisco.com) for forwarding updated text from Bob 
+and additional comments/input on this section.
+]]</t>
 
 	  <section anchor="wisun-docs" title="Provenance and Documents">
 
@@ -1080,22 +1081,61 @@ Additionally, the Alliance has
 created a certification program to promote global multi-vendor
 interoperability.  </t>
 
-<t>The FAN profile [[Ed: reference (really really:-) needed!]] is an IPv6 frequency hopping
-wireless mesh network with support for enterprise level security. The frequency hopping
-wireless mesh topology aims to offer superior network
-robustness, reliability due to high redundancy, good scalability due to the
-flexible mesh configuration and good resilience to interference. 
-Very low power modes are in development permitting long
-term battery operation of network nodes. [[Ed: details welcome.]]</t>
-
+<t>The FAN profiile is currently being specified within ANSI/TIA as an extension
+of work previously done on Smart Utility Networks. <xref target="ANSI-4957-000"/>.
+Updates to those specifications intended to be published in 2017 will
+contain details of the FAN profile. A current snapshot of the work
+to produce that profile is presented in 
+<xref target="wisun-pressie1"/>
+<xref target="wisun-pressie2"/>
+.
+</t>
 
 	  </section>
 
 	  <section anchor="wisun-chars" title="Characteristics">
 
-<t>[[Ed: this really needs the references.]] The FAN profile is based on
-various open standards in IETF, IEEE802 and ANSI/TIA for low power and lossy
-networks. The FAN profile specification provides an application-independent
+<t>The FAN profile is an IPv6 frequency hopping
+wireless mesh network with support for enterprise level security. The frequency hopping
+wireless mesh topology aims to offer superior network
+robustness, reliability due to high redundancy, good scalability due to the
+flexible mesh configuration and good resilience to interference. 
+Very low power modes are in development permitting long
+term battery operation of network nodes.</t>
+
+<t>
+The core architecture of Wi-SUN FAN is a mesh network. A FAN contains one      
+   or more networks.  Within a network, nodes assume one of  
+   three operational roles. First, each network contains a Border Router 
+   providing Wide Area Network (WAN) connectivity to the network.  The Border 
+   Router maintains source routing tables for all nodes within its network, 
+   provides node authentication and key management services, and disseminates 
+   network-wide information such as broadcast schedules. Secondly, Router 
+   nodes, which provide upward and downward packet forwarding (within a  
+   network). A Router also provides services for relaying security and 
+   address management protocols. Lastly, Leaf nodes provide minimum 
+   capabilities: discovering and joining a network, send/receive IPv6 
+   packets, etc. A low power network may contain a mesh topology with Routers 
+   at the edges that construct star topology with Leaf nodes.
+</t>
+
+<t>
+The FAN profile is based on various open standards developed by the IETF 
+(including 
+<xref target="RFC0768"/>,
+<xref target="RFC2460"/>,
+<xref target="RFC4443"/> and
+<xref target="RFC6282"/>),
+IEEE802 (including 
+<xref target="IEEE-802-15-4"/> and
+<xref target="IEEE-802-15-9"/>) and 
+ANSI/TIA 
+<xref target="ANSI-4957-210"/>
+for low power and lossy networks. 
+</t>
+
+<t>
+The FAN profile specification provides an application-independent
 IPv6-based transport service for both connectionless (i.e. UDP) and
 connection-oriented (i.e. TCP) services.  There are two possible methods for
 establishing the IPv6 packet routing: mandatory Routing Protocol for Low-Power
@@ -1127,10 +1167,10 @@ IEEE802.15.4-2015. The 2-FSK modulation schemes, with channel spacing range
 from 200 to 600 kHz, are defined to provide data rates from 50 to 300 kbps,
 with Forward Error Coding (FEC) as an optional feature. Towards enabling
 ultra-low-power applications, the PHY layer design is also extendable to low
-energy and critical infrastructure monitoring networks, such as IEEE802.15.4k.
+energy and critical infrastructure monitoring networks.
 </t>
 
-<texttable anchor="table-wisun" title="Wi-SUN Stack Overivew">
+<texttable anchor="table-wisun" title="Wi-SUN Stack Overview">
     <ttcol align='left'>Layer</ttcol>
     <ttcol align='left'>Description</ttcol>
 <c>IPv6 protocol suite</c> <c>TCP/UDP</c>
@@ -1157,8 +1197,8 @@ energy and critical infrastructure monitoring networks, such as IEEE802.15.4k.
 <t>The FAN security supports Data Link layer network access control, mutual
 authentication, and establishment of a secure pairwise link between a FAN node
 and its Border Router, which is implemented with an adaptation of IEEE802.1X
-and EAP-TLS as described in RFC5216 using secure device identity as described
-in IEEE802.1AR. Certificate formats are based upon RFC5280. A secure group link
+and EAP-TLS as described in <xref target="RFC5216"/> using secure device identity as described
+in IEEE802.1AR. Certificate formats are based upon <xref target="RFC5280"/>. A secure group link
 between a Border Router and a set of FAN nodes is established using an
 adaptation of the IEEE802.11 Four-Way Handshake. A set of 4 group keys are
 maintained within the network, one of which is the current transmit key. Secure
@@ -1183,9 +1223,10 @@ entities in a typical LPWAN network:</t>
 
 <t> <list style="symbols">
 
-<t>The Host, which are the devices or the things (e.g. sensors, actuators,
+<t>End-Devices are the devices or the "things" (e.g. sensors, actuators,
 etc.), they are named differently in each technology (End Device, User
-Equipment or End Point). There can be a high density of hosts per radio
+Equipment or End Point). There can be a high density of end devices
+per radio
 gateway.</t>
 
 <t>The Radio Gateway, which is the end point of the constrained link. It is
@@ -1243,9 +1284,7 @@ Gateway or Network Application.</t> </list> </t>
 	<t>In addition to the names of entities, LPWANs are also subject
 to possibly regional frequency band regulations. Those may include
 restrictions on the duty-cycle, for example requiring that hosts
-only transmit for a certain percentage of each hour. [[Ed: Are these
-duty-cycle percentages always per-hour? Could a host amortise it's
-transmits per day?]]</t>
+only transmit for a certain percentage of each hour.</t>
 
 	</section>
 
@@ -1448,8 +1487,7 @@ technologies where the star topology is used, such as BTLE or DECT-ULE. </t>
 
 <t>The main constraint in these networks comes from the nature of the devices
 (constrained devices), whereas in LPWANs it is the network itself that imposes
-the most stringent constraints. [[Ed: I'm not sure that conclusion follows from
-the information provided in this section - is more needed?.]]  </t>
+the most stringent constraints.</t>
 
 </section>
 
@@ -1517,8 +1555,7 @@ is between 3 and 4 bytes.
 of LPWANs: it does
 not take into account energy limitations nor the transmission rate, and
 RoHC context is synchronised during transmission, which does not allow better
-compression. [[Ed: this seems to conflict a bit with what was said about 6tisch
-which puzzled me.]]</t>
+compression.</t>
 
 </section>
 
@@ -1571,9 +1608,6 @@ and that they are not aware of this mobility.  </t>
 
 <section anchor="DNS" title="DNS and LPWAN">
 
-<t>[[Ed: the WG probably need to decide what to say about DNS,
-there's not much content here so far.]]</t>
-
 <t>The 
 Domain Name System (DNS) 
 DNS <xref target="RFC1035"/>,
@@ -1586,8 +1620,8 @@ The DNS query/answer protocol as a pre-cursor to other communication
 within the time-to-live (TTL) of a DNS answer is clearly problematic
 in an LPWAN, say where only one round-trip per hour can be used, and
 with a TTL that is less than 3600.
-It is currently unclear [[Ed: to me anyway:-)]] whether and how
-DNS-like functionality  might be provided in LPWANs.</t>
+It is currently unclear whether and how
+DNS-like functionality might be provided in LPWANs.</t>
 
 </section>
 
@@ -1790,6 +1824,7 @@ Science Foundation Ireland funded CONNECT centre
 <!--
    <?rfc include='reference.RFC.2119'?>
 -->
+   <?rfc include='reference.RFC.0768'?>
    <?rfc include='reference.RFC.1035'?>
    <?rfc include='reference.RFC.2460'?>
    <?rfc include='reference.RFC.2904'?>
@@ -1797,9 +1832,12 @@ Science Foundation Ireland funded CONNECT centre
    <?rfc include='reference.RFC.3315'?>
    <?rfc include='reference.RFC.3963'?>
    <?rfc include='reference.RFC.4301'?>
+   <?rfc include='reference.RFC.4443'?>
    <?rfc include='reference.RFC.4861'?>
    <?rfc include='reference.RFC.4944'?>
+   <?rfc include='reference.RFC.5216'?>
    <?rfc include='reference.RFC.5246'?>
+   <?rfc include='reference.RFC.5280'?>
    <?rfc include='reference.RFC.6282'?>
    <?rfc include='reference.RFC.6775'?>
    <?rfc include='reference.RFC.7252'?>
@@ -1975,6 +2013,73 @@ Science Foundation Ireland funded CONNECT centre
          </front>
       </reference>
 
+      <reference anchor="ANSI-4957-000" target="https://global.ihs.com/doc_detail.cfm?%26rid=TIA%26item_s_key=00606368">
+         <front>
+            <title>
+				Architecture Overview for the Smart Utility Network
+            </title>
+            <author>
+               <organization> ANSI, TIA-4957.000 </organization>
+            </author>
+            <date month="May" year="2013"/>
+         </front>
+      </reference>
+
+      <reference anchor="ANSI-4957-210" target="https://global.ihs.com/doc_detail.cfm?%26csf=TIA%26item_s_key=00601800">
+         <front>
+            <title>
+				Multi-Hop Delivery Specification of a Data Link Sub-Layer
+            </title>
+            <author>
+               <organization> ANSI, TIA-4957.210 </organization>
+            </author>
+            <date month="May" year="2013"/>
+         </front>
+      </reference>
+
+      <reference anchor="wisun-pressie1" target="http://indiasmartgrid.org/event2017/10-03-2017/4.%20Roundtable%20on%20Communication%20and%20Cyber%20Security/1.%20Phil%20Beecher.pdf">
+         <front>
+            <title>
+				Wi-SUN Alliance Overview
+            </title>
+            <author>
+               <organization>Phil Beecher, Chair, Wi-SUN Alliance</organization>
+            </author>
+            <date month="March" year="2017"/>
+         </front>
+      </reference>
+
+      <reference anchor="wisun-pressie2" target="https://www.ietf.org/proceedings/97/slides/slides-97-lpwan-35-wi-sun-presentation-00.pdf">
+         <front>
+            <title>
+				IETF97 Wi-SUN Alliance Field Area Network (FAN) Overview
+            </title>
+            <author>
+               <organization>Bob Heile, Director of Standards, Wi-SUN Alliance</organization>
+            </author>
+            <date month="November" year="2016"/>
+         </front>
+      </reference>
+
+    <reference anchor='IEEE-802-15-4' target="https://standards.ieee.org/findstds/standard/802.15.4-2015.html">
+      <front>
+        <title>IEEE Standard for Low-Rate Wireless Personal Area
+        Networks (WPANs)</title>
+	<author></author>
+        <date year='2015'/>
+      </front>
+      <seriesInfo name="IEEE" value="Standard 802.15.4" />
+    </reference>
+
+    <reference anchor='IEEE-802-15-9' target="https://standards.ieee.org/findstds/standard/802.15.9-2016.html">
+      <front>
+        <title>IEEE Recommended Practice for Transport of Key Management Protocol (KMP) Datagrams</title>
+	<author></author>
+        <date year='2016'/>
+      </front>
+      <seriesInfo name="IEEE" value="Standard 802.15.9" />
+    </reference>
+
 	</references>
 	<section title="Changes">
 
@@ -1990,7 +2095,12 @@ Science Foundation Ireland funded CONNECT centre
 	editorial notes from
 	-00 (in some cases as per suggestions from Ana Minaburo)</t>
 
-	<t>Merged PR's: #1...</t>
+	<t>Got new text wrt Wi-SUN via email from Paul Duffy and 
+	merged that in</t>
+
+	<t>Reflected list discussion wrt terminology and "end-device"</t>
+
+	<t>Merged PR's: #1, #3</t>
 
 	<t>Rejected PR's: #2 (change was made to .txt not .xml but was
 	replicated manually by editor)</t>
