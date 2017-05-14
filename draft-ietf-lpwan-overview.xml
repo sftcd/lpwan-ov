@@ -2095,12 +2095,7 @@ Science Foundation Ireland funded CONNECT centre
 	editorial notes from
 	-00 (in some cases as per suggestions from Ana Minaburo)</t>
 
-	<t>Got new text wrt Wi-SUN via email from Paul Duffy and 
-	merged that in</t>
-
-	<t>Reflected list discussion wrt terminology and "end-device"</t>
-
-	<t>Merged PR's: #1, #3</t>
+	<t>Merged PR's: #1...</t>
 
 	<t>Rejected PR's: #2 (change was made to .txt not .xml but was
 	replicated manually by editor)</t>
@@ -2110,6 +2105,23 @@ Science Foundation Ireland funded CONNECT centre
 	</list></t>
 
 
+	</section>
+
+	<section title="From -01 to -02">
+	<t><list style="symbols">
+
+	<t>WG seem to agree with editor suggestions in slides 13-24 of the presentation on this topic 
+    given at IETF98 (See: https://www.ietf.org/proceedings/98/slides/slides-98-lpwan-aggregated-slides-07.pdf)
+	</t>
+
+	<t>Got new text wrt Wi-SUN via email from Paul Duffy and 
+	merged that in</t>
+
+	<t>Reflected list discussion wrt terminology and "end-device"</t>
+
+	<t>Merged PR's: #3...</t>
+
+	</list></t>
 	</section>
 
 	</section>
