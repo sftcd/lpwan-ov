@@ -12,7 +12,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-02">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-03">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -2138,6 +2138,14 @@ Science Foundation Ireland funded CONNECT centre
 	<t>Reflected list discussion wrt terminology and "end-device"</t>
 
 	<t>Merged PR's: #3...</t>
+
+	</list></t>
+	</section>
+
+	<section title="From -01 to -02">
+	<t><list style="symbols">
+
+	<t>TBD</t>
 
 	</list></t>
 	</section>

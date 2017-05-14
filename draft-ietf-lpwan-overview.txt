@@ -9,7 +9,7 @@ Expires: November 15, 2017
 
 
                              LPWAN Overview
-                      draft-ietf-lpwan-overview-02
+                      draft-ietf-lpwan-overview-03
 
 Abstract
 
@@ -100,8 +100,8 @@ Table of Contents
    Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  38
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  38
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  39
+     A.3.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  39
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  39
-
 
 
 
@@ -2149,6 +2149,10 @@ A.2.  From -01 to -02
 
    o  Merged PR's: #3...
 
+A.3.  From -01 to -02
+
+   o  TBD
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2158,10 +2162,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
-
 
 
 
