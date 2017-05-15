@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                              May 14, 2017
-Expires: November 15, 2017
+Intended status: Informational                              May 15, 2017
+Expires: November 16, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 15, 2017.
+   This Internet-Draft will expire on November 16, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                 Expires November 15, 2017               [Page 1]
+Farrell                 Expires November 16, 2017               [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                 Expires November 15, 2017               [Page 2]
+Farrell                 Expires November 16, 2017               [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 3]
+Farrell                 Expires November 16, 2017               [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -221,7 +221,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 4]
+Farrell                 Expires November 16, 2017               [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -277,7 +277,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 5]
+Farrell                 Expires November 16, 2017               [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -333,7 +333,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 6]
+Farrell                 Expires November 16, 2017               [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 7]
+Farrell                 Expires November 16, 2017               [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 8]
+Farrell                 Expires November 16, 2017               [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017               [Page 9]
+Farrell                 Expires November 16, 2017               [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 10]
+Farrell                 Expires November 16, 2017              [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -584,8 +584,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 2.2.2.  Characteristics
 
-   [[Ed: Not clear what minimum/worst-case MTU might be.]]
-
    Specific targets for NB-IoT include: Less than US$5 module cost,
    extended coverage of 164 dB maximum coupling loss, battery life of
    over 10 years, ~55000 devices per cell and uplink reporting latency
@@ -609,17 +607,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
    meant to be used in licensed bands.  The maximum transmission power
    is either 20 or 23 dBm for uplink transmissions, while for downlink
+   transmission the eNodeB may use higher transmission power, up to 46
+   dBm depending on the deployment.
 
 
 
 
-Farrell                 Expires November 15, 2017              [Page 11]
+Farrell                 Expires November 16, 2017              [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
-
-   transmission the eNodeB may use higher transmission power, up to 46
-   dBm depending on the deployment.
 
    For signaling optimization, two options are introduced in addition to
    legacy RRC connection setup, mandatory Data-over-NAS (Control Plane
@@ -639,6 +636,11 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    With extended DRX the RRC Connected mode DRX cycle is up to 10.24
    seconds and in RRC Idle the DRX cycle can be up to 3 hours.
+
+   With NB-IoT, any size packet up to the said MTU size (1600 bytes) can
+   be passed to NB-IoT from higher layers, segmentation of the packet is
+   performed in the RLC layer, which can segment the data to
+   transmission blocks with size as small as 16 bits.
 
    NB-IoT has no channel access restrictions allowing up to a 100% duty-
    cycle.
@@ -663,16 +665,17 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Mobility Management Entity (MME) is responsible for handling the
    mobility of the UE.  MME tasks include tracking and paging UEs,
    session management, choosing the Serving gateway for the UE during
-   initial attachment and authenticating the user.  At MME, the Non
-   Access Stratum (NAS) signaling from the UE is terminated.
 
 
 
 
-Farrell                 Expires November 15, 2017              [Page 12]
+Farrell                 Expires November 16, 2017              [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   initial attachment and authenticating the user.  At MME, the Non
+   Access Stratum (NAS) signaling from the UE is terminated.
 
    Serving Gateway (S-GW) routes and forwards the user data packets
    through the access network and acts as a mobility anchor for UEs
@@ -720,16 +723,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    is responsible for authentication, security control, mobility
    management and bearer management.
 
-   Access Stratum (AS) is the functional layer below NAS, and in control
-   plane it consists of Radio Resource Control protocol (RRC)
 
 
-
-Farrell                 Expires November 15, 2017              [Page 13]
+Farrell                 Expires November 16, 2017              [Page 13]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+   Access Stratum (AS) is the functional layer below NAS, and in control
+   plane it consists of Radio Resource Control protocol (RRC)
    [TGPP36331], which handles connection establishment and release
    functions, broadcast of system information, radio bearer
    establishment, reconfiguration and release.  RRC configures the user
@@ -776,16 +778,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    User plane is responsible for transferring the user data through the
    Access Stratum.  It interfaces with IP and consists of PDCP, which in
-   user plane performs header compression using Robust Header
-   Compression (RoHC), transfer of user plane data between eNodeB and
 
 
 
-Farrell                 Expires November 15, 2017              [Page 14]
+Farrell                 Expires November 16, 2017              [Page 14]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+   user plane performs header compression using Robust Header
+   Compression (RoHC), transfer of user plane data between eNodeB and
    UE, ciphering and integrity protection.  Lower layers in user plane
    are similarly RLC, MAC and physical layer performing tasks mentioned
    above.
@@ -833,14 +835,14 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
       Spectrum allocation in Europe [etsi_ref]
 
-      Spectrum allocation in Japan [arib_ref]
 
 
-
-Farrell                 Expires November 15, 2017              [Page 15]
+Farrell                 Expires November 16, 2017              [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+      Spectrum allocation in Japan [arib_ref]
 
    The SIGFOX LTN radio interface is also compliant with the local
    regulations of the following countries: Australia, Brazil, Canada,
@@ -888,15 +890,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    The uplink frame is composed of the following fields:
 
-   o  Preamble: 19 bits
 
 
 
-
-Farrell                 Expires November 15, 2017              [Page 16]
+Farrell                 Expires November 16, 2017              [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   o  Preamble: 19 bits
 
    o  Frame sync and header: 29 bits
 
@@ -944,15 +946,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    o  Frame sync and header: 13 bits
 
-   o  Error Correcting Code (ECC): 32 bits
 
 
 
-
-Farrell                 Expires November 15, 2017              [Page 17]
+Farrell                 Expires November 16, 2017              [Page 17]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   o  Error Correcting Code (ECC): 32 bits
 
    o  Payload: 0-64 bits
 
@@ -1000,15 +1002,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
                        Figure 7: SIGFOX architecture
 
-   Figure 7 depicts the different elements of the SIGFOX architecture.
 
 
 
-
-Farrell                 Expires November 15, 2017              [Page 18]
+Farrell                 Expires November 16, 2017              [Page 18]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   Figure 7 depicts the different elements of the SIGFOX architecture.
 
    SIGFOX has a "one-contract one-network" model allowing devices to
    connect in any country, without any notion of roaming.
@@ -1059,9 +1061,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-
-
-Farrell                 Expires November 15, 2017              [Page 19]
+Farrell                 Expires November 16, 2017              [Page 19]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1117,7 +1117,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 20]
+Farrell                 Expires November 16, 2017              [Page 20]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1173,7 +1173,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 21]
+Farrell                 Expires November 16, 2017              [Page 21]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1229,7 +1229,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 22]
+Farrell                 Expires November 16, 2017              [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1285,7 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 23]
+Farrell                 Expires November 16, 2017              [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1341,7 +1341,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 24]
+Farrell                 Expires November 16, 2017              [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1397,7 +1397,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 25]
+Farrell                 Expires November 16, 2017              [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1453,7 +1453,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 26]
+Farrell                 Expires November 16, 2017              [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1509,7 +1509,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 27]
+Farrell                 Expires November 16, 2017              [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1565,7 +1565,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 28]
+Farrell                 Expires November 16, 2017              [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1621,7 +1621,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 29]
+Farrell                 Expires November 16, 2017              [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1677,7 +1677,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 30]
+Farrell                 Expires November 16, 2017              [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1733,7 +1733,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 31]
+Farrell                 Expires November 16, 2017              [Page 31]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1789,7 +1789,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 32]
+Farrell                 Expires November 16, 2017              [Page 32]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1845,7 +1845,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 33]
+Farrell                 Expires November 16, 2017              [Page 33]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1901,7 +1901,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 34]
+Farrell                 Expires November 16, 2017              [Page 34]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1957,7 +1957,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 35]
+Farrell                 Expires November 16, 2017              [Page 35]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2013,7 +2013,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 36]
+Farrell                 Expires November 16, 2017              [Page 36]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2069,7 +2069,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 15, 2017              [Page 37]
+Farrell                 Expires November 16, 2017              [Page 37]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2125,7 +2125,7 @@ A.1.  From -00 to -01
 
 
 
-Farrell                 Expires November 15, 2017              [Page 38]
+Farrell                 Expires November 16, 2017              [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2181,4 +2181,4 @@ Author's Address
 
 
 
-Farrell                 Expires November 15, 2017              [Page 39]
+Farrell                 Expires November 16, 2017              [Page 39]

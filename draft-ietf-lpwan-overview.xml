@@ -647,8 +647,6 @@ assumes familiarity with numerous 3GPP terms.</t>
 
 	  <section anchor="nbiot-chars" title="Characteristics">
 
-<t>[[Ed: Not clear what minimum/worst-case MTU might be.]]</t>
-
 <t>
 Specific targets for NB-IoT include: Less than US$5 module cost, extended
 coverage of 164 dB maximum coupling loss, battery life of over 10 years, ~55000
@@ -690,6 +688,11 @@ operation</t>
 
 <t>With extended DRX the RRC Connected mode DRX cycle is up to 10.24 seconds
 and in RRC Idle the DRX cycle can be up to 3 hours.</t>
+
+<t>With NB-IoT, any size packet up to the said MTU size (1600 bytes) can be
+passed to NB-IoT from higher layers, segmentation of the packet is performed in
+the RLC layer, which can segment the data to transmission blocks with size as
+small as 16 bits.</t> 
 
 <t>NB-IoT has no channel access restrictions allowing up to a 100% duty-cycle.</t>
 
