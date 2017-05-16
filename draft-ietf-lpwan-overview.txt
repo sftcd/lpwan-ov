@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                              May 15, 2017
-Expires: November 16, 2017
+Intended status: Informational                              May 16, 2017
+Expires: November 17, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 16, 2017.
+   This Internet-Draft will expire on November 17, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                 Expires November 16, 2017               [Page 1]
+Farrell                 Expires November 17, 2017               [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -95,7 +95,7 @@ Table of Contents
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  29
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  30
    7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  30
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  33
+   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  33
    9.  Informative References  . . . . . . . . . . . . . . . . . . .  33
    Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  38
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  38
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                 Expires November 16, 2017               [Page 2]
+Farrell                 Expires November 17, 2017               [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -137,12 +137,12 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    technologies aim for deployment in very similar circumstances.
 
    Existing pilot deployments have shown huge potential and created much
-   industrial interest in these technolgies.  As of today, essentially
+   industrial interest in these technologies.  As of today, essentially
    no LPWAN devices have IP capabilities.  Connecting LPWANs to the
    Internet would provide significant benefits to these networks in
    terms of interoperability, application deployment, and management,
    among others.  The goal of the LPWAN WG is to, where necessary, adapt
-   IETF defined protocols, addressing schemes and naming to this
+   IETF-defined protocols, addressing schemes and naming to this
    particular constrained environment.
 
    This document is largely the work of the people listed in Section 7.
@@ -155,7 +155,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    that are being considered in the LPWAN working group.  The text for
    each was mainly contributed by proponents of each technology.
 
-   Note that this text is not intended to be normative in any sesne, but
+   Note that this text is not intended to be normative in any sense, but
    simply to help the reader in finding the relevant layer 2
    specifications and in understanding how those integrate with IETF-
    defined technologies.  Similarly, there is no attempt here to set out
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 3]
+Farrell                 Expires November 17, 2017               [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -191,7 +191,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    network server via IP links while end-devices use single-hop LoRaWAN
    communication that can be received at one or more gateways.  All
    communication is generally bi-directional, although uplink
-   communication from end-devices to the network server are favoured in
+   communication from end-devices to the network server are favored in
    terms of overall bandwidth availability.
 
    Figure 1 shows the entities involved in a LoRaWAN network.
@@ -221,7 +221,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 4]
+Farrell                 Expires November 17, 2017               [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -231,7 +231,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       center of the star topology.
 
    o  Uplink message: refers to communications from end-device to
-      network server or appliction via one or more gateways.
+      network server or application via one or more gateways.
 
    o  Downlink message: refers to communications from network server or
       application via one gateway to a single end-device or a group of
@@ -277,7 +277,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 5]
+Farrell                 Expires November 17, 2017               [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -333,7 +333,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 6]
+Farrell                 Expires November 17, 2017               [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -363,11 +363,11 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    octets are required for LoRa MAC layer headers leaving only 11 octets
    for payload (including MAC layer options).  However, those settings
    do not apply for the join procedure - end-devices are required to use
-   a channel and data rate that can send the 23 byte Join-request
+   a channel and data rate that can send the 23-byte Join-request
    message for the join procedure.
 
    Uplink and downlink higher layer data is carried in a MACPayload.
-   There is a concept of "ports" (an optional 8 bit value) to handle
+   There is a concept of "ports" (an optional 8-bit value) to handle
    different applications on an end-device.  Port zero is reserved for
    LoRaWAN specific messaging, such as the configuration of device's
    network parameters (available channels, data rates, ADR parameters,
@@ -378,7 +378,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    And so-called "MAC commands" (see below) up to 15 bytes long can be
    piggybacked in an options field ("FOpts").
 
-   There are a number of MAC commands for: link and device status
+   There are a number of MAC commands for link and device status
    checking, ADR and duty-cycle negotiation, managing the RX windows and
    radio channel settings.  For example, the link check response message
    allows the network server (in response to a request from an end-
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 7]
+Farrell                 Expires November 17, 2017               [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -403,7 +403,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    a relative battery level is also sent to the network server).
 
    A LoRaWAN network has a short network identifier ("NwkID") which is a
-   seven bit value.  A private network (common for LoRaWAN) can use the
+   seven-bit value.  A private network (common for LoRaWAN) can use the
    value zero.  If a network wishes to support "foreign" end-devices
    then the NwkID needs to be registered with the LoRA Alliance, in
    which case the NwkID is the seven least significant bits of a
@@ -411,7 +411,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    "roaming" are defined in the upcoming LoRaWAN 1.1 specification.)
 
    In order to operate nominally on a LoRaWAN network, a device needs a
-   32-bit device address, which is the catentation of the NwkID and a
+   32-bit device address, which is the catenation of the NwkID and a
    25-bit device-specific network address that is assigned when the
    device "joins" the network (see below for the join procedure) or that
    is pre-provisioned into the device.
@@ -419,14 +419,14 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    End-devices are assumed to work with one or a quite limited number of
    applications, identified by a 64-bit AppEUI, which is assumed to be a
    registered IEEE EUI64 value.  In addition, a device needs to have two
-   symmetric session keys, one for protecting network artefacts
+   symmetric session keys, one for protecting network artifacts
    (port=0), the NwkSKey, and another for protecting application layer
-   traffic, the AppSKey.  Both keys are used for 128 bit AES
+   traffic, the AppSKey.  Both keys are used for 128-bit AES
    cryptographic operations.  So, one option is for an end-device to
    have all of the above, plus channel information, somehow
    (pre-)provisioned, in which case the end-device can simply start
    transmitting.  This is achievable in many cases via out-of-band means
-   given the nature of LoRaWAN networks.  Table 3 summarises these
+   given the nature of LoRaWAN networks.  Table 3 summarizes these
    values.
 
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 8]
+Farrell                 Expires November 17, 2017               [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -458,9 +458,9 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    |         |                                                         |
    | AppEUI  | IEEE EUI64 naming the application                       |
    |         |                                                         |
-   | NwkSKey | 128 bit network session key for use with AES            |
+   | NwkSKey | 128-bit network session key for use with AES            |
    |         |                                                         |
-   | AppSKey | 128 bit application session key for use with AES        |
+   | AppSKey | 128-bit application session key for use with AES        |
    +---------+---------------------------------------------------------+
 
               Table 3: Values required for nominal operation
@@ -475,7 +475,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    end-device should have a different AppKey value.  And finally, the
    end-device also needs a long-term identifier for itself,
    syntactically also an EUI-64, and known as the device EUI or DevEUI.
-   Table 4 summarises these values.
+   Table 4 summarizes these values.
 
      +---------+----------------------------------------------------+
      | Value   | Description                                        |
@@ -484,7 +484,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
      |         |                                                    |
      | AppEUI  | IEEE EUI64 naming the application                  |
      |         |                                                    |
-     | AppKey  | 128 bit long term application key for use with AES |
+     | AppKey  | 128-bit long term application key for use with AES |
      +---------+----------------------------------------------------+
 
                 Table 4: Values required for join procedure
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017               [Page 9]
+Farrell                 Expires November 17, 2017               [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -533,21 +533,21 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    procedure the Join-accept message payload is specially handled.
 
    The long-term AppKey is directly used to protect the Join-accept
-   message content, but the function used is not an aes-encrypt
-   operation, but rather an aes-decrypt operation.  The justification is
-   that this means that the end-device only needs to implement the aes-
+   message content, but the function used is not an AES-encrypt
+   operation, but rather an AES-decrypt operation.  The justification is
+   that this means that the end-device only needs to implement the AES-
    encrypt operation.  (The counter mode variant used for payload
-   decryption means the end-device doesn't need an aes-decrypt
+   decryption means the end-device doesn't need an AES-decrypt
    primitive.)
 
    The Join-accept plaintext is always less than 16 bytes long, so
    electronic code book (ECB) mode is used for protecting Join-accept
    messages.  The Join-accept contains an AppNonce (a 24 bit value) that
    is recovered on the end-device along with the other Join-accept
-   content (e.g.  DevAddr) using the aes-encrypt operation.  Once the
+   content (e.g.  DevAddr) using the AEs-encrypt operation.  Once the
    Join-accept payload is available to the end-device the session keys
    are derived from the AppKey, AppNonce and other values, again using
-   an ECB mode aes-encrypt operation, with the plaintext input being a
+   an ECB mode AES-encrypt operation, with the plaintext input being a
    maximum of 16 octets.
 
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 10]
+Farrell                 Expires November 17, 2017              [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -594,7 +594,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    of 1600 bytes.  As the name suggests, NB-IoT uses narrowbands with
    the bandwidth of 180 kHz in both, downlink and uplink.  The multiple
    access scheme used in the downlink is OFDMA with 15 kHz sub-carrier
-   spacing.  On uplink multi-tone SC-FDMA is used with 15 kHz tone
+   spacing.  On uplink, multi-tone SC-FDMA is used with 15 kHz tone
    spacing or as a special case of SC-FDMA single tone with either 15kHz
    or 3.75 kHz tone spacing may be used.
 
@@ -603,7 +603,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    band deployment the narrowband uses the unused resource blocks
    between two adjacent LTE carriers.  Also standalone deployment is
    supported, where the narrowband can be located alone in dedicated
-   spectrum, which makes it possible for example to refarm the GSM
+   spectrum, which makes it possible for example to reframe the GSM
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
    meant to be used in licensed bands.  The maximum transmission power
    is either 20 or 23 dBm for uplink transmissions, while for downlink
@@ -613,7 +613,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 11]
+Farrell                 Expires November 17, 2017              [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -669,7 +669,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 12]
+Farrell                 Expires November 17, 2017              [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -719,13 +719,13 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    which control the radio access bearers and the connection between the
    UE and the network.  The highest layer of control plane is called
    Non-Access Stratum (NAS), which conveys the radio signaling between
-   the UE and the EPC, passing transparently through radio network.  It
-   is responsible for authentication, security control, mobility
+   the UE and the EPC, passing transparently through the radio network.
+   It is responsible for authentication, security control, mobility
    management and bearer management.
 
 
 
-Farrell                 Expires November 16, 2017              [Page 13]
+Farrell                 Expires November 17, 2017              [Page 13]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -739,19 +739,19 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    RRC states, RRC_Idle or RRC_Connected, and RRC entity controls the
    switching between these states.  In RRC_Idle, the network knows that
    the UE is present in the network and the UE can be reached in case of
-   incoming call.  In this state the UE monitors paging, performs cell
+   incoming call.  In this state, the UE monitors paging, performs cell
    measurements and cell selection and acquires system information.
    Also the UE can receive broadcast and multicast data, but it is not
    expected to transmit or receive singlecast data.  In RRC_Connected
    the UE has a connection to the eNodeB, the network knows the UE
-   location on cell level and the UE may receive and transmit singlecast
-   data.  RRC_Connected mode is established, when the UE is expected to
-   be active in the network, to transmit or receive data.  Connection is
-   released, switching to RRC_Idle, when there is no traffic to save the
-   UE battery and radio resources.  However, a new feature was
-   introduced for NB-IoT, as mentioned earlier, which allows data to be
-   transmitted from the MME directly to the UE, while the UE is in
-   RRC_Idle transparently to the eNodeB.
+   location on the cell level and the UE may receive and transmit
+   singlecast data.  RRC_Connected mode is established, when the UE is
+   expected to be active in the network, to transmit or receive data.
+   Connection is released, switching to RRC_Idle, when there is no
+   traffic to save the UE battery and radio resources.  However, a new
+   feature was introduced for NB-IoT, as mentioned earlier, which allows
+   data to be transmitted from the MME directly to the UE, while the UE
+   is in RRC_Idle transparently to the eNodeB.
 
    Packet Data Convergence Protocol's (PDCP) [TGPP36323] main services
    in control plane are transfer of control plane data, ciphering and
@@ -759,7 +759,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    Radio Link Control protocol (RLC) [TGPP36322] performs transfer of
    upper layer PDUs and optionally error correction with Automatic
-   Repeat reQuest (ARQ), concatenation, segmentation and reassembly of
+   Repeat reQuest (ARQ), concatenation, segmentation, and reassembly of
    RLC SDUs, in-sequence delivery of upper layer PDUs, duplicate
    detection, RLC SDU discard, RLC-re-establishment and protocol error
    detection and recovery.
@@ -781,7 +781,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 14]
+Farrell                 Expires November 17, 2017              [Page 14]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -837,7 +837,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 15]
+Farrell                 Expires November 17, 2017              [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -893,7 +893,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 16]
+Farrell                 Expires November 17, 2017              [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -949,7 +949,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 17]
+Farrell                 Expires November 17, 2017              [Page 17]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1005,7 +1005,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 18]
+Farrell                 Expires November 17, 2017              [Page 18]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1061,7 +1061,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 19]
+Farrell                 Expires November 17, 2017              [Page 19]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1081,7 +1081,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Additionally, the Alliance has created a certification program to
    promote global multi-vendor interoperability.
 
-   The FAN profiile is currently being specified within ANSI/TIA as an
+   The FAN profile is currently being specified within ANSI/TIA as an
    extension of work previously done on Smart Utility Networks.
    [ANSI-4957-000].  Updates to those specifications intended to be
    published in 2017 will contain details of the FAN profile.  A current
@@ -1117,7 +1117,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 20]
+Farrell                 Expires November 17, 2017              [Page 20]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1141,8 +1141,8 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    The Network service is provided by IPv6 defined in RFC2460 with
    6LoWPAN adaptation as defined in RC4944 and RFC6282.  Additionally,
-   ICMPv6 as defined in RFC4443 is used for control plane in information
-   exchange.
+   ICMPv6, as defined in RFC4443, is used for control plane in
+   information exchange.
 
    The Data Link service provides both control/management of the
    Physical layer and data transfer/management services to the Network
@@ -1173,7 +1173,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 21]
+Farrell                 Expires November 17, 2017              [Page 21]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1229,7 +1229,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 22]
+Farrell                 Expires November 17, 2017              [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1285,7 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 23]
+Farrell                 Expires November 17, 2017              [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1341,7 +1341,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 24]
+Farrell                 Expires November 17, 2017              [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1375,7 +1375,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    cases].  However, the constraints of LPWANs, often more extreme than
    those typical of technologies that have (re)used 6LoWPAN, constitute
    a challenge for the 6LoWPAN suite in order to enable IPv6 over LPWAN.
-   LPWANs are characterised by device constraints (in terms of
+   LPWANs are characterized by device constraints (in terms of
    processing capacity, memory, and energy availability), and specially,
    link constraints, such as:
 
@@ -1397,7 +1397,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 25]
+Farrell                 Expires November 17, 2017              [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1417,7 +1417,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 4.2.2.  Address Autoconfiguration
 
    Traditionally, Interface Identifiers (IIDs) have been derived from
-   link layer identifiers [RFC4944] . This allows optimisations such as
+   link layer identifiers [RFC4944] . This allows optimizations such as
    header compression.  Nevertheless, recent guidance has given advice
    on the fact that, due to privacy concerns, 6LoWPAN devices should not
    be configured to embed their link layer addresses in the IID by
@@ -1453,7 +1453,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 26]
+Farrell                 Expires November 17, 2017              [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1509,7 +1509,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 27]
+Farrell                 Expires November 17, 2017              [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1537,8 +1537,8 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    level header size could be from 7 to 2 bytes.  The level of
    compression is managed by a sequence number, which varies in size
    from 2 bytes to 4 bits in the minimal compression.  SN compression is
-   done with an algorithm called W-LSB (Window- Least Signifiant Bits).
-   This window has a 4 bit size representing 15 packets, so every 15
+   done with an algorithm called W-LSB (Window- Least Significant Bits).
+   This window has a 4-bit size representing 15 packets, so every 15
    packets RoHC needs to slide the window in order to receive the
    correct sequence number, and sliding the window implies a reduction
    of the level of compression.  When packets are lost or errored, the
@@ -1565,7 +1565,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 28]
+Farrell                 Expires November 17, 2017              [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1578,8 +1578,8 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    and the potentially extremely limited throughput of LPWANs.
 
    For example, some of the timers in CoAP may need to be redefined.
-   Taking into account CoAP acknowledgements may allow the reduction of
-   L2 acknowledgements.  On the other hand, the current work in progress
+   Taking into account CoAP acknowledgments may allow the reduction of
+   L2 acknowledgments.  On the other hand, the current work in progress
    in the CoRE WG where the COMI/CoOL network management interface
    which, uses Structured Identifiers (SID) to reduce payload size over
    CoAP proves to be a good solution for the LPWAN technologies.  The
@@ -1604,7 +1604,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 4.9.  DNS and LPWAN
 
    The Domain Name System (DNS) DNS [RFC1035], enables applications to
-   name things with a globallly resolvable name.  Many protocols use the
+   name things with a globally resolvable name.  Many protocols use the
    DNS to identify hosts for example applications using CoAP.
 
    The DNS query/answer protocol as a pre-cursor to other communication
@@ -1621,12 +1621,12 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 29]
+Farrell                 Expires November 17, 2017              [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
-   standardized Authentication, Accounting and Authorization (AAA)
+   standardized Authentication, Accounting, and Authorization (AAA)
    infrastructure [RFC2904] may offer a scalable solution for some of
    the security and management issues for LPWANs.  AAA offers
    centralized management that may be of use in LPWANs, for example
@@ -1645,7 +1645,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    the existence of that traffic is visible to network entities, the
    more privacy sensitivities arise.  At this point, it is not clear
    whether there are workable mitigations for problems like this - in a
-   more typical network, one would cosider defining padding mechanisms
+   more typical network, one would consider defining padding mechanisms
    and allowing for cover traffic.  In some LPWANs, those mechanisms may
    not be feasible.  Nonetheless, the privacy challenges do exist and
    can be real and so some solutions will be needed.  Note that many
@@ -1672,12 +1672,12 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    developed by the full set of contributors listed below.  The main
    input documents and their authors were:
 
-   o  Text for Section 2.1 was provieded by Alper Yegin and Stephen
+   o  Text for Section 2.1 was provided by Alper Yegin and Stephen
       Farrell in [I-D.farrell-lpwan-lora-overview].
 
 
 
-Farrell                 Expires November 16, 2017              [Page 30]
+Farrell                 Expires November 17, 2017              [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1733,7 +1733,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 31]
+Farrell                 Expires November 17, 2017              [Page 31]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1789,7 +1789,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 32]
+Farrell                 Expires November 17, 2017              [Page 32]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1818,13 +1818,13 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       URI:   http://www.sigfox.com/
 
 
-8.  Acknowledgements
+8.  Acknowledgments
 
    Thanks to all those listed in Section 7 for the excellent text.
    Errors in the handling of that are solely the editor's fault.
 
    In addition to the contributors above, thanks are due to Jiazi Yi,
-   [your name here] for comments.
+   [[your name here]] for comments.
 
    Stephen Farrell's work on this memo was supported by the Science
    Foundation Ireland funded CONNECT centre <https://connectcentre.ie/>.
@@ -1845,7 +1845,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 33]
+Farrell                 Expires November 17, 2017              [Page 33]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1901,7 +1901,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 34]
+Farrell                 Expires November 17, 2017              [Page 34]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1957,7 +1957,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 35]
+Farrell                 Expires November 17, 2017              [Page 35]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2013,7 +2013,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 36]
+Farrell                 Expires November 17, 2017              [Page 36]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2069,7 +2069,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 16, 2017              [Page 37]
+Farrell                 Expires November 17, 2017              [Page 37]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2125,7 +2125,7 @@ A.1.  From -00 to -01
 
 
 
-Farrell                 Expires November 16, 2017              [Page 38]
+Farrell                 Expires November 17, 2017              [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2151,7 +2151,8 @@ A.2.  From -01 to -02
 
 A.3.  From -01 to -02
 
-   o  TBD
+   o  Editorial changes and type fixes thanks to Fred Baker running
+      something called Grammerly and sending me it's report.
 
 Author's Address
 
@@ -2180,5 +2181,4 @@ Author's Address
 
 
 
-
-Farrell                 Expires November 16, 2017              [Page 39]
+Farrell                 Expires November 17, 2017              [Page 39]
