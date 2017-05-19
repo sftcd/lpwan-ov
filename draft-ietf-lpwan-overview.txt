@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                              May 16, 2017
-Expires: November 17, 2017
+Intended status: Informational                              May 19, 2017
+Expires: November 20, 2017
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 17, 2017.
+   This Internet-Draft will expire on November 20, 2017.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                 Expires November 17, 2017               [Page 1]
+Farrell                 Expires November 20, 2017               [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -72,36 +72,36 @@ Table of Contents
        2.2.1.  Provenance and Documents  . . . . . . . . . . . . . .  11
        2.2.2.  Characteristics . . . . . . . . . . . . . . . . . . .  11
      2.3.  SIGFOX  . . . . . . . . . . . . . . . . . . . . . . . . .  15
-       2.3.1.  Provenance and Documents  . . . . . . . . . . . . . .  15
-       2.3.2.  Characteristics . . . . . . . . . . . . . . . . . . .  15
-     2.4.  Wi-SUN Alliance Field Area Network (FAN)  . . . . . . . .  19
+       2.3.1.  Provenance and Documents  . . . . . . . . . . . . . .  16
+       2.3.2.  Characteristics . . . . . . . . . . . . . . . . . . .  16
+     2.4.  Wi-SUN Alliance Field Area Network (FAN)  . . . . . . . .  20
        2.4.1.  Provenance and Documents  . . . . . . . . . . . . . .  20
-       2.4.2.  Characteristics . . . . . . . . . . . . . . . . . . .  20
-   3.  Generic Terminology . . . . . . . . . . . . . . . . . . . . .  23
-   4.  Gap Analysis  . . . . . . . . . . . . . . . . . . . . . . . .  24
-     4.1.  Naive application of IPv6 . . . . . . . . . . . . . . . .  24
-     4.2.  6LoWPAN . . . . . . . . . . . . . . . . . . . . . . . . .  25
-       4.2.1.  Header Compression  . . . . . . . . . . . . . . . . .  25
-       4.2.2.  Address Autoconfiguration . . . . . . . . . . . . . .  26
-       4.2.3.  Fragmentation . . . . . . . . . . . . . . . . . . . .  26
-       4.2.4.  Neighbor Discovery  . . . . . . . . . . . . . . . . .  27
-     4.3.  6lo . . . . . . . . . . . . . . . . . . . . . . . . . . .  27
-     4.4.  6tisch  . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     4.5.  RoHC  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     4.6.  ROLL  . . . . . . . . . . . . . . . . . . . . . . . . . .  28
-     4.7.  CoAP  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
-     4.8.  Mobility  . . . . . . . . . . . . . . . . . . . . . . . .  29
-     4.9.  DNS and LPWAN . . . . . . . . . . . . . . . . . . . . . .  29
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  29
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  30
-   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  30
-   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  33
-   9.  Informative References  . . . . . . . . . . . . . . . . . . .  33
-   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  38
-     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  38
-     A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  39
-     A.3.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  39
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  39
+       2.4.2.  Characteristics . . . . . . . . . . . . . . . . . . .  21
+   3.  Generic Terminology . . . . . . . . . . . . . . . . . . . . .  24
+   4.  Gap Analysis  . . . . . . . . . . . . . . . . . . . . . . . .  25
+     4.1.  Naive application of IPv6 . . . . . . . . . . . . . . . .  25
+     4.2.  6LoWPAN . . . . . . . . . . . . . . . . . . . . . . . . .  26
+       4.2.1.  Header Compression  . . . . . . . . . . . . . . . . .  26
+       4.2.2.  Address Autoconfiguration . . . . . . . . . . . . . .  27
+       4.2.3.  Fragmentation . . . . . . . . . . . . . . . . . . . .  27
+       4.2.4.  Neighbor Discovery  . . . . . . . . . . . . . . . . .  28
+     4.3.  6lo . . . . . . . . . . . . . . . . . . . . . . . . . . .  28
+     4.4.  6tisch  . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     4.5.  RoHC  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     4.6.  ROLL  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
+     4.7.  CoAP  . . . . . . . . . . . . . . . . . . . . . . . . . .  30
+     4.8.  Mobility  . . . . . . . . . . . . . . . . . . . . . . . .  30
+     4.9.  DNS and LPWAN . . . . . . . . . . . . . . . . . . . . . .  30
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  30
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  31
+   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  31
+   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  34
+   9.  Informative References  . . . . . . . . . . . . . . . . . . .  34
+   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  39
+     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  39
+     A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
+     A.3.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  40
 
 
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Farrell                 Expires November 17, 2017               [Page 2]
+Farrell                 Expires November 20, 2017               [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 3]
+Farrell                 Expires November 20, 2017               [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -221,7 +221,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 4]
+Farrell                 Expires November 20, 2017               [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -277,7 +277,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 5]
+Farrell                 Expires November 20, 2017               [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -333,7 +333,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 6]
+Farrell                 Expires November 20, 2017               [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 7]
+Farrell                 Expires November 20, 2017               [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 8]
+Farrell                 Expires November 20, 2017               [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017               [Page 9]
+Farrell                 Expires November 20, 2017               [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 10]
+Farrell                 Expires November 20, 2017              [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -571,14 +571,18 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    Narrowband Internet of Things (NB-IoT) is developed and standardized
    by 3GPP.  The standardization of NB-IoT was finalized with 3GPP
-   Release-13 in June 2016, but further enhancements for NB-IoT are
-   worked on in the following releases, for example in the form of
-   multicast support.  For more information of what has been specified
-   for NB-IoT, 3GPP specification 36.300 [TGPP36300] provides an
-   overview and overall description of the E-UTRAN radio interface
-   protocol architecture, while specifications 36.321 [TGPP36321],
-   36.322 [TGPP36322], 36.323 [TGPP36323] and 36.331 [TGPP36331] give
-   more detailed description of MAC, RLC, PDCP and RRC protocol layers
+   Release 13 in June 2016, and further enhancements for NB-IoT are
+   specified in 3GPP Release 14 in 2017, for example in the form of
+   multicast support.  Even further features and improvements are being
+   developed in the following releases.  Currently, NB-IoT is ready to
+   be deployed as of 2016, and is rather simple to deploy especially in
+   the existing LTE networks with a software upgrade in the operator's
+   base stations.  For more information of what has been specified for
+   NB-IoT, 3GPP specification 36.300 [TGPP36300] provides an overview
+   and overall description of the E-UTRAN radio interface protocol
+   architecture, while specifications 36.321 [TGPP36321], 36.322
+   [TGPP36322], 36.323 [TGPP36323] and 36.331 [TGPP36331] give more
+   detailed description of MAC, RLC, PDCP and RRC protocol layers,
    respectively.  Note that the description below assumes familiarity
    with numerous 3GPP terms.
 
@@ -590,60 +594,88 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    of less than 10 seconds.
 
    NB-IoT supports Half Duplex FDD operation mode with 60 kbps peak rate
-   in uplink and 30 kbps peak rate in downlink, and a maximum size MTU
-   of 1600 bytes.  As the name suggests, NB-IoT uses narrowbands with
-   the bandwidth of 180 kHz in both, downlink and uplink.  The multiple
+   in uplink and 30 kbps peak rate in downlink, and a maximum
+   transmission unit (MTU) size of 1600 bytes limited by PDCP layer (see
+   Figure 4 for the protocol structure), which is the highest layer in
+   the user plane, as explained later.  Any packet size up to the said
+   MTU size can be passed to the NB-IoT stack from higher layers,
+   segmentation of the packet is performed in the RLC layer, which can
+   segment the data to transmission blocks with size as small as 16
+   bits.  As the name suggests, NB-IoT uses narrowbands with the
+   bandwidth of 180 kHz in both downlink and uplink.  The multiple
    access scheme used in the downlink is OFDMA with 15 kHz sub-carrier
-   spacing.  On uplink, multi-tone SC-FDMA is used with 15 kHz tone
-   spacing or as a special case of SC-FDMA single tone with either 15kHz
-   or 3.75 kHz tone spacing may be used.
+   spacing.  In uplink SC-FDMA single tone with either 15kHz or 3.75 kHz
+   tone spacing is used, or optionally multi-tone SC- FDMA can be used
+   with 15 kHz tone spacing.
 
    NB-IoT can be deployed in three ways.  In-band deployment means that
-   the narrowband is multiplexed within normal LTE carrier.  In Guard-
-   band deployment the narrowband uses the unused resource blocks
-   between two adjacent LTE carriers.  Also standalone deployment is
-   supported, where the narrowband can be located alone in dedicated
-   spectrum, which makes it possible for example to reframe the GSM
-   carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
-   meant to be used in licensed bands.  The maximum transmission power
-   is either 20 or 23 dBm for uplink transmissions, while for downlink
-   transmission the eNodeB may use higher transmission power, up to 46
-   dBm depending on the deployment.
+   the narrowband is deployed inside the LTE band and radio resources
 
 
 
-
-Farrell                 Expires November 17, 2017              [Page 11]
+Farrell                 Expires November 20, 2017              [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+   are flexibly shared between NB-IoT and normal LTE carrier.  In Guard-
+   band deployment the narrowband uses the unused resource blocks
+   between two adjacent LTE carriers.  Also standalone deployment is
+   supported, where the narrowband can be located alone in dedicated
+   spectrum, which makes it possible for example to reframe a GSM
+   carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
+   used in licensed frequency bands.  The maximum transmission power is
+   either 20 or 23 dBm for uplink transmissions, while for downlink
+   transmission the eNodeB may use higher transmission power, up to 46
+   dBm depending on the deployment.
+
+   A maximum coupling loss (MCL) target for NB-IoT coverage enhancements
+   defined by 3GPP is 164 dB.  With this MCL, the performance of NB-IoT
+   in downlink varies between 200 bps and 2-3 kbps, depending on the
+   deployment mode.  Stand-alone operation may achieve the highest data
+   rates, up to few kbps, while in-band and guard-band operations may
+   reach several hundreds of bps.  NB-IoT may even operate with MCL
+   higher than 170 dB with very low bit rates.
+
    For signaling optimization, two options are introduced in addition to
-   legacy RRC connection setup, mandatory Data-over-NAS (Control Plane
-   optimization, solution 2 in [TGPP23720]) and optional RRC Suspend/
-   Resume (User Plane optimization, solution 18 in [TGPP23720]).  In the
-   control plane optimization the data is sent over Non Access Stratum,
-   directly from Mobility Management Entity (MME) in core network to the
-   UE without interaction from base station.  This means there are no
-   Access Stratum security or header compression, as the Access Stratum
-   is bypassed, and only limited RRC procedures.
+   legacy LTE RRC connection setup; mandatory Data-over-NAS (Control
+   Plane optimization, solution 2 in [TGPP23720]) and optional RRC
+   Suspend/Resume (User Plane optimization, solution 18 in [TGPP23720]).
+   In the control plane optimization the data is sent over Non-Access
+   Stratum, directly to/from Mobility Management Entity (MME) (see
+   Figure 3 for the network architecture) in the core network to the UE
+   without interaction from the base station.  This means there are no
+   Access Stratum security or header compression provided by the PDCP
+   layer in the eNodeB, as the Access Stratum is bypassed, and only
+   limited RRC procedures.  RoHC based header compression may still
+   optionally be provided and terminated in MME.
 
    The RRC Suspend/Resume procedures reduce the signaling overhead
-   required for UE state transition from Idle to Connected mode in order
-   to have a user plane transaction with the network and back to Idle
-   state by reducing the signaling messages required compared to legacy
-   operation
+   required for UE state transition from RRC Idle to RRC Connected mode
+   compared to legacy LTE operation in order to have quicker user plane
+   transaction with the network and return to RRC Idle mode faster.
 
-   With extended DRX the RRC Connected mode DRX cycle is up to 10.24
-   seconds and in RRC Idle the DRX cycle can be up to 3 hours.
+   In order to prolong device battery life, both power-saving mode (PSM)
+   and extended DRX (eDRX) are available to NB-IoT.  With eDRX the RRC
+   Connected mode DRX cycle is up to 10.24 seconds and in RRC Idle the
+   eDRX cycle can be up to 3 hours.  In PSM the device is in a deep
+   sleep state and only wakes up for uplink reporting, after which there
+   is a window, configured by the network, during which the device
+   receiver is open for downlink connectivity, of for periodical "keep-
+   alive" signaling (PSM uses periodic TAU signaling with additional
+   reception window for downlink reachability).
 
-   With NB-IoT, any size packet up to the said MTU size (1600 bytes) can
-   be passed to NB-IoT from higher layers, segmentation of the packet is
-   performed in the RLC layer, which can segment the data to
-   transmission blocks with size as small as 16 bits.
 
-   NB-IoT has no channel access restrictions allowing up to a 100% duty-
-   cycle.
+
+
+
+Farrell                 Expires November 20, 2017              [Page 12]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
+   Since NB-IoT operates in licensed spectrum, it has no channel access
+   restrictions allowing up to a 100% duty-cycle.
 
    3GPP access security is specified in [TGPP33203].
 
@@ -662,25 +694,17 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
                     Figure 3: 3GPP network architecture
 
-   Mobility Management Entity (MME) is responsible for handling the
-   mobility of the UE.  MME tasks include tracking and paging UEs,
+   Figure 3 shows the 3GPP network architecture, which applies to NB-
+   IoT.  Mobility Management Entity (MME) is responsible for handling
+   the mobility of the UE.  MME tasks include tracking and paging UEs,
    session management, choosing the Serving gateway for the UE during
-
-
-
-
-Farrell                 Expires November 17, 2017              [Page 12]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
-   initial attachment and authenticating the user.  At MME, the Non
+   initial attachment and authenticating the user.  At MME, the Non-
    Access Stratum (NAS) signaling from the UE is terminated.
 
    Serving Gateway (S-GW) routes and forwards the user data packets
    through the access network and acts as a mobility anchor for UEs
    during handover between base stations known as eNodeBs and also
-   during handovers between other 3GPP technologies.
+   during handovers between NB- IoT and other 3GPP technologies.
 
    Packet Data Node Gateway (P-GW) works as an interface between 3GPP
    network and external networks.
@@ -695,6 +719,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    The illustration of 3GPP radio protocol architecture can be seen from
    Figure 4.
+
+
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 13]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
    +---------+                                       +---------+
    | NAS     |----|-----------------------------|----| NAS     |
@@ -712,7 +746,9 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
                LTE-Uu                         S1-MME
        UE                     eNodeB                     MME
 
-                Figure 4: 3GPP radio protocol architecture
+       Figure 4: 3GPP radio protocol architecture for control plane
+
+   Control plane protocol stack
 
    The radio protocol architecture of NB-IoT (and LTE) is separated into
    control plane and user plane.  Control plane consists of protocols
@@ -723,13 +759,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    It is responsible for authentication, security control, mobility
    management and bearer management.
 
-
-
-Farrell                 Expires November 17, 2017              [Page 13]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
    Access Stratum (AS) is the functional layer below NAS, and in control
    plane it consists of Radio Resource Control protocol (RRC)
    [TGPP36331], which handles connection establishment and release
@@ -739,19 +768,28 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    RRC states, RRC_Idle or RRC_Connected, and RRC entity controls the
    switching between these states.  In RRC_Idle, the network knows that
    the UE is present in the network and the UE can be reached in case of
-   incoming call.  In this state, the UE monitors paging, performs cell
-   measurements and cell selection and acquires system information.
-   Also the UE can receive broadcast and multicast data, but it is not
-   expected to transmit or receive singlecast data.  In RRC_Connected
-   the UE has a connection to the eNodeB, the network knows the UE
-   location on the cell level and the UE may receive and transmit
-   singlecast data.  RRC_Connected mode is established, when the UE is
-   expected to be active in the network, to transmit or receive data.
-   Connection is released, switching to RRC_Idle, when there is no
-   traffic to save the UE battery and radio resources.  However, a new
-   feature was introduced for NB-IoT, as mentioned earlier, which allows
-   data to be transmitted from the MME directly to the UE, while the UE
-   is in RRC_Idle transparently to the eNodeB.
+   incoming call/downlink data.  In this state, the UE monitors paging,
+   performs cell measurements and cell selection and acquires system
+   information.  Also the UE can receive broadcast and multicast data,
+   but it is not expected to transmit or receive unicast data.  In
+   RRC_Connected the UE has a connection to the eNodeB, the network
+   knows the UE location on the cell level and the UE may receive and
+   transmit unicast data.  An RRC connection is established when the UE
+   is expected to be active in the network, to transmit or receive data.
+   The RRC connection is released, switching back to RRC_Idle, when
+   there is no more traffic in order to preserve UE battery life and
+
+
+
+Farrell                 Expires November 20, 2017              [Page 14]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
+   radio resources.  However, a new feature was introduced for NB-IoT,
+   as mentioned earlier, which allows data to be transmitted from the
+   MME directly to the UE transparently to the eNodeB, thus bypassing AS
+   functions.
 
    Packet Data Convergence Protocol's (PDCP) [TGPP36323] main services
    in control plane are transfer of control plane data, ciphering and
@@ -776,35 +814,33 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    modulation of physical channels, frequency and time synchronization
    and radio characteristics measurements.
 
+   User plane protocol stack
+
    User plane is responsible for transferring the user data through the
-   Access Stratum.  It interfaces with IP and consists of PDCP, which in
-
-
-
-Farrell                 Expires November 17, 2017              [Page 14]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
-   user plane performs header compression using Robust Header
-   Compression (RoHC), transfer of user plane data between eNodeB and
-   UE, ciphering and integrity protection.  Lower layers in user plane
-   are similarly RLC, MAC and physical layer performing tasks mentioned
-   above.
-
-   Under worst-case conditions, NB-IoT may achieve data rate of roughly
-   200 bps.  For downlink with 164 dB coupling loss, NB-IoT may achieve
-   higher data rates, depending on the deployment mode.  Stand-alone
-   operation may achieve the highest data rates, up to few kbps, while
-   in-band and guard-band operations may reach several hundreds of bps.
-   NB-IoT may even operate with higher maximum coupling loss than 170 dB
-   with very low bit rates.
+   Access Stratum.  It interfaces with IP and the highest layer of user
+   plane is PDCP, which in user plane performs header compression using
+   Robust Header Compression (RoHC), transfer of user plane data between
+   eNodeB and UE, ciphering and integrity protection.  Similar to
+   control plane, lower layers in user plane include RLC, MAC and
+   physical layer performing the same tasks as in control plane.
 
 2.3.  SIGFOX
 
    Text here is largely from
    [I-D.zuniga-lpwan-sigfox-system-description] which may have been
    updated since this was published.
+
+
+
+
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 15]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
 2.3.1.  Provenance and Documents
 
@@ -835,13 +871,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
       Spectrum allocation in Europe [etsi_ref]
 
-
-
-Farrell                 Expires November 17, 2017              [Page 15]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
       Spectrum allocation in Japan [arib_ref]
 
    The SIGFOX LTN radio interface is also compliant with the local
@@ -860,6 +889,14 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    downlink frames and time synchronization methods are needed.
 
    The main radio characteristics of the UNB uplink transmission are:
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 16]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
    o  Channelization mask: 100 Hz (600 Hz in the USA)
 
@@ -890,14 +927,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    The uplink frame is composed of the following fields:
 
-
-
-
-Farrell                 Expires November 17, 2017              [Page 16]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
    o  Preamble: 19 bits
 
    o  Frame sync and header: 29 bits
@@ -917,6 +946,13 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    o  Downlink baud rate: 600 baud
 
    o  Modulation scheme: GFSK
+
+
+
+Farrell                 Expires November 20, 2017              [Page 17]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
    o  Downlink transmission power: 500 mW (4W in the USA)
 
@@ -946,14 +982,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    o  Frame sync and header: 13 bits
 
-
-
-
-Farrell                 Expires November 17, 2017              [Page 17]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
    o  Error Correcting Code (ECC): 32 bits
 
    o  Payload: 0-64 bits
@@ -972,6 +1000,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    downlink message for a given device during the reception window.  The
    LTN selects the base station (BS) for transmitting the corresponding
    downlink message.
+
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 18]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
    Uplink and downlink transmissions are unbalanced due to the
    regulatory constraints on the ISM bands.  Under the strictest
@@ -1002,14 +1039,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
                        Figure 7: SIGFOX architecture
 
-
-
-
-Farrell                 Expires November 17, 2017              [Page 18]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
    Figure 7 depicts the different elements of the SIGFOX architecture.
 
    SIGFOX has a "one-contract one-network" model allowing devices to
@@ -1026,6 +1055,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    The radio access network is comprised of several BSs connected
    directly to the SC.  Each BS performs complex L1/L2 functions,
    leaving some L2 and L3 functionalities to the SC.
+
+
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 19]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
 
    The devices or End Points (EPs) are the objects that communicate
    application data between local device applications (DAs) and network
@@ -1056,16 +1095,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    editor thanks Paul Duffy (paduffy@cisco.com) for forwarding updated
    text from Bob and additional comments/input on this section.  ]]
 
-
-
-
-
-
-Farrell                 Expires November 17, 2017              [Page 19]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
 2.4.1.  Provenance and Documents
 
    The Wi-SUN Alliance <https://www.wi-sun.org/> is an industry alliance
@@ -1085,6 +1114,14 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    extension of work previously done on Smart Utility Networks.
    [ANSI-4957-000].  Updates to those specifications intended to be
    published in 2017 will contain details of the FAN profile.  A current
+
+
+
+Farrell                 Expires November 20, 2017              [Page 20]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
    snapshot of the work to produce that profile is presented in
    [wisun-pressie1] [wisun-pressie2] .
 
@@ -1113,15 +1150,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    network may contain a mesh topology with Routers at the edges that
    construct star topology with Leaf nodes.
 
-
-
-
-
-Farrell                 Expires November 17, 2017              [Page 20]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
    The FAN profile is based on various open standards developed by the
    IETF (including [RFC0768], [RFC2460], [RFC4443] and [RFC6282]),
    IEEE802 (including [IEEE-802-15-4] and [IEEE-802-15-9]) and ANSI/TIA
@@ -1141,6 +1169,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    The Network service is provided by IPv6 defined in RFC2460 with
    6LoWPAN adaptation as defined in RC4944 and RFC6282.  Additionally,
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 21]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
    ICMPv6, as defined in RFC4443, is used for control plane in
    information exchange.
 
@@ -1173,7 +1210,26 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 21]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                 Expires November 20, 2017              [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1229,7 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 22]
+Farrell                 Expires November 20, 2017              [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1285,7 +1341,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 23]
+Farrell                 Expires November 20, 2017              [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1301,15 +1357,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
  | Transceiver  |           |   Evolved  |    Base     |     RADIO     |
  |  Antenna     |  Gateway  |   Node B   |   Station   |    GATEWAY    |
  +--------------+-----------+------------+-------------+---------------+
- |  Server      |  Network  |  Serving-  |   Service   |Network Gateway|
- |              |  Server   |  Gateway   |   Center    |   (ROUTER)    |
+ |  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
+ |              |  Server   |    SCEF    |   Center    |   (ROUTER)    |
  +--------------+-----------+------------+-------------+---------------+
  |   Security   |    Join   |   Home     |Registration |               |
  |    Server    |   Server  | Subscriber | Authority   |      AAA      |
  |              |           |  Server    |             |    SERVER     |
  +--------------+-----------+------------+-------------+---------------+
- | Application  |Application| Packet Data|  Network    |  APPLICATION  |
- |              |   Server  |Node Gateway| Application |    SERVER     |
+ | Application  |Application| Application|  Network    |  APPLICATION  |
+ |              |   Server  |   Server   | Application |    SERVER     |
  +---------------------------------------------------------------------+
 
                  Figure 8: LPWAN Architecture Terminology
@@ -1341,7 +1397,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 24]
+Farrell                 Expires November 20, 2017              [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1397,7 +1453,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 25]
+Farrell                 Expires November 20, 2017              [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1453,7 +1509,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 26]
+Farrell                 Expires November 20, 2017              [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1509,7 +1565,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 27]
+Farrell                 Expires November 20, 2017              [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1565,7 +1621,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 28]
+Farrell                 Expires November 20, 2017              [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1621,7 +1677,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 29]
+Farrell                 Expires November 20, 2017              [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1677,7 +1733,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 30]
+Farrell                 Expires November 20, 2017              [Page 31]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1733,7 +1789,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 31]
+Farrell                 Expires November 20, 2017              [Page 32]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1789,7 +1845,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 32]
+Farrell                 Expires November 20, 2017              [Page 33]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1845,7 +1901,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 33]
+Farrell                 Expires November 20, 2017              [Page 34]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1901,7 +1957,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 34]
+Farrell                 Expires November 20, 2017              [Page 35]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -1957,7 +2013,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 35]
+Farrell                 Expires November 20, 2017              [Page 36]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2013,7 +2069,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 36]
+Farrell                 Expires November 20, 2017              [Page 37]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2069,7 +2125,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
 
-Farrell                 Expires November 17, 2017              [Page 37]
+Farrell                 Expires November 20, 2017              [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2125,7 +2181,7 @@ A.1.  From -00 to -01
 
 
 
-Farrell                 Expires November 17, 2017              [Page 38]
+Farrell                 Expires November 20, 2017              [Page 39]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
@@ -2154,6 +2210,8 @@ A.3.  From -01 to -02
    o  Editorial changes and type fixes thanks to Fred Baker running
       something called Grammerly and sending me it's report.
 
+   o  Merged PR's: #4...
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2179,6 +2237,4 @@ Author's Address
 
 
 
-
-
-Farrell                 Expires November 17, 2017              [Page 39]
+Farrell                 Expires November 20, 2017              [Page 40]
