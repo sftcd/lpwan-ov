@@ -100,7 +100,7 @@ Table of Contents
    Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  39
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  39
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
-     A.3.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
+     A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  40
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  40
 
 
@@ -2205,9 +2205,9 @@ A.2.  From -01 to -02
 
    o  Merged PR's: #3...
 
-A.3.  From -01 to -02
+A.3.  From -02 to -03
 
-   o  Editorial changes and type fixes thanks to Fred Baker running
+   o  Editorial changes and typo fixes thanks to Fred Baker running
       something called Grammerly and sending me it's report.
 
    o  Merged PR's: #4...
