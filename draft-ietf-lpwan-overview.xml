@@ -632,16 +632,15 @@ which may have been updated since this was published.</t>
 
 
 	  <t>Narrowband Internet of Things (NB-IoT) is developed and standardized
-by 3GPP.  The standardization of NB-IoT was finalized with 3GPP Release-13 in
-June 2016, but further enhancements for NB-IoT are worked on in the following
-releases, for example in the form of multicast support. For more information of
+by 3GPP.  The standardization of NB-IoT was finalized with 3GPP Release 13 in
+June 2016, and further enhancements for NB-IoT are specified in 3GPP Release 14 in 2017, for example in the form of multicast support. Even further features and improvements are being developed in the following releases. Currently, NB-IoT is ready to be deployed as of 2016, and is rather simple to deploy especially in the existing LTE networks with a software upgrade in the operator’s base stations. For more information of
 what has been specified for NB-IoT, 3GPP specification 36.300 <xref
 target="TGPP36300"></xref> provides an overview and overall description of the
 E-UTRAN radio interface protocol architecture, while specifications 36.321
 <xref target="TGPP36321"></xref>, 36.322 <xref target="TGPP36322"></xref>,
 36.323 <xref target="TGPP36323"></xref> and 36.331 <xref
 target="TGPP36331"></xref> give  more detailed description of MAC, RLC, PDCP
-and RRC protocol layers respectively. Note that the description below
+and RRC protocol layers, respectively. Note that the description below
 assumes familiarity with numerous 3GPP terms.</t> 
 
 	  </section>
@@ -654,48 +653,44 @@ coverage of 164 dB maximum coupling loss, battery life of over 10 years, ~55000
 devices per cell and uplink reporting latency of less than 10 seconds.</t>
 
 <t>NB-IoT supports Half Duplex FDD operation mode with 60 kbps peak rate in
-uplink and 30 kbps peak rate in downlink, and a maximum size MTU of 1600 bytes. 
+uplink and 30 kbps peak rate in downlink, and a maximum transmission unit (MTU) size of 1600 bytes limited by PDCP layer (see Figure 4 for the protocol structure), which is the highest layer in the user plane, as explained later.  Any packet size up to the said MTU size can be passed to the NB-IoT stack from higher layers, segmentation of the packet is performed in the RLC layer, which can segment the data to transmission blocks with size as small as 16 bits.
 As the name suggests, NB-IoT uses narrowbands with
-the bandwidth of 180 kHz in both, downlink and uplink. The multiple access
-scheme used in the downlink is OFDMA with 15 kHz sub-carrier spacing. On uplink,
-multi-tone SC-FDMA is used with 15 kHz tone spacing or as a special case of
-SC-FDMA single tone with either 15kHz or 3.75 kHz tone spacing may be used.
+the bandwidth of 180 kHz in both downlink and uplink. The multiple access
+scheme used in the downlink is OFDMA with 15 kHz sub-carrier spacing. In uplink SC-FDMA single tone with either 15kHz
+   or 3.75 kHz tone spacing is used, or optionally multi-tone SC-FDMA can be used with 15 kHz tone spacing.
 </t>
 
 <t>NB-IoT can be deployed in three ways. In-band deployment means that the
-narrowband is multiplexed within normal LTE carrier. In Guard-band deployment
+narrowband is deployed inside the LTE band and radio resources are flexibly shared between NB-IoT and normal LTE carrier. In Guard-band deployment
 the narrowband uses the unused resource blocks between two adjacent LTE
 carriers. Also standalone deployment is supported, where the narrowband can be
 located alone in dedicated spectrum, which makes it possible for example to
-reframe the GSM carrier at 850/900 MHz for NB-IoT. All three deployment modes
-are meant to be used in licensed bands. The maximum transmission power is
+reframe a GSM carrier at 850/900 MHz for NB-IoT. All three deployment modes
+are used in licensed frequency bands. The maximum transmission power is
 either 20 or 23 dBm for uplink transmissions, while for downlink transmission
 the eNodeB may use higher transmission power, up to 46 dBm depending on the
 deployment.</t>
 
-<t>For signaling optimization, two options are introduced in addition to legacy
-RRC connection setup, mandatory Data-over-NAS (Control Plane optimization,
+<t>A maximum coupling loss (MCL) target for NB-IoT coverage enhancements defined by 3GPP is 164 dB. With this MCL, the performance of NB-IoT in downlink varies between 200 bps and 2-3 kbps, depending on the deployment mode. Stand-alone operation may achieve the
+highest data rates, up to few kbps, while in-band and guard-band operations may
+reach several hundreds of bps. NB-IoT may even operate with MCL higher than 170 dB with very low bit rates.</t>
+
+<t>For signaling optimization, two options are introduced in addition to legacy LTE
+RRC connection setup; mandatory Data-over-NAS (Control Plane optimization,
 solution 2 in <xref target="TGPP23720"></xref>) and optional RRC Suspend/Resume
 (User Plane optimization, solution 18 in <xref target="TGPP23720"></xref>). In
-the control plane optimization the data is sent over Non Access Stratum,
-directly from Mobility Management Entity (MME) in core network to the UE
-without interaction from base station. This means there are no Access Stratum
-security or header compression, as the Access Stratum is bypassed, and only
-limited RRC procedures.</t> <t>The RRC Suspend/Resume procedures reduce the
-signaling overhead required for UE state transition from Idle to Connected mode
-in order to have a user plane transaction with the network and back to Idle
-state by reducing the signaling messages required compared to legacy
-operation</t>
+the control plane optimization the data is sent over Non-Access Stratum,
+directly to/from Mobility Management Entity (MME) (see Figure 3 for the network architecture) in the core network to the UE
+without interaction from the base station. This means there are no Access Stratum
+security or header compression provided by the PDCP layer in the eNodeB, as the Access Stratum is bypassed, and only
+limited RRC procedures. RoHC based header compression may still optionally be provided and terminated in MME.</t> <t>The RRC Suspend/Resume procedures reduce the
+signaling overhead required for UE state transition from RRC Idle to RRC Connected mode compared to legacy LTE operation
+in order to have quicker user plane transaction with the network and return to RRC Idle mode faster.</t>
 
-<t>With extended DRX the RRC Connected mode DRX cycle is up to 10.24 seconds
-and in RRC Idle the DRX cycle can be up to 3 hours.</t>
+<t>In order to prolong device battery life, both power-saving mode (PSM) and extended DRX (eDRX) are available to NB-IoT. With eDRX the RRC Connected mode DRX cycle is up to 10.24 seconds
+and in RRC Idle the eDRX cycle can be up to 3 hours. In PSM the device is in a deep sleep state and only wakes up for uplink reporting, after which there is a window, configured by the network, during which the device receiver is open for downlink connectivity, of for periodical “keep-alive” signaling (PSM uses periodic TAU signaling with additional reception window for downlink reachability).</t>
 
-<t>With NB-IoT, any size packet up to the said MTU size (1600 bytes) can be
-passed to NB-IoT from higher layers, segmentation of the packet is performed in
-the RLC layer, which can segment the data to transmission blocks with size as
-small as 16 bits.</t> 
-
-<t>NB-IoT has no channel access restrictions allowing up to a 100% duty-cycle.</t>
+<t>Since NB-IoT operates in licensed spectrum, it has no channel access restrictions allowing up to a 100% duty-cycle.</t>
 
 <t>3GPP access security is specified in <xref target="TGPP33203"></xref>.</t>
 
@@ -716,15 +711,15 @@ small as 16 bits.</t>
            ]]></artwork>
      </figure>
 
-  <t>Mobility Management Entity (MME) is responsible for handling the mobility
+  <t>Figure 3 shows the 3GPP network architecture, which applies to NB-IoT. Mobility Management Entity (MME) is responsible for handling the mobility
 of the UE. MME tasks include tracking and paging UEs, session management,
 choosing the Serving gateway for the UE during initial attachment and
-authenticating the user. At MME, the Non Access Stratum (NAS) signaling from
+authenticating the user. At MME, the Non-Access Stratum (NAS) signaling from
 the UE is terminated.</t>
 
   <t>Serving Gateway (S-GW) routes and forwards the user data packets through
 the access network and acts as a mobility anchor for UEs during handover
-between base stations known as eNodeBs and also during handovers between other
+between base stations known as eNodeBs and also during handovers between NB-IoT and other
 3GPP technologies.</t>
 
   <t>Packet Data Node Gateway (P-GW) works as an interface between 3GPP network
@@ -741,7 +736,7 @@ station, which controls the UEs in one or several cells.</t>
   <t>The illustration of 3GPP radio protocol architecture can be seen from <xref target="nbiot-stack"></xref>.</t>
 
 
-    <figure align="center" anchor="nbiot-stack" title="3GPP radio protocol architecture">
+    <figure align="center" anchor="nbiot-stack" title="3GPP radio protocol architecture for control plane">
        <artwork align="left"><![CDATA[
 +---------+                                       +---------+
 | NAS     |----|-----------------------------|----| NAS     |
@@ -761,6 +756,7 @@ station, which controls the UEs in one or several cells.</t>
            ]]></artwork>
      </figure>
 
+  <t>Control plane protocol stack</t>
   <t>The radio protocol architecture of NB-IoT (and LTE) is separated into
 control plane and user plane. Control plane consists of protocols which control
 the radio access bearers and the connection between the UE and the network. The
@@ -777,18 +773,17 @@ reconfiguration and release. RRC configures the user and control planes
 according to the network status. There exists two RRC states, RRC_Idle or
 RRC_Connected, and RRC entity controls the switching between these states. In
 RRC_Idle, the network knows that the UE is present in the network and the UE
-can be reached in case of incoming call. In this state, the UE monitors paging,
+can be reached in case of incoming call/downlink data. In this state, the UE monitors paging,
 performs cell measurements and cell selection and acquires system information.
 Also the UE can receive broadcast and multicast data, but it is not expected to
-transmit or receive singlecast data. In RRC_Connected the UE has a connection
+transmit or receive unicast data. In RRC_Connected the UE has a connection
 to the eNodeB, the network knows the UE location on the cell level and the UE
-may receive and transmit singlecast data. RRC_Connected mode is established,
+may receive and transmit unicast data. An RRC connection is established
 when the UE is expected to be active in the network, to transmit or receive
-data.  Connection is released, switching to RRC_Idle, when there is no traffic
-to save the UE battery and radio resources. However, a new feature was
+data.  The RRC connection is released, switching back to RRC_Idle, when there is no more traffic in order
+to preserve UE battery life and radio resources. However, a new feature was
 introduced for NB-IoT, as mentioned earlier, which allows data to be
-transmitted from the MME directly to the UE, while the UE is in RRC_Idle
-transparently to the eNodeB.</t>
+transmitted from the MME directly to the UE transparently to the eNodeB, thus bypassing AS functions.</t>
 
   <t>Packet Data Convergence Protocol's (PDCP) <xref target="TGPP36323"></xref>
 main services in control plane are transfer of control plane data, ciphering
@@ -813,19 +808,13 @@ the transport channels onto physical channels, power weighting and modulation
 of physical channels, frequency and time synchronization and radio
 characteristics measurements.</t>
 
+<t>User plane protocol stack</t>
   <t>User plane is responsible for transferring the user data through the
-Access Stratum. It interfaces with IP and consists of PDCP, which in user plane
+Access Stratum. It interfaces with IP and the highest layer of user plane is PDCP, which in user plane
 performs header compression using Robust Header Compression (RoHC), transfer of
 user plane data between eNodeB and UE, ciphering and integrity protection.
-Lower layers in user plane are similarly RLC, MAC and physical layer performing
-tasks mentioned above.</t>
-
-<t>Under worst-case conditions, NB-IoT may achieve data rate of roughly 200
-bps.  For downlink with 164 dB coupling loss, NB-IoT may achieve higher data
-rates, depending on the deployment mode. Stand-alone operation may achieve the
-highest data rates, up to few kbps, while in-band and guard-band operations may
-reach several hundreds of bps. NB-IoT may even operate with higher maximum
-coupling loss than 170 dB with very low bit rates.</t>
+Similar to control plane, lower layers in user plane include RLC, MAC and physical layer performing
+the same tasks as in control plane.</t>
 
 	  </section>
 
@@ -1260,15 +1249,15 @@ Gateway or Network Application.</t> </list> </t>
 | Transceiver  |           |   Evolved  |    Base     |     RADIO     |
 |  Antenna     |  Gateway  |   Node B   |   Station   |    GATEWAY    |
 +--------------+-----------+------------+-------------+---------------+
-|  Server      |  Network  |  Serving-  |   Service   |Network Gateway|
-|              |  Server   |  Gateway   |   Center    |   (ROUTER)    |
+|  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
+|              |  Server   |    SCEF    |   Center    |   (ROUTER)    |
 +--------------+-----------+------------+-------------+---------------+
 |   Security   |    Join   |   Home     |Registration |               |
 |    Server    |   Server  | Subscriber | Authority   |      AAA      |
 |              |           |  Server    |             |    SERVER     | 
 +--------------+-----------+------------+-------------+---------------+
-| Application  |Application| Packet Data|  Network    |  APPLICATION  |
-|              |   Server  |Node Gateway| Application |    SERVER     |
+| Application  |Application| Application|  Network    |  APPLICATION  |
+|              |   Server  |   Server   | Application |    SERVER     |
 +---------------------------------------------------------------------+
 ]]></artwork>
 </figure>
