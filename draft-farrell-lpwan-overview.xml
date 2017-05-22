@@ -686,14 +686,14 @@ RRC connection setup, mandatory Data-over-NAS (Control Plane optimization,
 solution 2 in <xref target="TGPP23720"></xref>) and optional RRC Suspend/Resume
 (User Plane optimization, solution 18 in <xref target="TGPP23720"></xref>). In
 the control plane optimization the data is sent over Non Access Stratum,
-directly from Mobility Management Entity (MME) in core network to the UE
-without interaction from base station. This means there are no Access Stratum
-security or header compression, as the Access Stratum is bypassed, and only
-limited RRC procedures.</t> <t>The RRC Suspend/Resume procedures reduce the
-signaling overhead required for UE state transition from Idle to Connected mode
-in order to have a user plane transaction with the network and back to Idle
-state by reducing the signaling messages required compared to legacy
-operation</t>
+directly from Mobility Management Entity (MME) in core network to the
+User Equiqment (UE) without interaction from base station. This means
+there are no Access Stratum security or header compression, as the Access Stratum
+is bypassed, and only limited RRC procedures.</t> <t>The RRC Suspend/Resume
+procedures reduce the signaling overhead required for UE state transition
+from Idle to Connected mode in order to have a user plane transaction with
+the network and back to Idle state by reducing the signaling messages required
+compared to legacy operation</t>
 
 <t>With extended DRX the RRC Connected mode DRX cycle is up to 10.24 seconds
 and in RRC Idle the DRX cycle can be up to 3 hours.</t>
