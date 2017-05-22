@@ -643,12 +643,12 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Suspend/Resume (User Plane optimization, solution 18 in [TGPP23720]).
    In the control plane optimization the data is sent over Non-Access
    Stratum, directly to/from Mobility Management Entity (MME) (see
-   Figure 3 for the network architecture) in the core network to the UE
-   without interaction from the base station.  This means there are no
-   Access Stratum security or header compression provided by the PDCP
-   layer in the eNodeB, as the Access Stratum is bypassed, and only
-   limited RRC procedures.  RoHC based header compression may still
-   optionally be provided and terminated in MME.
+   Figure 3 for the network architecture) in the core network to the
+   User Equiqment (UE) without interaction from the base station.
+   This means there are no Access Stratum security or header compression
+   provided by the PDCP layer in the eNodeB, as the Access Stratum is
+   bypassed, and only limited RRC procedures.  RoHC based header compression
+   may still optionally be provided and terminated in MME.
 
    The RRC Suspend/Resume procedures reduce the signaling overhead
    required for UE state transition from RRC Idle to RRC Connected mode
