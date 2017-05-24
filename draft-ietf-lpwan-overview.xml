@@ -1271,21 +1271,21 @@ Gateway or Network Application.</t> </list> </t>
 | Technology   |  LORAWAN  |    NB-IOT  |   SIGFOX    |      IETF     |
 +--------------+-----------+------------+-------------+---------------+
 |    Sensor,   |           |            |             |               |
-|  Actuator,   |     End   |     User   |     End     |     Thing     |
-|device, object|   Device  | Equipment  |    Point    |     (HOST)    |
+|  Actuator,   |     End   |     User   |     End     |     Device    |
+|device, object|   Device  | Equipment  |    Point    |     (Dev)     |
 +--------------+-----------+------------+-------------+---------------+
 | Transceiver  |           |   Evolved  |    Base     |     RADIO     |
 |  Antenna     |  Gateway  |   Node B   |   Station   |    GATEWAY    |
 +--------------+-----------+------------+-------------+---------------+
 |  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
-|              |  Server   |    SCEF    |   Center    |   (ROUTER)    |
+|              |  Server   |    SCEF    |   Center    |     (NGW)     |
 +--------------+-----------+------------+-------------+---------------+
 |   Security   |    Join   |   Home     |Registration |               |
 |    Server    |   Server  | Subscriber | Authority   |      AAA      |
 |              |           |  Server    |             |    SERVER     | 
 +--------------+-----------+------------+-------------+---------------+
 | Application  |Application| Application|  Network    |  APPLICATION  |
-|              |   Server  |   Server   | Application |    SERVER     |
+|              |   Server  |   Server   | Application |      (App)    |
 +---------------------------------------------------------------------+
 ]]></artwork>
 </figure>
@@ -1295,10 +1295,10 @@ Gateway or Network Application.</t> </list> </t>
  ()    ()   ()         |                         +------+
    ()  () () ()       / \         +---------+    | AAA  |
 () () () () () ()    /   \========|    /\   |====|Server|  +-----------+
- ()  ()   ()        |             | <--|--> |    +------+  |Application|
-()  ()  ()  ()     / \============|    v    |==============|   Server  |
+ ()  ()   ()        |             | <--|--> |    +------+  |APPLICATION|
+()  ()  ()  ()     / \============|    v    |==============|    (App)  |
   ()  ()  ()      /   \           +---------+              +-----------+
- HOSTS         Radio Gateways   Network Gateway
+ Dev         Radio Gateways           NGW
 ]]></artwork>
 </figure>
 
