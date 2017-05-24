@@ -1257,9 +1257,9 @@ known as: Gateway, Evolved Node B or Base station.</t>
 Gateway and the Internet. It is known as: Network Server, Serving GW or Service
 Center.</t>
 
-<t>AAA Server, which controls the user authentication, the applications. It is
+<t>LPWAN-AAA Server, which controls the user authentication, the applications. It is
 known as: Join-Server, Home Subscriber Server or Registration Authority.  [[Ed:
-I'm not clear that AAA server is the right generic term here.]]</t>
+I'm not clear that LPWAN-AAA server is the right generic term here.]]</t>
 
 <t>At last we have the Application Server, known also as Packet Data Node
 Gateway or Network Application.</t> </list> </t>
@@ -1280,7 +1280,7 @@ Gateway or Network Application.</t> </list> </t>
 |  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
 |              |  Server   |    SCEF    |   Center    |     (NGW)     |
 +--------------+-----------+------------+-------------+---------------+
-|   Security   |    Join   |   Home     |Registration |               |
+|   Security   |    Join   |   Home     |Registration |    LPWAN-     |
 |    Server    |   Server  | Subscriber | Authority   |      AAA      |
 |              |           |  Server    |             |    SERVER     | 
 +--------------+-----------+------------+-------------+---------------+
@@ -1292,7 +1292,8 @@ Gateway or Network Application.</t> </list> </t>
 
 <figure anchor="term-arch" title="LPWAN Architecture">
 <artwork align="left"><![CDATA[
- ()    ()   ()         |                         +------+
+                                                 +------+
+ ()    ()   ()         |                         |LPWAN-|
    ()  () () ()       / \         +---------+    | AAA  |
 () () () () () ()    /   \========|    /\   |====|Server|  +-----------+
  ()  ()   ()        |             | <--|--> |    +------+  |APPLICATION|

@@ -92,13 +92,13 @@ Table of Contents
      4.7.  CoAP  . . . . . . . . . . . . . . . . . . . . . . . . . .  30
      4.8.  Mobility  . . . . . . . . . . . . . . . . . . . . . . . .  30
      4.9.  DNS and LPWAN . . . . . . . . . . . . . . . . . . . . . .  30
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  30
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  31
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  31
-   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  31
+   7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  32
    8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  34
    9.  Informative References  . . . . . . . . . . . . . . . . . . .  34
-   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  39
-     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  39
+   Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  40
+     A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  40
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
      A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  40
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  40
@@ -1314,10 +1314,10 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       the Radio Gateway and the Internet.  It is known as: Network
       Server, Serving GW or Service Center.
 
-   o  AAA Server, which controls the user authentication, the
+   o  LPWAN-AAA Server, which controls the user authentication, the
       applications.  It is known as: Join-Server, Home Subscriber Server
-      or Registration Authority.  [[Ed: I'm not clear that AAA server is
-      the right generic term here.]]
+      or Registration Authority.  [[Ed: I'm not clear that LPWAN-AAA
+      server is the right generic term here.]]
 
    o  At last we have the Application Server, known also as Packet Data
       Node Gateway or Network Application.
@@ -1360,7 +1360,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
  |  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
  |              |  Server   |    SCEF    |   Center    |     (NGW)     |
  +--------------+-----------+------------+-------------+---------------+
- |   Security   |    Join   |   Home     |Registration |               |
+ |   Security   |    Join   |   Home     |Registration |    LPWAN-     |
  |    Server    |   Server  | Subscriber | Authority   |      AAA      |
  |              |           |  Server    |             |    SERVER     |
  +--------------+-----------+------------+-------------+---------------+
@@ -1370,7 +1370,8 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
                  Figure 8: LPWAN Architecture Terminology
 
- ()    ()   ()         |                         +------+
+                                                 +------+
+ ()    ()   ()         |                         |LPWAN-|
    ()  () () ()       / \         +---------+    | AAA  |
 () () () () () ()    /   \========|    /\   |====|Server|  +-----------+
  ()  ()   ()        |             | <--|--> |    +------+  |APPLICATION|
@@ -1393,7 +1394,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    nodes connected to the Internet.  Nevertheless, the header overhead
    of at least 40 bytes introduced by the protocol is incompatible with
    LPWAN constraints.  If IPv6 with no further optimization were used,
-   several LPWAN frames would be needed just to carry the IP header.
 
 
 
@@ -1402,6 +1402,7 @@ Farrell                 Expires November 25, 2017              [Page 25]
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+   several LPWAN frames would be needed just to carry the IP header.
    Another problem arises from IPv6 MTU requirements, which require the
    layer below to support at least 1280 byte packets [RFC2460].
 
@@ -1449,7 +1450,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    eliding header fields when they can be derived from the link layer,
    and by assuming that some of the header fields will frequently carry
    expected values. 6LoWPAN provides both stateless and stateful header
-   compression.  In the latter, all nodes of a 6LoWPAN are assumed to
 
 
 
@@ -1458,6 +1458,7 @@ Farrell                 Expires November 25, 2017              [Page 26]
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+   compression.  In the latter, all nodes of a 6LoWPAN are assumed to
    share compression context.  In the best case, the IPv6 header for
    link-local communication can be reduced to only 2 bytes.  For global
    communication, the IPv6 header may be compressed down to 3 bytes in
@@ -1504,8 +1505,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    field is expressed in increments of eight octets.  In some LPWAN
    technologies, the 6LoWPAN fragmentation header plus eight octets from
    the original datagram exceeds the available space in the layer two
-   payload.  In addition, the MTU in the LPWAN networks could be
-   variable which implies a variable fragmentation solution.
+
 
 
 
@@ -1513,6 +1513,9 @@ Farrell                 Expires November 25, 2017              [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   payload.  In addition, the MTU in the LPWAN networks could be
+   variable which implies a variable fragmentation solution.
 
 4.2.4.  Neighbor Discovery
 
@@ -1558,9 +1561,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    optimizations for technologies where the star topology is used, such
    as BTLE or DECT-ULE.
 
-   The main constraint in these networks comes from the nature of the
-   devices (constrained devices), whereas in LPWANs it is the network
-   itself that imposes the most stringent constraints.
 
 
 
@@ -1569,6 +1569,10 @@ Farrell                 Expires November 25, 2017              [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   The main constraint in these networks comes from the nature of the
+   devices (constrained devices), whereas in LPWANs it is the network
+   itself that imposes the most stringent constraints.
 
 4.4.  6tisch
 
@@ -1614,10 +1618,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Most technologies considered by the lpwan WG are based on a star
    topology, which eliminates the need for routing at that layer.
    Future work may address additional use-cases that may require
-   adaptation of existing routing protocols or the definition of new
-   ones.  As of the time of writing, work similar to that done in the
-   ROLL WG and other routing protocols are out of scope of the LPWAN WG.
-
 
 
 
@@ -1625,6 +1625,10 @@ Farrell                 Expires November 25, 2017              [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   adaptation of existing routing protocols or the definition of new
+   ones.  As of the time of writing, work similar to that done in the
+   ROLL WG and other routing protocols are out of scope of the LPWAN WG.
 
 4.7.  CoAP
 
@@ -1669,11 +1673,7 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    with a TTL that is less than 3600.  It is currently unclear whether
    and how DNS-like functionality might be provided in LPWANs.
 
-5.  Security Considerations
 
-   Most LPWAN technologies integrate some authentication or encryption
-   mechanisms that were defined outside the IETF.  The working group may
-   need to do work to integrate these mechanisms to unify management.  A
 
 
 
@@ -1682,6 +1682,11 @@ Farrell                 Expires November 25, 2017              [Page 30]
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+5.  Security Considerations
+
+   Most LPWAN technologies integrate some authentication or encryption
+   mechanisms that were defined outside the IETF.  The working group may
+   need to do work to integrate these mechanisms to unify management.  A
    standardized Authentication, Accounting, and Authorization (AAA)
    infrastructure [RFC2904] may offer a scalable solution for some of
    the security and management issues for LPWANs.  AAA offers
@@ -1722,6 +1727,17 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    There are no IANA considerations related to this memo.
 
+
+
+
+
+
+
+Farrell                 Expires November 25, 2017              [Page 31]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
 7.  Contributors
 
    As stated above this document is mainly a collection of content
@@ -1730,13 +1746,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
    o  Text for Section 2.1 was provided by Alper Yegin and Stephen
       Farrell in [I-D.farrell-lpwan-lora-overview].
-
-
-
-Farrell                 Expires November 25, 2017              [Page 31]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
 
    o  Text for Section 2.2 was provided by Antti Ratilainen in
       [I-D.ratilainen-lpwan-nb-iot].
@@ -1777,6 +1786,14 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       Bob Heile
       Wi-Sun Alliance
       11 Robert Toner Blvd, Suite 5-301
+
+
+
+Farrell                 Expires November 25, 2017              [Page 32]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
       North Attleboro, MA  02763
       USA
 
@@ -1786,14 +1803,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
       Ana Minaburo
       Acklio
-
-
-
-Farrell                 Expires November 25, 2017              [Page 32]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
       2bis rue de la Chataigneraie
       35510 Cesson-Sevigne Cedex
       France
@@ -1834,6 +1843,13 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       20, Science Park Rd
       Singapore  117674
 
+
+
+Farrell                 Expires November 25, 2017              [Page 33]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
       Phone: +65 6771 1011
       Email: sum@wi-sun.org
 
@@ -1842,14 +1858,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
       Institut MINES TELECOM ; TELECOM Bretagne
       2 rue de la Chataigneraie
       CS 17607
-
-
-
-Farrell                 Expires November 25, 2017              [Page 33]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
-
       35576 Cesson-Sevigne Cedex
       France
 
@@ -1891,6 +1899,13 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               DOI 10.17487/RFC0768, August 1980,
               <http://www.rfc-editor.org/info/rfc768>.
 
+
+
+Farrell                 Expires November 25, 2017              [Page 34]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
    [RFC1035]  Mockapetris, P., "Domain names - implementation and
               specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
               November 1987, <http://www.rfc-editor.org/info/rfc1035>.
@@ -1898,13 +1913,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    [RFC2460]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
               (IPv6) Specification", RFC 2460, DOI 10.17487/RFC2460,
               December 1998, <http://www.rfc-editor.org/info/rfc2460>.
-
-
-
-Farrell                 Expires November 25, 2017              [Page 34]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
 
    [RFC2904]  Vollbrecht, J., Calhoun, P., Farrell, S., Gommans, L.,
               Gross, G., de Bruijn, B., de Laat, C., Holdrege, M., and
@@ -1945,14 +1953,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               DOI 10.17487/RFC4861, September 2007,
               <http://www.rfc-editor.org/info/rfc4861>.
 
-   [RFC4944]  Montenegro, G., Kushalnagar, N., Hui, J., and D. Culler,
-              "Transmission of IPv6 Packets over IEEE 802.15.4
-              Networks", RFC 4944, DOI 10.17487/RFC4944, September 2007,
-              <http://www.rfc-editor.org/info/rfc4944>.
-
-   [RFC5216]  Simon, D., Aboba, B., and R. Hurst, "The EAP-TLS
-              Authentication Protocol", RFC 5216, DOI 10.17487/RFC5216,
-              March 2008, <http://www.rfc-editor.org/info/rfc5216>.
 
 
 
@@ -1961,6 +1961,15 @@ Farrell                 Expires November 25, 2017              [Page 35]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   [RFC4944]  Montenegro, G., Kushalnagar, N., Hui, J., and D. Culler,
+              "Transmission of IPv6 Packets over IEEE 802.15.4
+              Networks", RFC 4944, DOI 10.17487/RFC4944, September 2007,
+              <http://www.rfc-editor.org/info/rfc4944>.
+
+   [RFC5216]  Simon, D., Aboba, B., and R. Hurst, "The EAP-TLS
+              Authentication Protocol", RFC 5216, DOI 10.17487/RFC5216,
+              March 2008, <http://www.rfc-editor.org/info/rfc5216>.
 
    [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246,
@@ -1999,6 +2008,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               Energy", RFC 7668, DOI 10.17487/RFC7668, October 2015,
               <http://www.rfc-editor.org/info/rfc7668>.
 
+
+
+
+
+
+Farrell                 Expires November 25, 2017              [Page 36]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
    [I-D.farrell-lpwan-lora-overview]
               Farrell, S. and A. Yegin, "LoRaWAN Overview", draft-
               farrell-lpwan-lora-overview-01 (work in progress), October
@@ -2009,14 +2028,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               J. Crowcroft, "LPWAN Survey and GAP Analysis", draft-
               minaburo-lpwan-gap-analysis-02 (work in progress), October
               2016.
-
-
-
-
-Farrell                 Expires November 25, 2017              [Page 36]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
 
    [I-D.zuniga-lpwan-sigfox-system-description]
               Zuniga, J. and B. PONSARD, "SIGFOX System Description",
@@ -2054,6 +2065,15 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               Radio Access (E-UTRA); Radio Link Control (RLC) protocol
               specification", 2016.
 
+
+
+
+
+Farrell                 Expires November 25, 2017              [Page 37]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
    [TGPP36323]
               3GPP, "TS 36.323 v13.2.0 Evolved Universal Terrestrial
               Radio Access (E-UTRA); Packet Data Convergence Protocol
@@ -2063,16 +2083,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               3GPP, "TS 36.331 v13.2.0 Evolved Universal Terrestrial
               Radio Access (E-UTRA); Radio Resource Control (RRC);
               Protocol specification", 2016.
-
-
-
-
-
-
-Farrell                 Expires November 25, 2017              [Page 37]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
 
    [TGPP36201]
               3GPP, "TS 36.201 v13.2.0 - Evolved Universal Terrestrial
@@ -2108,16 +2118,6 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               Telecontrol and data transmission radio equipment.",
               February 2012.
 
-   [LoRaSpec]
-              LoRa Alliance, "LoRaWAN Specification Version V1.0.2",
-              July 2016, <http://portal.lora-
-              alliance.org/DesktopModules/Inventures_Document/
-              FileDownload.aspx?ContentID=1398>.
-
-   [LoRaSpec1.0]
-              LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
-              2015, <https://www.lora-alliance.org/portals/0/specs/
-              LoRaWAN%20Specification%201R0.pdf>.
 
 
 
@@ -2129,6 +2129,17 @@ Farrell                 Expires November 25, 2017              [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
+
+   [LoRaSpec]
+              LoRa Alliance, "LoRaWAN Specification Version V1.0.2",
+              July 2016, <http://portal.lora-
+              alliance.org/DesktopModules/Inventures_Document/
+              FileDownload.aspx?ContentID=1398>.
+
+   [LoRaSpec1.0]
+              LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
+              2015, <https://www.lora-alliance.org/portals/0/specs/
+              LoRaWAN%20Specification%201R0.pdf>.
 
    [ANSI-4957-000]
               ANSI, TIA-4957.000, "Architecture Overview for the Smart
@@ -2165,6 +2176,16 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
               <https://standards.ieee.org/findstds/
               standard/802.15.9-2016.html>.
 
+
+
+
+
+
+Farrell                 Expires November 25, 2017              [Page 39]
+
+Internet-Draft   Low Power Wide Area Networking Overview        May 2017
+
+
 Appendix A.  Changes
 
 A.1.  From -00 to -01
@@ -2177,14 +2198,6 @@ A.1.  From -00 to -01
       from -00 (in some cases as per suggestions from Ana Minaburo)
 
    o  Merged PR's: #1...
-
-
-
-
-Farrell                 Expires November 25, 2017              [Page 39]
-
-Internet-Draft   Low Power Wide Area Networking Overview        May 2017
-
 
    o  Rejected PR's: #2 (change was made to .txt not .xml but was
       replicated manually by editor)
@@ -2221,19 +2234,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
