@@ -56,8 +56,6 @@ needs of those technologies and the goal of running IP in LPWANs.
 <middle>
    <section title="Introduction">
 
-	<t>[[Ed: Editor comments/queries are in double square brackets like this.]]</t>
-
 	<t>This document provides background material and an overview of
 the technologies being considered in the IETF's Low Power Wide-Area
 Networking (LPWAN) working group. We also provide a gap analysis
@@ -129,7 +127,7 @@ table.]] </t>
 
 
 	<t>Most technologies in this space aim for similar goals of supporting
-large numbers of low-cost, low-throughput devices at very low-cost and with
+large numbers of very low-cost, low-throughput devices with
 very-low power consumption, so that even battery-powered devices can be
 deployed for years. LPWAN devices also tend to be constrained in their
 use of bandwidth, for example with limited frequencies being allowed to
@@ -150,14 +148,17 @@ industrial interest in these technologies.  As of today,
 essentially no LPWAN devices have IP capabilities.
 Connecting LPWANs to the Internet would provide significant benefits to these
 networks in terms of interoperability, application deployment, and management,
-among others.  The goal of the LPWAN WG is to, where necessary, adapt 
+among others.  The goal of the IETF LPWAN working group is to, where necessary, adapt 
 IETF-defined protocols,
 addressing schemes and naming to this particular constrained environment. 
 </t>
 
 	<t>This document is largely the work of the
-people listed in <xref target="contribs"/>. Discussion of this
+people listed in <xref target="contribs"/>. </t> 
+
+<!-- <t>Discussion of this
 document should take place on the lp-wan@ietf.org list.</t>
+-->
 
 	</section>
 
@@ -175,6 +176,9 @@ Similarly, there is no attempt here to set out the pros and cons of the
 relevant technologies. 
 </t>
 
+<t>Note that some of the technology-specific drafts referenced
+below may have been updated since publication of this document.</t>
+
 <!--
 	<t>[[Ed: the goal here is 2-3 pages per technology. If
 there's much more needed then we could add appendices I guess depending
@@ -184,7 +188,7 @@ on what text the WG find useful to include.]]</t>
 	<section anchor="lora" title="LoRaWAN">
 
 	<t>Text here is largely from <xref target="I-D.farrell-lpwan-lora-overview"/>
-which may have been updated since this was published.</t>
+</t>
 
 	  <section anchor="lora-docs" title="Provenance and Documents">
 
@@ -396,7 +400,7 @@ message for the join procedure.</t>
 	<t>Uplink and downlink higher layer data is carried in a MACPayload.  There
 is a concept of "ports" (an optional 8-bit value) to handle different
 applications on an end-device. Port zero is reserved for LoRaWAN specific
-messaging, such as the configuration of device's network parameters 
+messaging, such as the configuration of the end device's network parameters 
 (available channels, data rates, ADR parameters, RX1/2 delay, etc.).</t> 
 
 <!--
@@ -581,7 +585,8 @@ however sent in clear.
 	Any MAC commands sent as frame options and not
 only as payload, are visible to a passive
 attacker but are not malleable for an active attacker
-due to the use of the MIC.</t>
+due to the use of the Message Integrity Check (MIC)
+described below..</t>
 
 	<t>For LoRaWAN version 1.0.x, the NWkSkey session key is used
 to provide data integrity between the end-device and the network
@@ -590,7 +595,7 @@ the end-device and network server, or to the application "behind"
 the network server, depending on the implementation of the 
 network. </t>
 
-	<t>All MAC layer messages have an outer 32-bit Message Integrity Code (MIC)
+	<t>All MAC layer messages have an outer 32-bit MIC
 calculated using AES-CMAC calculated over the ciphertext payload and other
 headers and using the NwkSkey.  Payloads are encrypted using AES-128, with a
 counter-mode derived from IEEE 802.15.4 using the AppSKey.  Gateways are not
@@ -625,8 +630,7 @@ the plaintext input being a maximum of 16 octets.</t>
 
 	<section anchor="nbiot" title="Narrowband IoT (NB-IoT)">
 
-	<t>Text here is largely from <xref target="I-D.ratilainen-lpwan-nb-iot"/>
-which may have been updated since this was published.</t>
+	<t>Text here is largely from <xref target="I-D.ratilainen-lpwan-nb-iot"/></t>
 
 	  <section anchor="nbiot-docs" title="Provenance and Documents">
 
@@ -634,9 +638,9 @@ which may have been updated since this was published.</t>
       <t>Narrowband Internet of Things (NB-IoT) is developed and standardized
 by 3GPP.  The standardization of NB-IoT was finalized with 3GPP Release 13 in
 June 2016, and further enhancements for NB-IoT are specified in 3GPP Release
-14 in 2017, for example in the form of multicast support. Even further
-features and improvements are being developed in the following releases.
-Currently, NB-IoT is ready to be deployed as of 2016, and is rather simple to
+14 in 2017, for example in the form of multicast support. Further
+features and improvements will be developed in the following releases, but
+NB-IoT has been ready to be deployed since 2016, and is rather simple to
 deploy especially in the existing LTE networks with a software upgrade in the
 operator’s base stations. For more information of what has been specified for
 NB-IoT, 3GPP specification 36.300 <xref target="TGPP36300"></xref> provides an
@@ -674,7 +678,7 @@ FDMA can be used with 15 kHz tone spacing. </t>
 narrowband is deployed inside the LTE band and radio resources are flexibly
 shared between NB-IoT and normal LTE carrier. In Guard-band deployment the
 narrowband uses the unused resource blocks between two adjacent LTE carriers.
-Also standalone deployment is supported, where the narrowband can be located
+Standalone deployment is also supported, where the narrowband can be located
 alone in dedicated spectrum, which makes it possible for example to reframe a
 GSM carrier at 850/900 MHz for NB-IoT. All three deployment modes are used in
 licensed frequency bands. The maximum transmission power is either 20 or 23
@@ -745,13 +749,13 @@ the UE is terminated.</t>
 
   <t>Serving Gateway (S-GW) routes and forwards the user data packets through
 the access network and acts as a mobility anchor for UEs during handover
-between base stations known as eNodeBs and also during handovers between NB-
-IoT and other 3GPP technologies.</t>
+between base stations known as eNodeBs and also during handovers between 
+NB-IoT and other 3GPP technologies.</t>
 
   <t>Packet Data Node Gateway (P-GW) works as an interface between 3GPP
 network and external networks.</t>
 
-  <t>Home Subscriber Server (HSS) contains user-related and subscription-
+  <t>The Home Subscriber Server (HSS) contains user-related and subscription-
 related information. It is a database, which performs mobility management,
 session establishment support, user authentication and access
 authorization.</t>
@@ -784,7 +788,7 @@ station, which controls the UEs in one or several cells.</t>
      </figure>
 
   <t>Control plane protocol stack</t>   <t>The radio protocol architecture of
-NB-IoT (and LTE) is separated into control plane and user plane. Control plane
+NB-IoT (and LTE) is separated into control plane and user plane. The control plane
 consists of protocols which control the radio access bearers and the
 connection between the UE and the network. The highest layer of control plane
 is called Non-Access Stratum (NAS), which conveys the radio signaling between
@@ -1080,11 +1084,11 @@ encrypted by the application provider.  </t>
 	
 	<section anchor="wisun" title="Wi-SUN Alliance Field Area Network (FAN)">
 
-	<t>[[Ed: Text here is via personal communication from Bob Heile
+	<t>Text here is via personal communication from Bob Heile
 (bheile@ieee.org) and was authored by Bob and Sum Chin Sean. 
-The editor thanks Paul Duffy (paduffy@cisco.com) for forwarding updated text from Bob 
-and additional comments/input on this section.
-]]</t>
+Duffy (paduffy@cisco.com) also provided
+additional comments/input on this section.
+</t>
 
 	  <section anchor="wisun-docs" title="Provenance and Documents">
 
@@ -1137,7 +1141,7 @@ The core architecture of Wi-SUN FAN is a mesh network. A FAN contains one
    address management protocols. Lastly, Leaf nodes provide minimum 
    capabilities: discovering and joining a network, send/receive IPv6 
    packets, etc. A low power network may contain a mesh topology with Routers 
-   at the edges that construct star topology with Leaf nodes.
+   at the edges that construct a star topology with Leaf nodes.
 </t>
 
 <t>
@@ -1258,8 +1262,10 @@ Gateway and the Internet. It is known as: Network Server, Serving GW or Service
 Center.</t>
 
 <t>LPWAN-AAA Server, which controls the user authentication, the applications. It is
-known as: Join-Server, Home Subscriber Server or Registration Authority.  [[Ed:
-I'm not clear that LPWAN-AAA server is the right generic term here.]]</t>
+known as: Join-Server, Home Subscriber Server or Registration Authority.  
+(We use the term LPWAN-AAA server because we're not assuming that this
+entity speaks RADIUS or Diameter as many/most AAA servers do, but equally 
+we don't want to rule that out, as the functionality will be similar. </t> 
 
 <t>At last we have the Application Server, known also as Packet Data Node
 Gateway or Network Application.</t> </list> </t>
@@ -1317,7 +1323,7 @@ only transmit for a certain percentage of each hour.</t>
 <t>IPv6 <xref target='RFC2460'/> has been designed to allocate addresses to all the nodes 
  connected to the Internet. Nevertheless, the header overhead of at least 40 bytes 
  introduced by the protocol is incompatible with LPWAN constraints. If IPv6 with 
- no further optimization were used, several LPWAN frames would be needed just to carry
+ no further optimization were used, several LPWAN frames could be needed just to carry
  the IP header.
  Another problem arises from IPv6 MTU requirements, which require the layer below
  to support at least 1280 byte packets <xref target='RFC2460' />.
@@ -1603,7 +1609,7 @@ potentially extremely limited throughput of LPWANs. </t>
 into account CoAP acknowledgments may allow the reduction of L2
 acknowledgments. On the other hand, the current work in progress in the CoRE
 WG where the COMI/CoOL network management interface which, uses Structured
-Identifiers (SID) to reduce payload size over CoAP proves to be a good solution
+Identifiers (SID) to reduce payload size over CoAP may prove to be a good solution
 for the LPWAN technologies.  The overhead is reduced by adding a dictionary
 which matches a URI to a small identifier and a compact mapping of the YANG
 model into the CBOR binary representation.  </t>
@@ -1617,13 +1623,14 @@ model into the CBOR binary representation.  </t>
 one specified for Mobile IP.  LPWAN implies sporadic traffic and will rarely be
 used for high-frequency, real-time communications.  The applications do not
 generate a flow, they need to save energy and most of the time the node will be
-down.  The mobility will imply most of the time a group of devices, which
-represent a network itself. The mobility concerns more the gateway than the
-devices.  </t>
+down.</t>  
 
-<t> NEMO <xref target="RFC3963"/> Mobility solutions may be used in the case where some
-hosts belonging to the same Network gateway will move from one point to another
-and that they are not aware of this mobility.  </t>
+<t>In addition, LPWAN mobility may mostly apply to groups of devices, that
+represent a network in which case mobility is more a concern for the gateway
+than the devices.  
+NEMO <xref target="RFC3963"/> Mobility solutions may be used in the case where some
+end-devices belonging to the same network gateway move from one point to another
+such that they are not aware of being mobile.  </t>
 
 </section>
 
@@ -1634,7 +1641,7 @@ and that they are not aware of this mobility.  </t>
 Domain Name System (DNS) 
 DNS <xref target="RFC1035"/>,
 enables applications to name things with a
-globally resolvable name.  Many protocols use the DNS to identify hosts
+globally resolvable name.  Many protocols use the DNS to identify hosts,
 for example applications using CoAP. </t>
 
 <t>
@@ -1681,10 +1688,10 @@ specific.</t>
 
 <t>Another challenge for LPWANs will be how to handle key management
 and associated protocols. In a more traditional network (e.g. the web),
-servers can stable OCSP responses in order to allow browsers to 
+servers can "staple" OCSP responses in order to allow browsers to 
 check revocation status for presented certificates. <xref target="RFC6961"/>
 While the 
-"stapling" approach is likely something that would help in an LPWAN,
+stapling approach is likely something that would help in an LPWAN,
 as it avoids an RTT, certificates and OCSP responses are bulky items
 and will prove challenging to handle in LPWANs with bounded bandwidth.</t>
 
@@ -1848,7 +1855,18 @@ solely the editor's fault.
 </t>
 
 	<t>In addition to the contributors above, thanks are due 
-to Jiazi Yi, [[your name here]] for comments.</t>
+to 
+Arun (arun@acklio.com),
+Dan Garcia Carrillo,
+Paul Duffy, 
+Jiazi Yi, 
+for comments.</t>
+
+<t>[[Ed: If I omitted anyone, sorry and just let me know
+and I'll add you here.]]</t>
+
+<t>Alexander Pelov and Pascal Thubert were the LPWAN WG
+chairs while this document was developed.</t>
 
 		<t>Stephen Farrell's work on this memo was supported by the
 Science Foundation Ireland funded CONNECT centre 
@@ -2171,6 +2189,8 @@ Science Foundation Ireland funded CONNECT centre
 called Grammerly and sending me it's report.</t>
 
 	<t>Merged PR's: #4, #6, #7...</t>
+
+	<t>Editor did an editing pass on the lot.</t>
 
 	</list></t>
 	</section>
