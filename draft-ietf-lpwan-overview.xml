@@ -12,7 +12,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-03">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-04">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -700,7 +700,7 @@ Suspend/Resume (User Plane optimization, solution 18 in <xref
 target="TGPP23720"></xref>). In the control plane optimization the data is
 sent over Non-Access Stratum, directly to/from Mobility Management Entity
 (MME) (see Figure 3 for the network architecture) in the core network to the
-UE without interaction from the base station. This means there are no Access
+User Equipment (UE) without interaction from the base station. This means there are no Access
 Stratum security or header compression provided by the PDCP layer in the
 eNodeB, as the Access Stratum is bypassed, and only limited RRC procedures.
 RoHC based header compression may still optionally be provided and terminated
@@ -1859,6 +1859,7 @@ to
 Arun (arun@acklio.com),
 Dan Garcia Carrillo,
 Paul Duffy, 
+Thad Guidry,
 Jiazi Yi, 
 for comments.</t>
 
@@ -2194,6 +2195,15 @@ called Grammerly and sending me it's report.</t>
 
 	</list></t>
 	</section>
+
+	<section title="From -03 to -04">
+	<t><list style="symbols">
+	
+	<t>Picked up a PR that had been wrongly applied that expands UE</t>
+
+	</list></t>
+	</section>
+
 
 	</section>
 

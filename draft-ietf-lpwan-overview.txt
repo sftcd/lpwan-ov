@@ -9,7 +9,7 @@ Expires: November 26, 2017
 
 
                              LPWAN Overview
-                      draft-ietf-lpwan-overview-03
+                      draft-ietf-lpwan-overview-04
 
 Abstract
 
@@ -101,8 +101,8 @@ Table of Contents
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  40
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
      A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  40
+     A.4.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  41
-
 
 
 
@@ -642,12 +642,12 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Suspend/Resume (User Plane optimization, solution 18 in [TGPP23720]).
    In the control plane optimization the data is sent over Non-Access
    Stratum, directly to/from Mobility Management Entity (MME) (see
-   Figure 3 for the network architecture) in the core network to the UE
-   without interaction from the base station.  This means there are no
-   Access Stratum security or header compression provided by the PDCP
-   layer in the eNodeB, as the Access Stratum is bypassed, and only
-   limited RRC procedures.  RoHC based header compression may still
-   optionally be provided and terminated in MME.
+   Figure 3 for the network architecture) in the core network to the
+   User Equipment (UE) without interaction from the base station.  This
+   means there are no Access Stratum security or header compression
+   provided by the PDCP layer in the eNodeB, as the Access Stratum is
+   bypassed, and only limited RRC procedures.  RoHC based header
+   compression may still optionally be provided and terminated in MME.
 
    The RRC Suspend/Resume procedures reduce the signaling overhead
    required for UE state transition from RRC Idle to RRC Connected mode
@@ -1888,8 +1888,8 @@ Internet-Draft   Low Power Wide Area Networking Overview        May 2017
    Errors in the handling of that are solely the editor's fault.
 
    In addition to the contributors above, thanks are due to Arun
-   (arun@acklio.com), Dan Garcia Carrillo, Paul Duffy, Jiazi Yi, for
-   comments.
+   (arun@acklio.com), Dan Garcia Carrillo, Paul Duffy, Thad Guidry,
+   Jiazi Yi, for comments.
 
    [[Ed: If I omitted anyone, sorry and just let me know and I'll add
    you here.]]
@@ -2242,6 +2242,10 @@ Farrell                 Expires November 26, 2017              [Page 40]
 Internet-Draft   Low Power Wide Area Networking Overview        May 2017
 
 
+A.4.  From -03 to -04
+
+   o  Picked up a PR that had been wrongly applied that expands UE
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2251,10 +2255,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
-
 
 
 
