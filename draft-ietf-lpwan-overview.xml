@@ -476,9 +476,9 @@ rates). Of course, these must also remain within the
 bands assigned by local regulation.</t>
 -->
 
-	<t>A LoRaWAN network has a short network identifier ("NwkID") which is a
+	<t>A LoRaWAN network has a network identifier ("NwkID"), currently a
 seven-bit value.  A private network (common for LoRaWAN) can use the value
-zero. If a network wishes to support "foreign" end-devices then the NwkID needs
+zero or one. If a network wishes to support "foreign" end-devices then the NwkID needs
 to be registered with the LoRA Alliance, in which case the NwkID is the seven
 least significant bits of a registered 24-bit NetID. (Note however, that the
 methods for "roaming" are defined in the upcoming LoRaWAN 1.1
@@ -512,7 +512,7 @@ out-of-band means given the nature of LoRaWAN networks.
 <texttable anchor="table-nominal" title="Values required for nominal operation">
     <ttcol align='left'>Value</ttcol>
     <ttcol align='left'>Description</ttcol>
-<c>DevAddr</c> <c>DevAddr (32-bits) =  NwkId (7-bits) + device-specific network address (25 bits)</c>
+<c>DevAddr</c> <c>DevAddr (32-bits) =  device-specific network address generated from the NwkID</c>
 <c>AppEUI </c> <c> IEEE EUI64 naming the application</c>
 <c>NwkSKey </c> <c> 128-bit network session key for use with AES</c>
 <c>AppSKey </c> <c> 128-bit application session key for use with AES</c> 
@@ -2200,6 +2200,8 @@ called Grammerly and sending me it's report.</t>
 	<t><list style="symbols">
 	
 	<t>Picked up a PR that had been wrongly applied that expands UE</t>
+
+	<t>Editorial changes wrt LoRa suggested by Alper</t>
 
 	</list></t>
 	</section>
