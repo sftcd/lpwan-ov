@@ -100,7 +100,7 @@ Table of Contents
    Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  40
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  40
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
-     A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  41
+     A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  40
      A.4.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  41
 
@@ -2107,11 +2107,6 @@ Internet-Draft   Low Power Wide Area Networking Overview       June 2017
               3GPP, "TS 33.203 v13.1.0 - 3G security; Access security
               for IP-based services", 2016.
 
-   [etsi_ltn]
-              "ETSI Technical Committee on EMC and Radio Spectrum
-              Matters (ERM) TG28 Low Throughput Networks (LTN)",
-              February 2015.
-
    [fcc_ref]  "FCC CFR 47 Part 15.247 Telecommunication Radio Frequency
               Devices - Operation within the bands 902-928 MHz,
               2400-2483.5 MHz, and 5725-5850 MHz.", June 2016.
@@ -2123,17 +2118,17 @@ Internet-Draft   Low Power Wide Area Networking Overview       June 2017
               MHz to 1 000 MHz frequency range with power levels ranging
               up to 500 mW", May 2016.
 
+   [arib_ref]
+              "ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter,
+              Telecontrol and data transmission radio equipment.",
+              February 2012.
+
 
 
 Farrell                 Expires December 15, 2017              [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview       June 2017
 
-
-   [arib_ref]
-              "ARIB STD-T108 (Version 1.0): 920MHz-Band Telemeter,
-              Telecontrol and data transmission radio equipment.",
-              February 2012.
 
    [LoRaSpec]
               LoRa Alliance, "LoRaWAN Specification Version V1.0.2",
@@ -2175,6 +2170,11 @@ Internet-Draft   Low Power Wide Area Networking Overview       June 2017
               <https://standards.ieee.org/findstds/
               standard/802.15.4-2015.html>.
 
+   [IEEE-802-15-9]
+              "IEEE Recommended Practice for Transport of Key Management
+              Protocol (KMP) Datagrams", IEEE Standard 802.15.9, 2016,
+              <https://standards.ieee.org/findstds/
+              standard/802.15.9-2016.html>.
 
 
 
@@ -2185,12 +2185,6 @@ Farrell                 Expires December 15, 2017              [Page 39]
 
 Internet-Draft   Low Power Wide Area Networking Overview       June 2017
 
-
-   [IEEE-802-15-9]
-              "IEEE Recommended Practice for Transport of Key Management
-              Protocol (KMP) Datagrams", IEEE Standard 802.15.9, 2016,
-              <https://standards.ieee.org/findstds/
-              standard/802.15.9-2016.html>.
 
    [etsi_unb]
               "ETSI TR 103 435 System Reference document (SRdoc); Short
@@ -2230,8 +2224,14 @@ A.2.  From -01 to -02
 
    o  Merged PR's: #3...
 
+A.3.  From -02 to -03
 
+   o  Editorial changes and typo fixes thanks to Fred Baker running
+      something called Grammerly and sending me it's report.
 
+   o  Merged PR's: #4, #6, #7...
+
+   o  Editor did an editing pass on the lot.
 
 
 
@@ -2241,15 +2241,6 @@ Farrell                 Expires December 15, 2017              [Page 40]
 
 Internet-Draft   Low Power Wide Area Networking Overview       June 2017
 
-
-A.3.  From -02 to -03
-
-   o  Editorial changes and typo fixes thanks to Fred Baker running
-      something called Grammerly and sending me it's report.
-
-   o  Merged PR's: #4, #6, #7...
-
-   o  Editor did an editing pass on the lot.
 
 A.4.  From -03 to -04
 
@@ -2268,6 +2259,15 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
+
+
+
+
+
+
+
+
+
 
 
 
