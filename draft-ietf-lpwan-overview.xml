@@ -476,6 +476,7 @@ rates). Of course, these must also remain within the
 bands assigned by local regulation.</t>
 -->
 
+<!--
 	<t>A LoRaWAN network has a network identifier ("NwkID"), currently a
 seven-bit value.  A private network (common for LoRaWAN) can use the value
 zero or one. If a network wishes to support "foreign" end-devices then the NwkID needs
@@ -490,6 +491,17 @@ specification.)</t>
 25-bit device-specific network address that is assigned when the
 device "joins" the network (see below for the join procedure) or
 that is pre-provisioned into the device.</t>
+-->
+
+<t>
+In order to operate nominally on a LoRaWAN network, a device needs a
+32-bit device address, that is assigned when the
+device "joins" the network (see below for the join procedure) or that
+is pre-provisioned into the device.  In case of roaming devices, the device address
+is assigned based on the 24-bit network identifier (NetID) that is allocated to the network
+by the LoRa Alliance. Non-roaming devices can be assigned device addresses
+by the network without relying on a LoRa Alliance-assigned NetID.
+</t>
 
 
 	<t>End-devices are assumed to work with one or a quite limited 
@@ -2236,6 +2248,8 @@ called Grammerly and sending me it's report.</t>
 	<t><list style="symbols">
 
 	<t>Handled Russ Housley's WGLC review.</t>
+
+	<t>Handled Alper Yegin's WGLC review.</t>
 	
 	</list></t>
 	</section>
