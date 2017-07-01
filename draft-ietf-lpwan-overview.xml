@@ -12,7 +12,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-04">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-05">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -514,8 +514,9 @@ out-of-band means given the nature of LoRaWAN networks.
     <ttcol align='left'>Description</ttcol>
 <c>DevAddr</c> <c>DevAddr (32-bits) =  device-specific network address generated from the NwkID</c>
 <c>AppEUI </c> <c> IEEE EUI64 naming the application</c>
-<c>NwkSKey </c> <c> 128-bit network session key for use with AES</c>
-<c>AppSKey </c> <c> 128-bit application session key for use with AES</c> 
+<c>NwkSKey </c> <c> 128-bit network session key used with AES-CMAC</c>
+<c>AppSKey </c> <c> 128-bit application session key used with AES-CTR</c> 
+<c>AppKey </c> <c> 128-bit application session key used with AES-ECB</c> 
 </texttable>
 
 	<t>As an alternative, end-devices can use the LoRaWAN
@@ -586,7 +587,7 @@ however sent in clear.
 only as payload, are visible to a passive
 attacker but are not malleable for an active attacker
 due to the use of the Message Integrity Check (MIC)
-described below..</t>
+described below.</t>
 
 	<t>For LoRaWAN version 1.0.x, the NWkSkey session key is used
 to provide data integrity between the end-device and the network
@@ -616,7 +617,7 @@ electronic code book (ECB) mode is used for protecting Join-accept
 messages. The Join-accept contains an AppNonce (a 
 24 bit value) that is recovered on the end-device along
 with the other Join-accept content (e.g. DevAddr) using
-the AEs-encrypt operation.
+the AES-encrypt operation.
 	Once the Join-accept payload is available to
 the end-device the session keys are derived from the
 AppKey, AppNonce and other values, again using an
@@ -1072,12 +1073,15 @@ network application at a time.</t>
 <t> The radio protocol provides mechanisms to authenticate and ensure integrity
 of the message. This is achieved by using a unique device ID and a message
 authentication code, which allow ensuring that the message has been generated
-and sent by the device with the ID claimed in the message. </t>
+and sent by the device with the ID claimed in the message. At the time of
+writing the algorithms and keying details for this are not published.</t>
 
 <t> Security keys are independent for each device. These keys are associated
 with the device ID and they are pre-provisioned. Application data can be
 encrypted at the application level or not, depending on the criticality of the 
-use case, allowing hence to balance cost and effort vs. risk.  </t>
+use case, allowing hence to balance cost and effort vs. risk. The sigfox
+network itself provides no support for application layer confidentiality
+mechanisms.</t>
 
 	  </section>
 
@@ -1214,8 +1218,10 @@ energy and critical infrastructure monitoring networks.
 
 <c>PHY based on 802.15.4g</c><c> Various data rates and regions</c>
 
-<c>Security</c><c>802.1X/EAP-TLS/PKI  Authentication.</c>
+<c>Security</c><c>802.1X/EAP-TLS/PKI  Authentication.
+TLS_ECDHE_ECDSA_WITH_AES_128_CCM_8 required for EAP-TLS.</c>
 <c></c><c>802.11i Group Key Management</c>
+<c></c><c>Frame security is implemented as AES-CCM* as specified in IEEE 802.15.4</c>
 <c></c><c>Optional ETSI-TS-102-887-2 Node 2 Node Key Management</c>
 
 </texttable>
@@ -1224,7 +1230,8 @@ energy and critical infrastructure monitoring networks.
 authentication, and establishment of a secure pairwise link between a FAN node
 and its Border Router, which is implemented with an adaptation of IEEE802.1X
 and EAP-TLS as described in <xref target="RFC5216"/> using secure device identity as described
-in IEEE802.1AR. Certificate formats are based upon <xref target="RFC5280"/>. A secure group link
+in IEEE802.1AR. 
+Certificate formats are based upon <xref target="RFC5280"/>. A secure group link
 between a Border Router and a set of FAN nodes is established using an
 adaptation of the IEEE802.11 Four-Way Handshake. A set of 4 group keys are
 maintained within the network, one of which is the current transmit key. Secure
@@ -1354,6 +1361,9 @@ round-trips required for secure session
 establishment, cryptographic operations can require
 padding and addition of authenticators that are
 problematic when considering LPWAN lower layers.
+Note that mains powered Wi-SUN mesh router nodes will typically be more resource capable than the other LPWAN techs discussed.
+This can enable use of more "chatty" protocols for some aspects of Wi-SUN.
+
 </t>
 
 
@@ -1860,6 +1870,7 @@ to
 Arun (arun@acklio.com),
 Dan Garcia Carrillo,
 Paul Duffy, 
+Russ Housley,
 Thad Guidry,
 Jiazi Yi, 
 for comments.</t>
@@ -2221,6 +2232,13 @@ called Grammerly and sending me it's report.</t>
 	</list></t>
 	</section>
 
+	<section title="From -03 to -04">
+	<t><list style="symbols">
+
+	<t>Handled Russ Housley's WGLC review.</t>
+	
+	</list></t>
+	</section>
 
 	</section>
 
