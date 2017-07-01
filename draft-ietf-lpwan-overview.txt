@@ -102,7 +102,7 @@ Table of Contents
      A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
      A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  40
      A.4.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
-     A.5.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
+     A.5.  From -04 to -05 . . . . . . . . . . . . . . . . . . . . .  41
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  41
 
 
@@ -1895,8 +1895,8 @@ Internet-Draft   Low Power Wide Area Networking Overview       July 2017
    (arun@acklio.com), Dan Garcia Carrillo, Paul Duffy, Russ Housley,
    Thad Guidry, Jiazi Yi, for comments.
 
-   [[Ed: If I omitted anyone, sorry and just let me know and I'll add
-   you here.]]
+   Alexander Pelov and Pascal Thubert were the LPWAN WG chairs while
+   this document was developed.
 
 
 
@@ -1905,9 +1905,6 @@ Farrell                  Expires January 2, 2018               [Page 34]
 
 Internet-Draft   Low Power Wide Area Networking Overview       July 2017
 
-
-   Alexander Pelov and Pascal Thubert were the LPWAN WG chairs while
-   this document was developed.
 
    Stephen Farrell's work on this memo was supported by the Science
    Foundation Ireland funded CONNECT centre <https://connectcentre.ie/>.
@@ -1953,6 +1950,9 @@ Internet-Draft   Low Power Wide Area Networking Overview       July 2017
    [RFC4301]  Kent, S. and K. Seo, "Security Architecture for the
               Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
               December 2005, <http://www.rfc-editor.org/info/rfc4301>.
+
+
+
 
 
 
@@ -2250,7 +2250,7 @@ A.4.  From -03 to -04
 
    o  Editorial changes wrt SIGFOX provided by Juan-Carlos
 
-A.5.  From -03 to -04
+A.5.  From -04 to -05
 
    o  Handled Russ Housley's WGLC review.
 
