@@ -207,9 +207,9 @@ Version 1.0, which has also seen some deployment, is available at
 which gateways relay messages between end-devices and a central "network
 server" in the backend.  Gateways are connected to the network server via IP
 links while end-devices use single-hop LoRaWAN communication that can be
-received at one or more gateways.  All communication is generally
-bi-directional, although uplink communication from end-devices to the network
-server are favored in terms of overall bandwidth availability.  </t>
+received at one or more gateways.  Communication is generally
+bi-directional; uplink communication from end-devices to the network
+server is favored in terms of overall bandwidth availability.  </t>
 
 	<t><xref target="lora-arch"/> shows the entities involved in a 
 LoRaWAN network. </t>
@@ -380,7 +380,7 @@ protocols over the LoRaWAN MAC layer.</t>
     <ttcol align='center'>Min</ttcol>
     <ttcol align='center'>Max</ttcol>
 <c>Duty Cycle: some but not all ISM bands impose a limit in terms of how often an
-end-device can transmit. In some cases LoRaWAN is more stringent in an attempt to
+end-device can transmit. In some cases LoRaWAN is more restrictive in an attempt to
 avoid congestion.</c>
 <c>1%</c>
 <c>no-limit</c>
@@ -491,7 +491,7 @@ specification.)</t>
 
 
 	<t>In order to operate nominally on a LoRaWAN network, a device needs a 
-32-bit device address, which is the catenation of the NwkID and a
+32-bit device address, which is the concatenation of the NwkID and a
 25-bit device-specific network address that is assigned when the
 device "joins" the network (see below for the join procedure) or
 that is pre-provisioned into the device.</t>
@@ -685,10 +685,10 @@ structure), which is the highest layer in the user plane, as explained later.
 Any packet size up to the said MTU size can be passed to the NB-IoT stack from
 higher layers, segmentation of the packet is performed in the RLC layer, which
 can segment the data to transmission blocks with size as small as 16 bits. As
-the name suggests, NB-IoT uses narrowbands with the bandwidth of 180 kHz in
+the name suggests, NB-IoT uses narrowbands with bandwidth of 180 kHz in
 both downlink and uplink. The multiple access scheme used in the downlink is
-OFDMA with 15 kHz sub-carrier spacing. In uplink SC-FDMA single tone with
-either 15kHz    or 3.75 kHz tone spacing is used, or optionally multi-tone SC-
+OFDMA with 15 kHz sub-carrier spacing. In uplink, SC-FDMA single tone with
+either 15kHz or 3.75 kHz tone spacing is used, or optionally multi-tone SC-
 FDMA can be used with 15 kHz tone spacing. </t>
 
 <t>NB-IoT can be deployed in three ways. In-band deployment means that the
@@ -780,7 +780,7 @@ authorization.</t>
   <t>E-UTRAN consists of components of a single type, eNodeB. eNodeB is a base
 station, which controls the UEs in one or several cells.</t>
 
-  <t>The illustration of 3GPP radio protocol architecture can be seen from 
+  <t>The 3GPP radio protocol architecture is illustration in
   	<xref target="nbiot-stack"></xref>.</t>
 
 
@@ -809,11 +809,11 @@ NB-IoT (and LTE) is separated into control plane and user plane. The control pla
 consists of protocols which control the radio access bearers and the
 connection between the UE and the network. The highest layer of control plane
 is called Non-Access Stratum (NAS), which conveys the radio signaling between
-the UE and the EPC, passing transparently through the radio network. It is
+the UE and the EPC, passing transparently through the radio network.  NAS
 responsible for authentication, security control, mobility management and
 bearer management.</t>
 
-  <t>Access Stratum (AS) is the functional layer below NAS, and in control
+  <t>Access Stratum (AS) is the functional layer below NAS, and in the control
 plane it consists of Radio Resource Control protocol (RRC) <xref
 target="TGPP36331"></xref>, which handles connection establishment and release
 functions, broadcast of system information, radio bearer establishment,
@@ -852,7 +852,7 @@ priority handling and transport format selection. </t>
 
   <t>Physical layer <xref target="TGPP36201"></xref> provides data transport
 services to higher layers. These include error detection and indication to
-higher layers, FEC encoding, HARQ soft-combining. Rate matching and mapping of
+higher layers, FEC encoding, HARQ soft-combining, rate matching and mapping of
 the transport channels onto physical channels, power weighting and modulation
 of physical channels, frequency and time synchronization and radio
 characteristics measurements.</t>
@@ -980,8 +980,8 @@ with a maximum output power of 25 mW and a duty cycle of 1%.  </t>
   <t>Downlink transmission power: 500 mW / 4W (depending on the region)</t>
   <t>Link budget: 153 dB (or better)</t>
 
-  <t>Central frequency accuracy: Centre frequency of downlink transmission are
-set by the network according to the corresponding uplink transmission</t>
+  <t>Central frequency accuracy: the center frequency of downlink transmission
+is set by the network according to the corresponding uplink transmission</t>
 
 </list></t>
 
@@ -1137,8 +1137,8 @@ Additionally, the Alliance has
 created a certification program to promote global multi-vendor
 interoperability.  </t>
 
-<t>The FAN profile is currently being specified within ANSI/TIA as an extension
-of work previously done on Smart Utility Networks. <xref target="ANSI-4957-000"/>.
+<t>The FAN profile is specified within ANSI/TIA as an extension of work
+previously done on Smart Utility Networks. <xref target="ANSI-4957-000"/>.
 Updates to those specifications intended to be published in 2017 will
 contain details of the FAN profile. A current snapshot of the work
 to produce that profile is presented in 
@@ -1151,7 +1151,7 @@ to produce that profile is presented in
 
 	  <section anchor="wisun-chars" title="Characteristics">
 
-<t>The FAN profile is an IPv6 frequency hopping
+<t>The FAN profile is an IPv6
 wireless mesh network with support for enterprise level security. The frequency hopping
 wireless mesh topology aims to offer superior network
 robustness, reliability due to high redundancy, good scalability due to the
@@ -1160,7 +1160,31 @@ Very low power modes are in development permitting long
 term battery operation of network nodes.</t>
 
 <t>
-The core architecture of Wi-SUN FAN is a mesh network. A FAN contains one      
+The following list contains some overall characteristics of Wi-SUN that are
+relevant to LPWAN applications.
+<list style="symbols">
+<t>Coverage
+The range of Wi-SUN FAN is typically 2 -- 3 km in line of sight, matching the
+needs of neighborhood area networks, campus area networks, or corporate area
+networks. The range can also be extended via multi-hop networking.</t>
+
+<t> High bandwidth, low link latency:
+
+Wi-SUN supports relatively high bandwidth, i.e. up to 300 kbps [FANTPS], enables remote update and upgrade of devices so that they can handle new applications, extending their working life. Wi-SUN supports LPWAN IoT applications that require on-demand control by providing low link latency (0.02s) and bi-directional communication.</t>
+
+<t> Low power consumption:
+
+FAN devices draw less than 2 uA when resting and only 8 mA when listening. Such devices can maintain a long lifetime even if they are frequently listening. For instance, suppose the device transmits data for 10 ms once every 10 s; theoretically, a battery of 1000 mAh can last more than 10 years.</t>
+
+
+<t>Scalability:
+
+Tens of millions Wi-SUN FAN devices have been deployed in urban, suburban and rural environments, including deployments with more than 1 million devices.</t>
+ </list></t>
+
+
+<t>
+A FAN contains one      
    or more networks.  Within a network, nodes assume one of  
    three operational roles. First, each network contains a Border Router 
    providing Wide Area Network (WAN) connectivity to the network.  The Border 
@@ -1192,20 +1216,19 @@ for low power and lossy networks.
 
 <t>
 The FAN profile specification provides an application-independent
-IPv6-based transport service for both connectionless (i.e. UDP) and
-connection-oriented (i.e. TCP) services.  There are two possible methods for
-establishing the IPv6 packet routing: mandatory Routing Protocol for Low-Power
-and Lossy Networks (RPL) at the Network layer or optional Multi-Hop Delivery
-Service (MHDS) at the Data Link layer. <xref target="table-wisun"/> 
+IPv6-based transport service.  There are two possible methods for
+establishing the IPv6 packet routing: Routing Protocol for Low-Power and
+Lossy Networks (RPL) at the Network layer is mandatory, and Multi-Hop Delivery
+Service (MHDS) is optional at the Data Link layer. <xref target="table-wisun"/> 
 provides an overview of the FAN network stack.</t>
 
 
 <t> The Transport service is based on User Datagram Protocol (UDP) defined in
 RFC768 or Transmission Control Protocol (TCP) defined in RFC793.  </t>
 
-<t> The Network service is provided by IPv6 defined in RFC2460 with 6LoWPAN
-adaptation as defined in RC4944 and RFC6282. Additionally, ICMPv6, as defined in
-RFC4443, is used for control plane in information exchange.  </t>
+<t> The Network service is provided by IPv6 as defined in RFC2460 with 6LoWPAN
+adaptation as defined in RFC4944 and RFC6282. ICMPv6, as defined
+in RFC4443, is used for the control plane during information exchange.  </t>
 
 <t>The Data Link service provides both control/management of the Physical layer
 and data transfer/management services to the Network layer. These services are
@@ -1216,7 +1239,7 @@ is constructed using data structures defined in IEEE802.15.4-2015. Multiple
 modes of frequency hopping are defined. The entire MAC payload is encapsulated
 in an IEEE802.15.9 Information Element to enable LLC protocol dispatch between
 upper layer 6LoWPAN processing, MAC sublayer mesh processing, etc. These areas
-will be expanded once IEEE802.15.12 is completed </t>
+will be expanded once IEEE802.15.12 is completed.</t>
 
 <t>The PHY service is derived from a sub-set of the SUN FSK specification in
 IEEE802.15.4-2015. The 2-FSK modulation schemes, with channel spacing range
@@ -1283,7 +1306,7 @@ entities in a typical LPWAN network:</t>
 <t> <list style="symbols">
 
 <t>End-Devices are the devices or the "things" (e.g. sensors, actuators,
-etc.), they are named differently in each technology (End Device, User
+etc.); they are named differently in each technology (End Device, User
 Equipment or End Point). There can be a high density of end devices
 per radio
 gateway.</t>
@@ -1307,25 +1330,27 @@ Gateway or Network Application.</t> </list> </t>
 <figure anchor="term-comp" title="LPWAN Architecture Terminology">
 <artwork align="left"><![CDATA[
 +---------------------------------------------------------------------+
-| Function/    |           |            |             |               |
-| Technology   |  LORAWAN  |    NB-IOT  |   SIGFOX    |      IETF     |
-+--------------+-----------+------------+-------------+---------------+
-|    Sensor,   |           |            |             |               |
-|  Actuator,   |     End   |     User   |     End     |     Device    |
-|device, object|   Device  | Equipment  |    Point    |     (Dev)     |
-+--------------+-----------+------------+-------------+---------------+
-| Transceiver  |           |   Evolved  |    Base     |     RADIO     |
-|  Antenna     |  Gateway  |   Node B   |   Station   |    GATEWAY    |
-+--------------+-----------+------------+-------------+---------------+
-|  Server      |  Network  |   PDN GW/  |   Service   |Network Gateway|
-|              |  Server   |    SCEF    |   Center    |     (NGW)     |
-+--------------+-----------+------------+-------------+---------------+
-|   Security   |    Join   |   Home     |Registration |    LPWAN-     |
-|    Server    |   Server  | Subscriber | Authority   |      AAA      |
-|              |           |  Server    |             |    SERVER     | 
-+--------------+-----------+------------+-------------+---------------+
-| Application  |Application| Application|  Network    |  APPLICATION  |
-|              |   Server  |   Server   | Application |      (App)    |
+| Function/ |           |           |            |        |           |
+|Technology |  LORAWAN  |   NB-IOT  |   SIGFOX   | Wi-SUN |    IETF   |
++-----------+-----------+-----------+------------+--------+-----------+
+|  Sensor,  |           |           |            |        |           |
+|Actuator,  |    End    |    User   |     End    |  Leaf  |   Device  |
+|device,    |  Device   | Equipment |    Point   |  Node  |   (Dev)   |
+| object    |           |           |            |        |           |
++-----------+-----------+-----------+------------+--------+-----------+
+|Transceiver|           |  Evolved  |    Base    | Router |   RADIO   |
+| Antenna   |  Gateway  |  Node B   |   Station  |  Node  |  Gateway  |
++-----------+-----------+-----------+------------+--------+-----------+
+| Server    |  Network  |  PDN GW/  |   Service  | Border |  Network  |
+|           |  Server   |   SCEF    |   Center   | Router |  Gateway  |
+|           |           |           |            |        |   (NGW)   |
++-----------+-----------+-----------+------------+--------+-----------+
+| Security  |   Join    |    Home   |Registration|Authent.|  LPWAN-   |
+|  Server   |  Server   | Subscriber| Authority  | Server |   AAA     |
+|           |           |   Server  |            |        |  SERVER   | 
++-----------+-----------+-----------+------------+--------+-----------+
+|Application|Application|Application|  Network   |Appli-  |Application|
+|           |   Server  |  Server   | Application| cation |   (App)   |
 +---------------------------------------------------------------------+
 ]]></artwork>
 </figure>
@@ -2263,7 +2288,17 @@ called Grammerly and sending me it's report.</t>
 
 	<t>Handled Alper Yegin's WGLC review.</t>
 
+	</list></t>
+	</section>
+
+	<section title="From -05 to -06">
+	<t><list style="symbols">
+
+	<t>More Alper comments:-)</t>
+
 	<t>Added some more detail about sigfox security.</t>
+
+	<t>Added Wi-SUN changes from Charlie Perkins</t>
 	
 	</list></t>
 	</section>
