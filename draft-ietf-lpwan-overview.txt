@@ -684,7 +684,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
    during handover between base stations known as eNodeBs and also
    during handovers between NB-IoT and other 3GPP technologies.
 
-   Packet Data Node Gateway (P-GW) works as an interface between 3GPP
+   Packet Data Network Gateway (P-GW) works as an interface between 3GPP
    network and external networks.
 
    The Home Subscriber Server (HSS) contains user-related and
@@ -730,9 +730,10 @@ Farrell                   Expires April 6, 2018                [Page 13]
 Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
 
-   between the UE and the EPC, passing transparently through the radio
-   network.  NAS responsible for authentication, security control,
-   mobility management and bearer management.
+   between the UE and the Evolved Packet Core (EPC), passing
+   transparently through the radio network.  NAS responsible for
+   authentication, security control, mobility management and bearer
+   management.
 
    Access Stratum (AS) is the functional layer below NAS, and in the
    control plane it consists of Radio Resource Control protocol (RRC)
@@ -777,7 +778,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
    Physical layer [TGPP36201] provides data transport services to higher
    layers.  These include error detection and indication to higher
    layers, FEC encoding, HARQ soft-combining, rate matching and mapping
-   of the transport channels onto physical channels, power weighting and
 
 
 
@@ -786,6 +786,7 @@ Farrell                   Expires April 6, 2018                [Page 14]
 Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
 
+   of the transport channels onto physical channels, power weighting and
    modulation of physical channels, frequency and time synchronization
    and radio characteristics measurements.
 
@@ -833,7 +834,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
    of deployment (urban, rural, etc.).  The radio interface is compliant
    with the following regulations:
 
-      Spectrum allocation in the USA [fcc_ref]
 
 
 
@@ -841,6 +841,8 @@ Farrell                   Expires April 6, 2018                [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
+
+      Spectrum allocation in the USA [fcc_ref]
 
       Spectrum allocation in Europe [etsi_ref]
 
@@ -883,13 +885,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
    The format of the uplink frame is the following:
 
-   +--------+--------+--------+------------------+-------------+-----+
-   |Preamble|  Frame | Dev ID |     Payload      |Msg Auth Code| FCS |
-   |        |  Sync  |        |                  |             |     |
-   +--------+--------+--------+------------------+-------------+-----+
 
 
-                       Figure 5: Uplink Frame Format
+
+
+
 
 
 
@@ -897,6 +897,14 @@ Farrell                   Expires April 6, 2018                [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
+
+   +--------+--------+--------+------------------+-------------+-----+
+   |Preamble|  Frame | Dev ID |     Payload      |Msg Auth Code| FCS |
+   |        |  Sync  |        |                  |             |     |
+   +--------+--------+--------+------------------+-------------+-----+
+
+
+                       Figure 5: Uplink Frame Format
 
    The uplink frame is composed of the following fields:
 
@@ -934,6 +942,18 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
    The format of the downlink frame is the following:
 
+
+
+
+
+
+
+
+Farrell                   Expires April 6, 2018                [Page 17]
+
+Internet-Draft   Low Power Wide Area Networking Overview    October 2017
+
+
    +------------+-----+---------+------------------+-------------+-----+
    |  Preamble  |Frame|   ECC   |     Payload      |Msg Auth Code| FCS |
    |            |Sync |         |                  |             |     |
@@ -945,14 +965,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
    The downlink frame is composed of the following fields:
 
    o  Preamble: 91 bits
-
-
-
-
-Farrell                   Expires April 6, 2018                [Page 17]
-
-Internet-Draft   Low Power Wide Area Networking Overview    October 2017
-
 
    o  Frame sync and header: 13 bits
 
@@ -981,18 +993,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
    and 4 downlink messages per device per day.  These restrictions can
    be slightly relaxed depending on system conditions and the specific
    regulatory domain of operation.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1667,11 +1667,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
    In addition, LPWAN mobility may mostly apply to groups of devices,
    that represent a network in which case mobility is more a concern for
-   the gateway than the devices.  NEMO [RFC3963] Mobility solutions may
+   the gateway than the devices.  NEMO [RFC3963] Mobility or other
+   mobile gateway solutions (such as a gateway with an LTE uplink) may
    be used in the case where some end-devices belonging to the same
    network gateway move from one point to another such that they are not
    aware of being mobile.
-
 
 
 

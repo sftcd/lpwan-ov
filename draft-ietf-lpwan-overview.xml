@@ -786,7 +786,7 @@ the access network and acts as a mobility anchor for UEs during handover
 between base stations known as eNodeBs and also during handovers between 
 NB-IoT and other 3GPP technologies.</t>
 
-  <t>Packet Data Node Gateway (P-GW) works as an interface between 3GPP
+  <t>Packet Data Network Gateway (P-GW) works as an interface between 3GPP
 network and external networks.</t>
 
   <t>The Home Subscriber Server (HSS) contains user-related and subscription-
@@ -826,7 +826,7 @@ NB-IoT (and LTE) is separated into control plane and user plane. The control pla
 consists of protocols which control the radio access bearers and the
 connection between the UE and the network. The highest layer of control plane
 is called Non-Access Stratum (NAS), which conveys the radio signaling between
-the UE and the EPC, passing transparently through the radio network.  NAS
+the UE and the Evolved Packet Core (EPC), passing transparently through the radio network.  NAS
 responsible for authentication, security control, mobility management and
 bearer management.</t>
 
@@ -1707,7 +1707,8 @@ down.</t>
 <t>In addition, LPWAN mobility may mostly apply to groups of devices, that
 represent a network in which case mobility is more a concern for the gateway
 than the devices.  
-NEMO <xref target="RFC3963"/> Mobility solutions may be used in the case where some
+NEMO <xref target="RFC3963"/> Mobility or other mobile gateway solutions (such
+as a gateway with an LTE uplink) may be used in the case where some
 end-devices belonging to the same network gateway move from one point to another
 such that they are not aware of being mobile.  </t>
 
