@@ -12,7 +12,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-07">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-08">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -1937,6 +1937,7 @@ solely the editor's fault.
 	<t>In addition to the contributors above, thanks are due 
 to 
 Arun (arun@acklio.com),
+Behcet SariKaya,
 Dan Garcia Carrillo,
 Paul Duffy, 
 Russ Housley,
@@ -2317,6 +2318,15 @@ called Grammerly and sending me it's report.</t>
 	<t>Added some more detail about sigfox security.</t>
 
 	<t>Added Wi-SUN changes from Charlie Perkins</t>
+
+	</list></t>
+	</section>
+
+	<section title="From -06 to -07">
+	<t><list style="symbold">
+
+	<t>Yet more Alper comments:-)</t>
+	<t>Comments from Behcet Sarikaya</t>
 	
 	</list></t>
 	</section>

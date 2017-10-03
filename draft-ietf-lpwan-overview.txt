@@ -9,7 +9,7 @@ Expires: April 6, 2018
 
 
                              LPWAN Overview
-                      draft-ietf-lpwan-overview-07
+                      draft-ietf-lpwan-overview-08
 
 Abstract
 
@@ -104,8 +104,8 @@ Table of Contents
      A.4.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
      A.5.  From -04 to -05 . . . . . . . . . . . . . . . . . . . . .  41
      A.6.  From -05 to -06 . . . . . . . . . . . . . . . . . . . . .  41
+     A.7.  From -06 to -07 . . . . . . . . . . . . . . . . . . . . .  41
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  41
-
 
 
 
@@ -1907,8 +1907,8 @@ Internet-Draft   Low Power Wide Area Networking Overview    October 2017
 
 
    In addition to the contributors above, thanks are due to Arun
-   (arun@acklio.com), Dan Garcia Carrillo, Paul Duffy, Russ Housley,
-   Thad Guidry, Jiazi Yi, for comments.
+   (arun@acklio.com), Behcet SariKaya, Dan Garcia Carrillo, Paul Duffy,
+   Russ Housley, Thad Guidry, Jiazi Yi, for comments.
 
    Alexander Pelov and Pascal Thubert were the LPWAN WG chairs while
    this document was developed.
@@ -2275,6 +2275,12 @@ A.6.  From -05 to -06
 
    o  Added Wi-SUN changes from Charlie Perkins
 
+A.7.  From -06 to -07
+
+      Yet more Alper comments:-)
+
+      Comments from Behcet Sarikaya
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2284,12 +2290,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
-
-
-
 
 
 
