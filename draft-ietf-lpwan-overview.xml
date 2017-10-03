@@ -12,7 +12,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-06">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-07">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -192,16 +192,33 @@ on what text the WG find useful to include.]]</t>
 
 	  <section anchor="lora-docs" title="Provenance and Documents">
 
+<!--
 	  <t> LoRaWAN is a wireless technology for long-range low-power
 low-data-rate applications developed by the LoRa Alliance, a membership
 consortium.  <eref target="https://www.lora-alliance.org/"/> This draft is
 based on version 1.0.2 <xref target="LoRaSpec"/> of the LoRa specification.
 Version 1.0, which has also seen some deployment, is available at
 <xref target="LoRaSpec1.0"/>.</t>
+-->
+
+
+<t>LoRaWAN is an ISM-based wireless technology for long-range low-power
+low-data-rate applications developed by the LoRa Alliance, a membership
+consortium.  <eref target="https://www.lora-alliance.org/"/> This draft is
+based on version 1.0.2 <xref target="LoRaSpec"/> of the LoRa specification.
+That specification is publicly available and has already seen several
+deployments across the globe.</t>
 	
 	  </section>
 
 	  <section anchor="lora-chars" title="Characteristics">
+
+<t>
+   LoRaWAN aims to support end-devices operating on a single battery for an 
+   extended period of time (e.g., 10 years or more), extended coverage through 
+   155 dB maximum coupling loss, and reliable and efficient file download (as 
+   needed for remote software/firmware upgrade).
+</t>
 
 <t> LoRaWAN networks are typically organized in a star-of-stars topology in
 which gateways relay messages between end-devices and a central "network
@@ -528,7 +545,7 @@ out-of-band means given the nature of LoRaWAN networks.
 <texttable anchor="table-nominal" title="Values required for nominal operation">
     <ttcol align='left'>Value</ttcol>
     <ttcol align='left'>Description</ttcol>
-<c>DevAddr</c> <c>DevAddr (32-bits) =  device-specific network address generated from the NwkID</c>
+<c>DevAddr</c> <c>DevAddr (32-bits) =  device-specific network address generated from the NetID</c>
 <c>AppEUI </c> <c> IEEE EUI64 corresponding to the join server for an application</c>
 <c>NwkSKey </c> <c> 128-bit network session key used with AES-CMAC</c>
 <c>AppSKey </c> <c> 128-bit application session key used with AES-CTR</c> 
@@ -780,7 +797,7 @@ authorization.</t>
   <t>E-UTRAN consists of components of a single type, eNodeB. eNodeB is a base
 station, which controls the UEs in one or several cells.</t>
 
-  <t>The 3GPP radio protocol architecture is illustration in
+  <t>The 3GPP radio protocol architecture is illustrated in
   	<xref target="nbiot-stack"></xref>.</t>
 
 
@@ -1546,7 +1563,7 @@ rate of ~0.1 message/minute), the same exchange may take hours or even days,
 leading to severe fragmentation and consuming a significant amount of the
 available network resources.  6LoWPAN Neighbor Discovery behavior may be tuned
 through the use of appropriate values for the default Router Lifetime, the
-Valid Lifetime in the PIOs, and the Valid Lifetime in the 6CO, as well as the
+Valid Lifetime in the PIOs, and the Valid Lifetime in the 6LowPan Context Option (6CO), as well as the
 address Registration Lifetime. However, for the latter LPWANs mentioned above,
 6LoWPAN Neighbor Discovery is not suitable.  </t>
 
@@ -1681,7 +1698,7 @@ model into the CBOR binary representation.  </t>
 
 <section anchor="Mobility" title="Mobility">
 
-<t> LPWANs nodes can be mobile.  However, LPWAN mobility is different from the
+<t> LPWAN nodes can be mobile.  However, LPWAN mobility is different from the
 one specified for Mobile IP.  LPWAN implies sporadic traffic and will rarely be
 used for high-frequency, real-time communications.  The applications do not
 generate a flow, they need to save energy and most of the time the node will be
@@ -1750,7 +1767,7 @@ specific.</t>
 
 <t>Another challenge for LPWANs will be how to handle key management
 and associated protocols. In a more traditional network (e.g. the web),
-servers can "staple" OCSP responses in order to allow browsers to 
+servers can "staple" Online Certificate Status Protocol (OCSP) responses in order to allow browsers to 
 check revocation status for presented certificates. <xref target="RFC6961"/>
 While the 
 stapling approach is likely something that would help in an LPWAN,
