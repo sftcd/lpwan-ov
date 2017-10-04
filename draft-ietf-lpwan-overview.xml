@@ -1563,7 +1563,7 @@ rate of ~0.1 message/minute), the same exchange may take hours or even days,
 leading to severe fragmentation and consuming a significant amount of the
 available network resources.  6LoWPAN Neighbor Discovery behavior may be tuned
 through the use of appropriate values for the default Router Lifetime, the
-Valid Lifetime in the PIOs, and the Valid Lifetime in the 6LowPan Context Option (6CO), as well as the
+Valid Lifetime in the PIOs, and the Valid Lifetime in the 6LoWPAN Context Option (6CO), as well as the
 address Registration Lifetime. However, for the latter LPWANs mentioned above,
 6LoWPAN Neighbor Discovery is not suitable.  </t>
 
@@ -2330,6 +2330,15 @@ called Grammerly and sending me it's report.</t>
 	
 	</list></t>
 	</section>
+
+	<section title="From -07 to -08">
+	<t><list style="symbold">
+
+	<t>various typos</t>
+
+	</list></t>
+	</section>
+
 
 	</section>
 
