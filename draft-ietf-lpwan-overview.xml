@@ -263,7 +263,7 @@ for the end-devices connected to the network. It is the center of the star
 topology.
 </t>
 
-    <t>- Join Server: The Join Server (JS) is a server on the Internet
+    <t>Join Server: The Join Server (JS) is a server on the Internet
 side of an NS that processes join requests from end-devices.</t>
 
 
@@ -371,7 +371,7 @@ we describe maxima and
 minima for some parameters of interest to those defining ways to use IETF
 protocols over the LoRaWAN MAC layer.</t>
 
-<texttable anchor="lora-ism868" title="Default settings for EU868MHz band">
+<texttable anchor="lora-ism868" title="Default settings for EU 868MHz band">
     <ttcol align='center'>Parameters</ttcol>
     <ttcol align='center'>Default Value</ttcol>
 
