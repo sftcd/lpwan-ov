@@ -1396,7 +1396,7 @@ only transmit for a certain percentage of each hour.</t>
 
 <section anchor="naive" title="Naive application of IPv6">
 
-<t>IPv6 <xref target='RFC2460'/> has been designed to allocate addresses to all the nodes 
+<t>IPv6 <xref target='RFC8200'/> has been designed to allocate addresses to all the nodes 
  connected to the Internet. Nevertheless, the header overhead of at least 40 bytes 
  introduced by the protocol is incompatible with LPWAN constraints. If IPv6 with 
  no further optimization were used, several LPWAN frames could be needed just to carry
@@ -1981,6 +1981,7 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
    <?rfc include='reference.RFC.6961'?>
    <?rfc include='reference.RFC.7252'?>
    <?rfc include='reference.RFC.7668'?>
+   <?rfc include='reference.RFC.8200'?>
     &I-D.farrell-lpwan-lora-overview;
 	&I-D.minaburo-lpwan-gap-analysis;
 	&I-D.zuniga-lpwan-sigfox-system-description;
@@ -2335,6 +2336,8 @@ called Grammerly and sending me it's report.</t>
 	<t><list style="symbold">
 
 	<t>various typos</t>
+	<t>Last call and directorate comments from Abdussalam Baryun and Andy Malis</t>
+	
 
 	</list></t>
 	</section>

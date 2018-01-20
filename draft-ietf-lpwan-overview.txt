@@ -4,8 +4,8 @@
 
 lpwan                                                    S. Farrell, Ed.
 Internet-Draft                                    Trinity College Dublin
-Intended status: Informational                          January 12, 2018
-Expires: July 16, 2018
+Intended status: Informational                          January 20, 2018
+Expires: July 24, 2018
 
 
                              LPWAN Overview
@@ -36,7 +36,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 16, 2018.
+   This Internet-Draft will expire on July 24, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 1]
+Farrell                   Expires July 24, 2018                 [Page 1]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -109,12 +109,12 @@ Table of Contents
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 2]
+Farrell                   Expires July 24, 2018                 [Page 2]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  41
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  42
 
 1.  Introduction
 
@@ -165,7 +165,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 3]
+Farrell                   Expires July 24, 2018                 [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -221,7 +221,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 4]
+Farrell                   Expires July 24, 2018                 [Page 4]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -277,7 +277,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 5]
+Farrell                   Expires July 24, 2018                 [Page 5]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -333,7 +333,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 6]
+Farrell                   Expires July 24, 2018                 [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -389,7 +389,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 7]
+Farrell                   Expires July 24, 2018                 [Page 7]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -445,7 +445,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 8]
+Farrell                   Expires July 24, 2018                 [Page 8]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -501,7 +501,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                 [Page 9]
+Farrell                   Expires July 24, 2018                 [Page 9]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -557,7 +557,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 10]
+Farrell                   Expires July 24, 2018                [Page 10]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -613,7 +613,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 11]
+Farrell                   Expires July 24, 2018                [Page 11]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -669,7 +669,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 12]
+Farrell                   Expires July 24, 2018                [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -725,7 +725,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 13]
+Farrell                   Expires July 24, 2018                [Page 13]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -781,7 +781,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 14]
+Farrell                   Expires July 24, 2018                [Page 14]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -837,7 +837,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 15]
+Farrell                   Expires July 24, 2018                [Page 15]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -893,7 +893,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 16]
+Farrell                   Expires July 24, 2018                [Page 16]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -949,7 +949,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 17]
+Farrell                   Expires July 24, 2018                [Page 17]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1005,7 +1005,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 18]
+Farrell                   Expires July 24, 2018                [Page 18]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1061,7 +1061,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 19]
+Farrell                   Expires July 24, 2018                [Page 19]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1117,7 +1117,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 20]
+Farrell                   Expires July 24, 2018                [Page 20]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1173,7 +1173,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 21]
+Farrell                   Expires July 24, 2018                [Page 21]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1229,7 +1229,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 22]
+Farrell                   Expires July 24, 2018                [Page 22]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1285,7 +1285,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 23]
+Farrell                   Expires July 24, 2018                [Page 23]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1341,7 +1341,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 24]
+Farrell                   Expires July 24, 2018                [Page 24]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1397,14 +1397,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 25]
+Farrell                   Expires July 24, 2018                [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 4.1.  Naive application of IPv6
 
-   IPv6 [RFC2460] has been designed to allocate addresses to all the
+   IPv6 [RFC8200] has been designed to allocate addresses to all the
    nodes connected to the Internet.  Nevertheless, the header overhead
    of at least 40 bytes introduced by the protocol is incompatible with
    LPWAN constraints.  If IPv6 with no further optimization were used,
@@ -1453,7 +1453,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 26]
+Farrell                   Expires July 24, 2018                [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1509,7 +1509,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 27]
+Farrell                   Expires July 24, 2018                [Page 27]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1565,7 +1565,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 28]
+Farrell                   Expires July 24, 2018                [Page 28]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1621,7 +1621,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 29]
+Farrell                   Expires July 24, 2018                [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1677,7 +1677,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 30]
+Farrell                   Expires July 24, 2018                [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1733,7 +1733,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 31]
+Farrell                   Expires July 24, 2018                [Page 31]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1789,7 +1789,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 32]
+Farrell                   Expires July 24, 2018                [Page 32]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1845,7 +1845,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 33]
+Farrell                   Expires July 24, 2018                [Page 33]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1901,7 +1901,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 34]
+Farrell                   Expires July 24, 2018                [Page 34]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -1957,7 +1957,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 35]
+Farrell                   Expires July 24, 2018                [Page 35]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -2013,7 +2013,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 36]
+Farrell                   Expires July 24, 2018                [Page 36]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -2032,6 +2032,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Shelby, Z., and C. Gomez, "IPv6 over BLUETOOTH(R) Low
               Energy", RFC 7668, DOI 10.17487/RFC7668, October 2015,
               <https://www.rfc-editor.org/info/rfc7668>.
+
+   [RFC8200]  Deering, S. and R. Hinden, "Internet Protocol, Version 6
+              (IPv6) Specification", STD 86, RFC 8200,
+              DOI 10.17487/RFC8200, July 2017, <https://www.rfc-
+              editor.org/info/rfc8200>.
 
    [I-D.farrell-lpwan-lora-overview]
               Farrell, S. and A. Yegin, "LoRaWAN Overview", draft-
@@ -2058,21 +2063,21 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               "LoRaWAN Authentication in Diameter", draft-garcia-dime-
               diameter-lorawan-00 (work in progress), May 2016.
 
+
+
+
+
+
+
+Farrell                   Expires July 24, 2018                [Page 37]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    [I-D.garcia-radext-radius-lorawan]
               Garcia, D., Lopez, R., Kandasamy, A., and A. Pelov,
               "LoRaWAN Authentication in RADIUS", draft-garcia-radext-
               radius-lorawan-03 (work in progress), May 2017.
-
-
-
-
-
-
-
-Farrell                   Expires July 16, 2018                [Page 37]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    [TGPP36300]
               3GPP, "TS 36.300 v13.4.0 Evolved Universal Terrestrial
@@ -2120,12 +2125,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-
-
-
-
-
-Farrell                   Expires July 16, 2018                [Page 38]
+Farrell                   Expires July 24, 2018                [Page 38]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -2181,7 +2181,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-Farrell                   Expires July 16, 2018                [Page 39]
+Farrell                   Expires July 24, 2018                [Page 39]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -2237,7 +2237,7 @@ A.2.  From -01 to -02
 
 
 
-Farrell                   Expires July 16, 2018                [Page 40]
+Farrell                   Expires July 24, 2018                [Page 40]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
@@ -2285,18 +2285,20 @@ A.8.  From -07 to -08
 
       various typos
 
-Author's Address
+      Last call and directorate comments from Abdussalam Baryun and Andy
+      Malis
 
 
 
 
 
 
-
-Farrell                   Expires July 16, 2018                [Page 41]
+Farrell                   Expires July 24, 2018                [Page 41]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+Author's Address
 
    Stephen Farrell (editor)
    Trinity College Dublin
@@ -2347,6 +2349,4 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
 
-
-
-Farrell                   Expires July 16, 2018                [Page 42]
+Farrell                   Expires July 24, 2018                [Page 42]
