@@ -137,7 +137,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Existing pilot deployments have shown huge potential and created much
    industrial interest in these technologies.  As of today, essentially
-   no LPWAN devices have IP capabilities.  Connecting LPWANs to the
+   no LPWAN end-devices have IP capabilities.  Connecting LPWANs to the
    Internet would provide significant benefits to these networks in
    terms of interoperability, application deployment, and management,
    among others.  The goal of the IETF LPWAN working group is to, where
@@ -2285,8 +2285,8 @@ A.8.  From -07 to -08
 
       various typos
 
-      Last call and directorate comments from Abdussalam Baryun and Andy
-      Malis
+      Last call and directorate comments from Abdussalam Baryun (AB) and
+      Andy Malis
 
       20180118 IESG ballot comments from Warren: nits handled, two
       possible bits of text still needed.
@@ -2298,6 +2298,9 @@ Farrell                   Expires July 27, 2018                [Page 41]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+      Some more AB comments handled.  Still need to check over 7452 and
+      8240 to see if issues from those need to be discussed here.
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2307,9 +2310,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
 
 
 

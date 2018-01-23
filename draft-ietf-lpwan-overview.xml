@@ -145,7 +145,7 @@ increased indoor coverage.
 
 <t> Existing pilot deployments have shown huge potential and created much
 industrial interest in these technologies.  As of today, 
-essentially no LPWAN devices have IP capabilities.
+essentially no LPWAN end-devices have IP capabilities.
 Connecting LPWANs to the Internet would provide significant benefits to these
 networks in terms of interoperability, application deployment, and management,
 among others.  The goal of the IETF LPWAN working group is to, where necessary, adapt 
@@ -2336,9 +2336,12 @@ called Grammerly and sending me it's report.</t>
 	<t><list style="symbold">
 
 	<t>various typos</t>
-	<t>Last call and directorate comments from Abdussalam Baryun and Andy Malis</t>
+	<t>Last call and directorate comments from Abdussalam Baryun (AB) and Andy Malis</t>
 	<t>20180118 IESG ballot comments from Warren: nits handled, two possible bits of
 	text still needed.</t>
+
+	<t>Some more AB comments handled. Still need to check over 7452 and 8240
+			to see if issues from those need to be discussed here.</t>
 	
 
 	</list></t>
