@@ -264,13 +264,13 @@ topology.
 </t>
 
     <t>Join Server: The Join Server (JS) is a server on the Internet
-side of an NS that processes join requests from end-devices.</t>
+side of an NS that processes join requests from an end-devices.</t>
 
 
-	<t>Uplink message: refers to communications from end-device to network
+	<t>Uplink message: refers to communications from an end-device to a network
 server or application via one or more gateways. </t>
 
-	<t>Downlink message: refers to communications from network server or
+	<t>Downlink message: refers to communications from a network server or
 application via one gateway to a single end-device or a group of end-devices
 (considering multicasting). </t>
 
@@ -888,7 +888,7 @@ layer performing the same tasks as in control plane.</t>
 
 	<section anchor="sigfox" title="SIGFOX">
 
-	<t>Text here is largely from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>
+	<t>Text here is largely from <xref target="I-D.zuniga-lpwan-sigfox-system-description"/>,
 which may have been updated since this was published.</t>
 
 	  <section anchor="sigfox-docs" title="Provenance and Documents">
@@ -1180,7 +1180,7 @@ term battery operation of network nodes.</t>
 The following list contains some overall characteristics of Wi-SUN that are
 relevant to LPWAN applications.
 <list style="symbols">
-<t>Coverage
+<t>Coverage:
 The range of Wi-SUN FAN is typically 2 -- 3 km in line of sight, matching the
 needs of neighborhood area networks, campus area networks, or corporate area
 networks. The range can also be extended via multi-hop networking.</t>
@@ -2337,6 +2337,8 @@ called Grammerly and sending me it's report.</t>
 
 	<t>various typos</t>
 	<t>Last call and directorate comments from Abdussalam Baryun and Andy Malis</t>
+	<t>20180118 IESG ballot comments from Warren: nits handled, two possible bits of
+	text still needed.</t>
 	
 
 	</list></t>
