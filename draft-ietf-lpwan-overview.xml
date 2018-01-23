@@ -153,7 +153,7 @@ increased indoor coverage.
 
 <t> Existing pilot deployments have shown huge potential and created much
 industrial interest in these technologies.  As of today, 
-essentially no LPWAN end-devices have IP capabilities.
+essentially no LPWAN end-devices (other than for Wi-SUN) have IP capabilities.
 Connecting LPWANs to the Internet would provide significant benefits to these
 networks in terms of interoperability, application deployment, and management,
 among others.  The goal of the IETF LPWAN working group is to, where necessary, adapt 
@@ -2350,6 +2350,9 @@ called Grammerly and sending me it's report.</t>
 
 	<t>Some more AB comments handled. Still need to check over 7452 and 8240
 			to see if issues from those need to be discussed here.</t>
+
+	<t>Corrected "no IP capabilities - Wi-SUN devices do v6 (thanks
+	Paul Duffy:-)</t>
 	
 
 	</list></t>

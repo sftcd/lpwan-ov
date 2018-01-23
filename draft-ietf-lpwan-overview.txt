@@ -137,12 +137,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Existing pilot deployments have shown huge potential and created much
    industrial interest in these technologies.  As of today, essentially
-   no LPWAN end-devices have IP capabilities.  Connecting LPWANs to the
-   Internet would provide significant benefits to these networks in
-   terms of interoperability, application deployment, and management,
-   among others.  The goal of the IETF LPWAN working group is to, where
-   necessary, adapt IETF-defined protocols, addressing schemes and
-   naming to this particular constrained environment.
+   no LPWAN end-devices (other than for Wi-SUN) have IP capabilities.
+   Connecting LPWANs to the Internet would provide significant benefits
+   to these networks in terms of interoperability, application
+   deployment, and management, among others.  The goal of the IETF LPWAN
+   working group is to, where necessary, adapt IETF-defined protocols,
+   addressing schemes and naming to this particular constrained
+   environment.
 
    This document is largely the work of the people listed in Section 7.
 
@@ -160,7 +161,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Note that some of the technology-specific drafts referenced below may
    have been updated since publication of this document.
-
 
 
 
@@ -2301,6 +2301,9 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
       Some more AB comments handled.  Still need to check over 7452 and
       8240 to see if issues from those need to be discussed here.
 
+      Corrected "no IP capabilities - Wi-SUN devices do v6 (thanks Paul
+      Duffy:-)
+
 Author's Address
 
    Stephen Farrell (editor)
@@ -2310,9 +2313,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
 
 
 
