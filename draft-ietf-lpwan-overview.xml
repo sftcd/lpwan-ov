@@ -9,6 +9,14 @@
 
 ]>
 
+<!--
+	 TODO: 
+		- warren: say why lpwan is different from lp lan/pan
+		- warren, andy, AB: add moar examples
+		- AB: check 7452 and 8240 to see if they have good
+			stuff for gap analysis not already covered
+-->
+
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
