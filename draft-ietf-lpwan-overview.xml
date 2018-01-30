@@ -10,8 +10,7 @@
 ]>
 
 <!--
-	 TODO: 
-		- warren, andy, AB: add moar examples
+	 TODO: Add some neutral use-case where there're real details available, if I can find one.
 -->
 
 <?rfc toc="yes"?>
@@ -152,7 +151,9 @@ increased indoor coverage.
 is that in LPWANs the balancing act related to power consumption/battery life, cost and
 bandwidth tends to prioritise doing better with respect to power and cost and we
 are more willing to live with extremely low bandwidth and 
-constrained duty-cycles when making the various trade-offs required.</t>
+constrained duty-cycles when making the various trade-offs required, in
+order to get the multiple-kilometre radio links implied by the "wide
+area" aspect of the LPWAN term.</t>
 
 <t> Existing pilot deployments have shown huge potential and created much
 industrial interest in these technologies.  As of today, 
@@ -697,9 +698,13 @@ overview and overall description of the E-UTRAN radio interface protocol
 architecture, while specifications 36.321 <xref target="TGPP36321"></xref>,
 36.322 <xref target="TGPP36322"></xref>, 36.323 <xref
 target="TGPP36323"></xref> and 36.331 <xref target="TGPP36331"></xref> give
-more detailed description of MAC, RLC, PDCP and RRC protocol layers,
+more detailed description of MAC, Radio Link Control (RLC), 
+Packet Data Convergence 
+Protocol (PDCP) and Radio Resource Control (RRC) protocol layers,
 respectively. Note that the description below assumes familiarity with
 numerous 3GPP terms.</t>
+
+<t>For a general overview of NB-IoT, see <xref target="nbiot-ov"/>.</t>
 
 	  </section>
 
@@ -2178,6 +2183,7 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
          </front>
       </reference>
 
+	  <!--
       <reference anchor="LoRaSpec1.0" target="https://www.lora-alliance.org/portals/0/specs/LoRaWAN%20Specification%201R0.pdf">
          <front>
             <title>
@@ -2189,6 +2195,7 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
             <date month="Jan" year="2015"/>
          </front>
       </reference>
+	-->
 
       <reference anchor="ANSI-4957-000" target="https://global.ihs.com/doc_detail.cfm?%26rid=TIA%26item_s_key=00606368">
          <front>
@@ -2265,6 +2272,18 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
           <date year="2017" month="February"/>
         </front>
       </reference>
+
+      <reference anchor="nbiot-ov">
+        <front>
+			<title>NB-IoT technology overview and experience from cloud-RAN implementation</title>
+			<author>
+  				<organization> Beyene, Yihenew Dagne, et al.</organization>
+			</author>
+		  	<date year="2017" month="June"/>
+        </front>
+      	<seriesInfo name="IEEE Wireless Communications" value="24,3 (2017): 26-32"/>
+      </reference>
+
 	  
 
 	</references>
@@ -2388,6 +2407,9 @@ called Grammerly and sending me it's report.</t>
 
 	<t>Added text @ start of gap analysis referring to RFCs 7252 and 8240,
 			as suggested by a few folks (AB, Warren, Mirja)</t>
+
+	<t>Added nbiot-ov reference for those who'd like a more polished presentation
+			of NB-IoT</t>
 	
 
 	</list></t>

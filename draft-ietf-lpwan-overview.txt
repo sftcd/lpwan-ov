@@ -140,7 +140,8 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    life, cost and bandwidth tends to prioritise doing better with
    respect to power and cost and we are more willing to live with
    extremely low bandwidth and constrained duty-cycles when making the
-   various trade-offs required.
+   various trade-offs required, in order to get the multiple-kilometre
+   radio links implied by the "wide area" aspect of the LPWAN term.
 
    Existing pilot deployments have shown huge potential and created much
    industrial interest in these technologies.  As of today, essentially
@@ -160,8 +161,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    that are being considered in the LPWAN working group.  The text for
    each was mainly contributed by proponents of each technology.
 
-   Note that this text is not intended to be normative in any sense, but
-   simply to help the reader in finding the relevant layer 2
+
 
 
 
@@ -170,6 +170,8 @@ Farrell                  Expires August 3, 2018                 [Page 3]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+   Note that this text is not intended to be normative in any sense, but
+   simply to help the reader in finding the relevant layer 2
    specifications and in understanding how those integrate with IETF-
    defined technologies.  Similarly, there is no attempt here to set out
    the pros and cons of the relevant technologies.
@@ -206,8 +208,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    bandwidth availability.
 
    Figure 1 shows the entities involved in a LoRaWAN network.
-
-
 
 
 
@@ -579,9 +579,12 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    overall description of the E-UTRAN radio interface protocol
    architecture, while specifications 36.321 [TGPP36321], 36.322
    [TGPP36322], 36.323 [TGPP36323] and 36.331 [TGPP36331] give more
-   detailed description of MAC, RLC, PDCP and RRC protocol layers,
-   respectively.  Note that the description below assumes familiarity
-   with numerous 3GPP terms.
+   detailed description of MAC, Radio Link Control (RLC), Packet Data
+   Convergence Protocol (PDCP) and Radio Resource Control (RRC) protocol
+   layers, respectively.  Note that the description below assumes
+   familiarity with numerous 3GPP terms.
+
+   For a general overview of NB-IoT, see [nbiot-ov].
 
 2.2.2.  Characteristics
 
@@ -607,9 +610,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    NB-IoT can be deployed in three ways.  In-band deployment means that
    the narrowband is deployed inside the LTE band and radio resources
-   are flexibly shared between NB-IoT and normal LTE carrier.  In Guard-
-   band deployment the narrowband uses the unused resource blocks
-   between two adjacent LTE carriers.  Standalone deployment is also
 
 
 
@@ -618,6 +618,9 @@ Farrell                  Expires August 3, 2018                [Page 11]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+   are flexibly shared between NB-IoT and normal LTE carrier.  In Guard-
+   band deployment the narrowband uses the unused resource blocks
+   between two adjacent LTE carriers.  Standalone deployment is also
    supported, where the narrowband can be located alone in dedicated
    spectrum, which makes it possible for example to reframe a GSM
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
@@ -662,10 +665,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    alive" signaling (PSM uses periodic TAU signaling with additional
    reception window for downlink reachability).
 
-   Since NB-IoT operates in licensed spectrum, it has no channel access
-   restrictions allowing up to a 100% duty-cycle.
 
-   3GPP access security is specified in [TGPP33203].
 
 
 
@@ -673,6 +673,11 @@ Farrell                  Expires August 3, 2018                [Page 12]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   Since NB-IoT operates in licensed spectrum, it has no channel access
+   restrictions allowing up to a 100% duty-cycle.
+
+   3GPP access security is specified in [TGPP33203].
 
    +--+
    |UE| \              +------+      +------+
@@ -713,11 +718,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    base station, which controls the UEs in one or several cells.
 
    The 3GPP radio protocol architecture is illustrated in Figure 4.
-
-
-
-
-
 
 
 
@@ -2170,10 +2170,10 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               alliance.org/DesktopModules/Inventures_Document/
               FileDownload.aspx?ContentID=1398>.
 
-   [LoRaSpec1.0]
-              LoRa Alliance, "LoRaWAN Specification Version V1.0", Jan
-              2015, <https://www.lora-alliance.org/portals/0/specs/
-              LoRaWAN%20Specification%201R0.pdf>.
+   [ANSI-4957-000]
+              ANSI, TIA-4957.000, "Architecture Overview for the Smart
+              Utility Network", May 2013, <https://global.ihs.com/
+              doc_detail.cfm?%26rid=TIA%26item_s_key=00606368>.
 
 
 
@@ -2185,11 +2185,6 @@ Farrell                  Expires August 3, 2018                [Page 39]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
-
-   [ANSI-4957-000]
-              ANSI, TIA-4957.000, "Architecture Overview for the Smart
-              Utility Network", May 2013, <https://global.ihs.com/
-              doc_detail.cfm?%26rid=TIA%26item_s_key=00606368>.
 
    [ANSI-4957-210]
               ANSI, TIA-4957.210, "Multi-Hop Delivery Specification of a
@@ -2226,6 +2221,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Range Devices (SRD); Technical characteristics for Ultra
               Narrow Band (UNB) SRDs operating in the UHF spectrum below
               1 GHz", February 2017.
+
+   [nbiot-ov]
+              Beyene, Yihenew Dagne, et al., "NB-IoT technology overview
+              and experience from cloud-RAN implementation", IEEE
+              Wireless Communications 24,3 (2017): 26-32, June 2017.
 
 Appendix A.  Changes
 
@@ -2337,7 +2337,22 @@ A.8.  From -07 to -08
       Added text @ start of gap analysis referring to RFCs 7252 and
       8240, as suggested by a few folks (AB, Warren, Mirja)
 
+      Added nbiot-ov reference for those who'd like a more polished
+      presentation of NB-IoT
+
 Author's Address
+
+
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 42]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    Stephen Farrell (editor)
    Trinity College Dublin
@@ -2349,4 +2364,45 @@ Author's Address
 
 
 
-Farrell                  Expires August 3, 2018                [Page 42]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 43]
