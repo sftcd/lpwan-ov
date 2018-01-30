@@ -11,10 +11,7 @@
 
 <!--
 	 TODO: 
-		- warren: say why lpwan is different from lp lan/pan
 		- warren, andy, AB: add moar examples
-		- AB: check 7452 and 8240 to see if they have good
-			stuff for gap analysis not already covered
 -->
 
 <?rfc toc="yes"?>
@@ -150,6 +147,12 @@ There are some differences however, e.g.,
 the Narrowband IoT specifications <xref target="nbiot"/> also aim for
 increased indoor coverage. 
 -->
+
+<t>What mainly distinguishes LPWANs from other constrained networks
+is that in LPWANs the balancing act related to power consumption/battery life, cost and
+bandwidth tends to prioritise doing better with respect to power and cost and we
+are more willing to live with extremely low bandwidth and 
+constrained duty-cycles when making the various trade-offs required.</t>
 
 <t> Existing pilot deployments have shown huge potential and created much
 industrial interest in these technologies.  As of today, 
@@ -1408,6 +1411,15 @@ only transmit for a certain percentage of each hour.</t>
 
 <section anchor="gaps" title="Gap Analysis">
 
+<t>This section considers some of the gaps between current 
+		LPWAN technologies and the goals of the LPWAN working
+		group. Many of the generic considerations described 
+		in <xref target="RFC7452"/> will also apply in LPWANs,
+		as end-devices can also be considered as a subclass of
+		(so-called) "smart objects." In addition, LPWAN device
+		implementers will also need to consider the issues 
+		relating to firmware updates described in <xref target="RFC8240"/>.</t>
+
 <section anchor="naive" title="Naive application of IPv6">
 
 <t>IPv6 <xref target='RFC8200'/> has been designed to allocate addresses to all the nodes 
@@ -1948,15 +1960,22 @@ for the excellent text. Errors in the handling of that are
 solely the editor's fault.
 </t>
 
+<t>[[RFC editor: Please surnames below for I18N, at least Mirja's does
+		need fixing.]]</t>
+
 	<t>In addition to the contributors above, thanks are due 
-to 
+to (in alphabetical order):  
+Abdussalam Baryun,
+Andy Malis,
 Arun (arun@acklio.com),
 Behcet SariKaya,
 Dan Garcia Carrillo,
+Jiazi Yi, 
+Mirja Kühlewind, 
 Paul Duffy, 
 Russ Housley,
 Thad Guidry,
-Jiazi Yi, 
+Warren Kumari,
 for comments.</t>
 
 <t>Alexander Pelov and Pascal Thubert were the LPWAN WG
@@ -1994,8 +2013,10 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
    <?rfc include='reference.RFC.6775'?>
    <?rfc include='reference.RFC.6961'?>
    <?rfc include='reference.RFC.7252'?>
+   <?rfc include='reference.RFC.7452'?>
    <?rfc include='reference.RFC.7668'?>
    <?rfc include='reference.RFC.8200'?>
+   <?rfc include='reference.RFC.8240'?>
     &I-D.farrell-lpwan-lora-overview;
 	&I-D.minaburo-lpwan-gap-analysis;
 	&I-D.zuniga-lpwan-sigfox-system-description;
@@ -2361,6 +2382,12 @@ called Grammerly and sending me it's report.</t>
 	Paul Duffy:-)</t>
 
 	<t>Mirja's AD ballot comments handled.</t>
+
+	<t>Added a sentence in intro trying to say what's "special" about LPWAN
+			compared to other constrained networks. (As suggested by Warren.)</t>
+
+	<t>Added text @ start of gap analysis referring to RFCs 7252 and 8240,
+			as suggested by a few folks (AB, Warren, Mirja)</t>
 	
 
 	</list></t>

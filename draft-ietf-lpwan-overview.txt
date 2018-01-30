@@ -68,15 +68,15 @@ Table of Contents
      2.1.  LoRaWAN . . . . . . . . . . . . . . . . . . . . . . . . .   4
        2.1.1.  Provenance and Documents  . . . . . . . . . . . . . .   4
        2.1.2.  Characteristics . . . . . . . . . . . . . . . . . . .   4
-     2.2.  Narrowband IoT (NB-IoT) . . . . . . . . . . . . . . . . .  10
-       2.2.1.  Provenance and Documents  . . . . . . . . . . . . . .  10
+     2.2.  Narrowband IoT (NB-IoT) . . . . . . . . . . . . . . . . .  11
+       2.2.1.  Provenance and Documents  . . . . . . . . . . . . . .  11
        2.2.2.  Characteristics . . . . . . . . . . . . . . . . . . .  11
      2.3.  SIGFOX  . . . . . . . . . . . . . . . . . . . . . . . . .  15
        2.3.1.  Provenance and Documents  . . . . . . . . . . . . . .  15
-       2.3.2.  Characteristics . . . . . . . . . . . . . . . . . . .  15
-     2.4.  Wi-SUN Alliance Field Area Network (FAN)  . . . . . . . .  19
+       2.3.2.  Characteristics . . . . . . . . . . . . . . . . . . .  16
+     2.4.  Wi-SUN Alliance Field Area Network (FAN)  . . . . . . . .  20
        2.4.1.  Provenance and Documents  . . . . . . . . . . . . . .  20
-       2.4.2.  Characteristics . . . . . . . . . . . . . . . . . . .  20
+       2.4.2.  Characteristics . . . . . . . . . . . . . . . . . . .  21
    3.  Generic Terminology . . . . . . . . . . . . . . . . . . . . .  24
    4.  Gap Analysis  . . . . . . . . . . . . . . . . . . . . . . . .  25
      4.1.  Naive application of IPv6 . . . . . . . . . . . . . . . .  26
@@ -85,7 +85,7 @@ Table of Contents
        4.2.2.  Address Autoconfiguration . . . . . . . . . . . . . .  27
        4.2.3.  Fragmentation . . . . . . . . . . . . . . . . . . . .  27
        4.2.4.  Neighbor Discovery  . . . . . . . . . . . . . . . . .  28
-     4.3.  6lo . . . . . . . . . . . . . . . . . . . . . . . . . . .  28
+     4.3.  6lo . . . . . . . . . . . . . . . . . . . . . . . . . . .  29
      4.4.  6tisch  . . . . . . . . . . . . . . . . . . . . . . . . .  29
      4.5.  RoHC  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
      4.6.  ROLL  . . . . . . . . . . . . . . . . . . . . . . . . . .  30
@@ -95,17 +95,17 @@ Table of Contents
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  31
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  32
    7.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  32
-   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  34
+   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  35
    9.  Informative References  . . . . . . . . . . . . . . . . . . .  35
    Appendix A.  Changes  . . . . . . . . . . . . . . . . . . . . . .  40
      A.1.  From -00 to -01 . . . . . . . . . . . . . . . . . . . . .  40
-     A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  40
+     A.2.  From -01 to -02 . . . . . . . . . . . . . . . . . . . . .  41
      A.3.  From -02 to -03 . . . . . . . . . . . . . . . . . . . . .  41
      A.4.  From -03 to -04 . . . . . . . . . . . . . . . . . . . . .  41
      A.5.  From -04 to -05 . . . . . . . . . . . . . . . . . . . . .  41
-     A.6.  From -05 to -06 . . . . . . . . . . . . . . . . . . . . .  41
-     A.7.  From -06 to -07 . . . . . . . . . . . . . . . . . . . . .  41
-     A.8.  From -07 to -08 . . . . . . . . . . . . . . . . . . . . .  41
+     A.6.  From -05 to -06 . . . . . . . . . . . . . . . . . . . . .  42
+     A.7.  From -06 to -07 . . . . . . . . . . . . . . . . . . . . .  42
+     A.8.  From -07 to -08 . . . . . . . . . . . . . . . . . . . . .  42
 
 
 
@@ -135,6 +135,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    goal.  So, by and large, the different technologies aim for
    deployment in very similar circumstances.
 
+   What mainly distinguishes LPWANs from other constrained networks is
+   that in LPWANs the balancing act related to power consumption/battery
+   life, cost and bandwidth tends to prioritise doing better with
+   respect to power and cost and we are more willing to live with
+   extremely low bandwidth and constrained duty-cycles when making the
+   various trade-offs required.
+
    Existing pilot deployments have shown huge potential and created much
    industrial interest in these technologies.  As of today, essentially
    no LPWAN end-devices (other than for Wi-SUN) have IP capabilities.
@@ -155,13 +162,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Note that this text is not intended to be normative in any sense, but
    simply to help the reader in finding the relevant layer 2
-   specifications and in understanding how those integrate with IETF-
-   defined technologies.  Similarly, there is no attempt here to set out
-   the pros and cons of the relevant technologies.
-
-   Note that some of the technology-specific drafts referenced below may
-   have been updated since publication of this document.
-
 
 
 
@@ -169,6 +169,13 @@ Farrell                  Expires August 3, 2018                 [Page 3]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   specifications and in understanding how those integrate with IETF-
+   defined technologies.  Similarly, there is no attempt here to set out
+   the pros and cons of the relevant technologies.
+
+   Note that some of the technology-specific drafts referenced below may
+   have been updated since publication of this document.
 
 2.1.  LoRaWAN
 
@@ -200,6 +207,25 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Figure 1 shows the entities involved in a LoRaWAN network.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                 [Page 4]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    +----------+
    |End-device| * * *
    +----------+       *   +---------+
@@ -218,13 +244,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    o  End-device: a LoRa client device, sometimes called a mote.
       Communicates with gateways.
-
-
-
-Farrell                  Expires August 3, 2018                 [Page 4]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    o  Gateway: a radio on the infrastructure-side, sometimes called a
       concentrator or base-station.  Communicates with end-devices and,
@@ -254,6 +273,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    multiple gateways, so during nominal operation a network server may
    see multiple instances of the same uplink message from an end-device.
 
+
+
+
+
+Farrell                  Expires August 3, 2018                 [Page 5]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    The LoRaWAN network infrastructure manages the data rate and RF
    output power for each end-device individually by means of an adaptive
    data rate (ADR) scheme.  End-devices may transmit on any channel
@@ -274,14 +302,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    receive windows.  When a device joins a LoRaWAN network, there are
    similar timeouts on parts of that process.
 
-
-
-
-Farrell                  Expires August 3, 2018                 [Page 5]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    |----------------------------|         |--------|     |--------|
    |             Tx             |         |   Rx   |     |   Rx   |
    |----------------------------|         |--------|     |--------|
@@ -301,26 +321,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    parameters of interest to those defining ways to use IETF protocols
    over the LoRaWAN MAC layer.
 
-   +------------------------+------------------------------------------+
-   |       Parameters       |              Default Value               |
-   +------------------------+------------------------------------------+
-   |       Rx delay 1       |                   1 s                    |
-   |                        |                                          |
-   |       Rx delay 2       |    2 s (must be RECEIVE_DELAY1 + 1s)     |
-   |                        |                                          |
-   |      join delay 1      |                   5 s                    |
-   |                        |                                          |
-   |      join delay 2      |                   6 s                    |
-   |                        |                                          |
-   |     868MHz Default     | 3 (868.1,868.2,868.3), data rate: 0.3-5  |
-   |        channels        |                   kbps                   |
-   +------------------------+------------------------------------------+
-
-               Table 1: Default settings for EU 868MHz band
-
-
-
-
 
 
 
@@ -337,6 +337,23 @@ Farrell                  Expires August 3, 2018                 [Page 6]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   +------------------------+------------------------------------------+
+   |       Parameters       |              Default Value               |
+   +------------------------+------------------------------------------+
+   |       Rx delay 1       |                   1 s                    |
+   |                        |                                          |
+   |       Rx delay 2       |    2 s (must be RECEIVE_DELAY1 + 1s)     |
+   |                        |                                          |
+   |      join delay 1      |                   5 s                    |
+   |                        |                                          |
+   |      join delay 2      |                   6 s                    |
+   |                        |                                          |
+   |     868MHz Default     | 3 (868.1,868.2,868.3), data rate: 0.3-5  |
+   |        channels        |                   kbps                   |
+   +------------------------+------------------------------------------+
+
+               Table 1: Default settings for EU 868MHz band
 
    +-----------------------------------------------+--------+----------+
    | Parameter/Notes                               |  Min   |   Max    |
@@ -369,6 +386,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Uplink and downlink higher layer data is carried in a MACPayload.
    There is a concept of "ports" (an optional 8-bit value) to handle
+
+
+
+Farrell                  Expires August 3, 2018                 [Page 7]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    different applications on an end-device.  Port zero is reserved for
    LoRaWAN specific messaging, such as the configuration of the end
    device's network parameters (available channels, data rates, ADR
@@ -386,13 +411,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    device) to inform an end-device about the signal attenuation seen
    most recently at a gateway, and to also tell the end-device how many
    gateways received the corresponding link request MAC command.
-
-
-
-Farrell                  Expires August 3, 2018                 [Page 7]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    Some MAC commands are initiated by the network server.  For example,
    one command allows the network server to ask an end-device to reduce
@@ -424,6 +442,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    given the nature of LoRaWAN networks.  Table 3 summarizes these
    values.
 
+
+
+
+Farrell                  Expires August 3, 2018                 [Page 8]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    +---------+---------------------------------------------------------+
    | Value   | Description                                             |
    +---------+---------------------------------------------------------+
@@ -441,14 +467,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    +---------+---------------------------------------------------------+
 
               Table 3: Values required for nominal operation
-
-
-
-
-Farrell                  Expires August 3, 2018                 [Page 8]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    As an alternative, end-devices can use the LoRaWAN join procedure
    with a join server behind the NS in order to setup some of these
@@ -480,6 +498,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    then routed to the network server which interacts with an entity that
    knows that AppKey to verify the Join-request.  All going well, a
    Join-accept downlink message is returned from the network server to
+
+
+
+Farrell                  Expires August 3, 2018                 [Page 9]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    the end-device that specifies the 24-bit NetID, 32-bit DevAddr and
    channel information and from which the AppSKey and NwkSKey can be
    derived based on knowledge of the AppKey.  This provides the end-
@@ -498,13 +524,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    AppSKey is used to provide data confidentiality between the end-
    device and network server, or to the application "behind" the network
    server, depending on the implementation of the network.
-
-
-
-Farrell                  Expires August 3, 2018                 [Page 9]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    All MAC layer messages have an outer 32-bit MIC calculated using AES-
    CMAC calculated over the ciphertext payload and other headers and
@@ -534,6 +553,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    an ECB mode AES-encrypt operation, with the plaintext input being a
    maximum of 16 octets.
 
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 10]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
 2.2.  Narrowband IoT (NB-IoT)
 
 2.2.1.  Provenance and Documents
@@ -554,13 +582,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    detailed description of MAC, RLC, PDCP and RRC protocol layers,
    respectively.  Note that the description below assumes familiarity
    with numerous 3GPP terms.
-
-
-
-Farrell                  Expires August 3, 2018                [Page 10]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
 2.2.2.  Characteristics
 
@@ -589,6 +610,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    are flexibly shared between NB-IoT and normal LTE carrier.  In Guard-
    band deployment the narrowband uses the unused resource blocks
    between two adjacent LTE carriers.  Standalone deployment is also
+
+
+
+Farrell                  Expires August 3, 2018                [Page 11]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    supported, where the narrowband can be located alone in dedicated
    spectrum, which makes it possible for example to reframe a GSM
    carrier at 850/900 MHz for NB-IoT.  All three deployment modes are
@@ -610,14 +639,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    Plane optimization, solution 2 in [TGPP23720]) and optional RRC
    Suspend/Resume (User Plane optimization, solution 18 in [TGPP23720]).
    In the control plane optimization the data is sent over Non-Access
-
-
-
-Farrell                  Expires August 3, 2018                [Page 11]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    Stratum, directly to/from Mobility Management Entity (MME) (see
    Figure 3 for the network architecture) in the core network to the
    User Equipment (UE) without interaction from the base station.  This
@@ -646,6 +667,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    3GPP access security is specified in [TGPP33203].
 
+
+
+Farrell                  Expires August 3, 2018                [Page 12]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    +--+
    |UE| \              +------+      +------+
    +--+  \             | MME  |------| HSS  |
@@ -665,15 +693,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    IoT.  Mobility Management Entity (MME) is responsible for handling
    the mobility of the UE.  MME tasks include tracking and paging UEs,
    session management, choosing the Serving gateway for the UE during
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 12]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    initial attachment and authenticating the user.  At MME, the Non-
    Access Stratum (NAS) signaling from the UE is terminated.
 
@@ -694,6 +713,22 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    base station, which controls the UEs in one or several cells.
 
    The 3GPP radio protocol architecture is illustrated in Figure 4.
+
+
+
+
+
+
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 13]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    +---------+                                       +---------+
    | NAS     |----|-----------------------------|----| NAS     |
@@ -722,14 +757,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    is called Non-Access Stratum (NAS), which conveys the radio signaling
    between the UE and the Evolved Packet Core (EPC), passing
    transparently through the radio network.  NAS responsible for
-
-
-
-Farrell                  Expires August 3, 2018                [Page 13]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    authentication, security control, mobility management and bearer
    management.
 
@@ -751,6 +778,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    transmit unicast data.  An RRC connection is established when the UE
    is expected to be active in the network, to transmit or receive data.
    The RRC connection is released, switching back to RRC_Idle, when
+
+
+
+Farrell                  Expires August 3, 2018                [Page 14]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    there is no more traffic in order to preserve UE battery life and
    radio resources.  However, a new feature was introduced for NB-IoT,
    as mentioned earlier, which allows data to be transmitted from the
@@ -777,15 +812,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    layers.  These include error detection and indication to higher
    layers, FEC encoding, HARQ soft-combining, rate matching and mapping
    of the transport channels onto physical channels, power weighting and
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 14]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    modulation of physical channels, frequency and time synchronization
    and radio characteristics measurements.
 
@@ -806,6 +832,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    been fully deployed in 12 countries, with ongoing deployments on 26
    other countries, giving in total a geography of 2 million square
    kilometers, containing 512 million people.
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 15]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
 2.3.2.  Characteristics
 
@@ -833,15 +868,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
       Spectrum allocation in Japan [arib_ref]
 
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 15]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    The SIGFOX radio interface is also compliant with the local
    regulations of the following countries: Australia, Brazil, Canada,
    Kenya, Lebanon, Mauritius, Mexico, New Zealand, Oman, Peru,
@@ -863,6 +889,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    o  Channelization mask: 100 Hz / 600 Hz (depending on the region)
 
    o  Uplink baud rate: 100 baud / 600 baud (depending on the region)
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 16]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    o  Modulation scheme: DBPSK
 
@@ -891,13 +925,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    o  Preamble: 19 bits
 
-
-
-Farrell                  Expires August 3, 2018                [Page 16]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    o  Frame sync and header: 29 bits
 
    o  Device ID: 32 bits
@@ -919,6 +946,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    o  Downlink transmission power: 500 mW / 4W (depending on the region)
 
    o  Link budget: 153 dB (or better)
+
+
+
+Farrell                  Expires August 3, 2018                [Page 17]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    o  Central frequency accuracy: the center frequency of downlink
       transmission is set by the network according to the corresponding
@@ -946,14 +980,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    o  Error Correcting Code (ECC): 32 bits
 
-
-
-
-Farrell                  Expires August 3, 2018                [Page 17]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    o  Payload: 0-64 bits
 
    o  Authentication: 16 bits
@@ -975,6 +1001,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    regulatory constraints on ISM bands.  Under the strictest
    regulations, the system can allow a maximum of 140 uplink messages
    and 4 downlink messages per device per day.  These restrictions can
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 18]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    be slightly relaxed depending on system conditions and the specific
    regulatory domain of operation.
 
@@ -1003,13 +1038,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    Figure 7 depicts the different elements of the SIGFOX network
    architecture.
 
-
-
-Farrell                  Expires August 3, 2018                [Page 18]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    SIGFOX has a "one-contract one-network" model allowing devices to
    connect in any country, without any need or notion of either roaming
    or handover.
@@ -1030,6 +1058,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    The Devices (DEVs) or End Points (EPs) are the objects that
    communicate application data between local device applications (DAs)
    and network applications (NAs).
+
+
+
+Farrell                  Expires August 3, 2018                [Page 19]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    Devices (or EPs) can be static or nomadic, as they associate with the
    SC and they do not attach to any specific BS.  Hence, they can
@@ -1057,15 +1092,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    Text here is via personal communication from Bob Heile
    (bheile@ieee.org) and was authored by Bob and Sum Chin Sean.  Duffy
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 19]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    (paduffy@cisco.com) also provided additional comments/input on this
    section.
 
@@ -1088,6 +1114,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    previously done on Smart Utility Networks.  [ANSI-4957-000].  Updates
    to those specifications intended to be published in 2017 will contain
    details of the FAN profile.  A current snapshot of the work to
+
+
+
+Farrell                  Expires August 3, 2018                [Page 20]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    produce that profile is presented in [wisun-pressie1]
    [wisun-pressie2] .
 
@@ -1113,15 +1147,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
       bandwidth, i.e. up to 300 kbps [FANTPS], enables remote update and
       upgrade of devices so that they can handle new applications,
       extending their working life.  Wi-SUN supports LPWAN IoT
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 20]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
       applications that require on-demand control by providing low link
       latency (0.02s) and bi-directional communication.
 
@@ -1145,6 +1170,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    as broadcast schedules.  Secondly, Router nodes, which provide upward
    and downward packet forwarding (within a network).  A Router also
    provides services for relaying security and address management
+
+
+
+Farrell                  Expires August 3, 2018                [Page 21]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    protocols.  Lastly, Leaf nodes provide minimum capabilities:
    discovering and joining a network, send/receive IPv6 packets, etc.  A
    low power network may contain a mesh topology with Routers at the
@@ -1171,13 +1204,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    defined in RFC4443, is used for the control plane during information
    exchange.
 
-
-
-Farrell                  Expires August 3, 2018                [Page 21]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
    The Data Link service provides both control/management of the
    Physical layer and data transfer/management services to the Network
    layer.  These services are divided into Media Access Control (MAC)
@@ -1198,32 +1224,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    (FEC) as an optional feature.  Towards enabling ultra-low-power
    applications, the PHY layer design is also extendable to low energy
    and critical infrastructure monitoring networks.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1390,10 +1390,10 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 4.  Gap Analysis
 
-
-
-
-
+   This section considers some of the gaps between current LPWAN
+   technologies and the goals of the LPWAN working group.  Many of the
+   generic considerations described in [RFC7452] will also apply in
+   LPWANs, as end-devices can also be considered as a subclass of (so-
 
 
 
@@ -1401,6 +1401,10 @@ Farrell                  Expires August 3, 2018                [Page 25]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   called) "smart objects."  In addition, LPWAN device implementers will
+   also need to consider the issues relating to firmware updates
+   described in [RFC8240].
 
 4.1.  Naive application of IPv6
 
@@ -1447,16 +1451,14 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    o  very low layer two payload size (from ~10 to ~100 bytes),
 
-   o  very low bit rate (from ~10 bit/s to ~100 kbit/s), and
-
-
-
 
 
 Farrell                  Expires August 3, 2018                [Page 26]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   o  very low bit rate (from ~10 bit/s to ~100 kbit/s), and
 
    o  in some specific technologies, further message rate constraints
       (e.g.  between ~0.1 message/minute and ~1 message/minute) due to
@@ -1504,8 +1506,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
    6LoWPAN defined a fragmentation mechanism and a fragmentation header
    to support the transmission of IPv6 packets over IEEE 802.15.4
-   networks [RFC4944].  While the 6LoWPAN fragmentation header is
-   appropriate for IEEE 802.15.4-2003 (which has a frame payload size of
 
 
 
@@ -1514,6 +1514,8 @@ Farrell                  Expires August 3, 2018                [Page 27]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+   networks [RFC4944].  While the 6LoWPAN fragmentation header is
+   appropriate for IEEE 802.15.4-2003 (which has a frame payload size of
    81-102 bytes), it is not suitable for several LPWAN technologies,
    many of which have a maximum payload size that is one order of
    magnitude below that of IEEE 802.15.4-2003.  The overhead of the
@@ -1557,11 +1559,9 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    for the latter LPWANs mentioned above, 6LoWPAN Neighbor Discovery is
    not suitable.
 
-4.3.  6lo
 
-   The 6lo WG has been reusing and adapting 6LoWPAN to enable IPv6
-   support over link layer technologies such as Bluetooth Low Energy
-   (BTLE), ITU-T G.9959, DECT-ULE, MS/TP-RS485, NFC IEEE 802.11ah.  (See
+
+
 
 
 
@@ -1570,6 +1570,11 @@ Farrell                  Expires August 3, 2018                [Page 28]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+4.3.  6lo
+
+   The 6lo WG has been reusing and adapting 6LoWPAN to enable IPv6
+   support over link layer technologies such as Bluetooth Low Energy
+   (BTLE), ITU-T G.9959, DECT-ULE, MS/TP-RS485, NFC IEEE 802.11ah.  (See
    <https://tools.ietf.org/wg/6lo> for details.)  These technologies are
    similar in several aspects to IEEE 802.15.4, which was the original
    6LoWPAN target technology.
@@ -1613,11 +1618,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    of the level of compression.  When packets are lost or errored, the
    decompressor loses context and drops packets until a bigger header is
    sent with more complete information.  To estimate the performance of
-   RoHC, an average header size is used.  This average depends on the
-   transmission conditions, but most of the time is between 3 and 4
-   bytes.
-
-
 
 
 
@@ -1625,6 +1625,10 @@ Farrell                  Expires August 3, 2018                [Page 29]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   RoHC, an average header size is used.  This average depends on the
+   transmission conditions, but most of the time is between 3 and 4
+   bytes.
 
    RoHC has not been adapted specifically to the constrained hosts and
    networks of LPWANs: it does not take into account energy limitations
@@ -1670,10 +1674,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    the gateway than the devices.  NEMO [RFC3963] Mobility or other
    mobile gateway solutions (such as a gateway with an LTE uplink) may
    be used in the case where some end-devices belonging to the same
-   network gateway move from one point to another such that they are not
-   aware of being mobile.
-
-
 
 
 
@@ -1681,6 +1681,9 @@ Farrell                  Expires August 3, 2018                [Page 30]
 
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
+
+   network gateway move from one point to another such that they are not
+   aware of being mobile.
 
 4.9.  DNS and LPWAN
 
@@ -1726,10 +1729,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    specifications, but can be e.g. implementation or deployment
    specific.
 
-   Another challenge for LPWANs will be how to handle key management and
-   associated protocols.  In a more traditional network (e.g. the web),
-   servers can "staple" Online Certificate Status Protocol (OCSP)
-   responses in order to allow browsers to check revocation status for
+
 
 
 
@@ -1738,6 +1738,10 @@ Farrell                  Expires August 3, 2018                [Page 31]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+   Another challenge for LPWANs will be how to handle key management and
+   associated protocols.  In a more traditional network (e.g. the web),
+   servers can "staple" Online Certificate Status Protocol (OCSP)
+   responses in order to allow browsers to check revocation status for
    presented certificates.  [RFC6961] While the stapling approach is
    likely something that would help in an LPWAN, as it avoids an RTT,
    certificates and OCSP responses are bulky items and will prove
@@ -1783,10 +1787,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
       Email: jon.crowcroft@cl.cam.ac.uk
 
 
-      Carles Gomez
-      UPC/i2CAT
-      C/Esteve Terradas, 7
-
 
 
 Farrell                  Expires August 3, 2018                [Page 32]
@@ -1794,6 +1794,9 @@ Farrell                  Expires August 3, 2018                [Page 32]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+      Carles Gomez
+      UPC/i2CAT
+      C/Esteve Terradas, 7
       Castelldefels 08860
       Spain
 
@@ -1839,9 +1842,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
       Antti Ratilainen
-      Ericsson
-      Hirsalantie 11
-      Jorvas  02420
 
 
 
@@ -1850,6 +1850,9 @@ Farrell                  Expires August 3, 2018                [Page 33]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+      Ericsson
+      Hirsalantie 11
+      Jorvas  02420
       Finland
 
       Email: antti.ratilainen@ericsson.com
@@ -1892,10 +1895,7 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
       URI:   http://www.sigfox.com/
 
 
-8.  Acknowledgments
 
-   Thanks to all those listed in Section 7 for the excellent text.
-   Errors in the handling of that are solely the editor's fault.
 
 
 
@@ -1906,9 +1906,19 @@ Farrell                  Expires August 3, 2018                [Page 34]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
-   In addition to the contributors above, thanks are due to Arun
-   (arun@acklio.com), Behcet SariKaya, Dan Garcia Carrillo, Paul Duffy,
-   Russ Housley, Thad Guidry, Jiazi Yi, for comments.
+8.  Acknowledgments
+
+   Thanks to all those listed in Section 7 for the excellent text.
+   Errors in the handling of that are solely the editor's fault.
+
+   [[RFC editor: Please surnames below for I18N, at least Mirja's does
+   need fixing.]]
+
+   In addition to the contributors above, thanks are due to (in
+   alphabetical order): Abdussalam Baryun, Andy Malis, Arun
+   (arun@acklio.com), Behcet SariKaya, Dan Garcia Carrillo, Jiazi Yi,
+   Mirja Kuehlewind, Paul Duffy, Russ Housley, Thad Guidry, Warren
+   Kumari, for comments.
 
    Alexander Pelov and Pascal Thubert were the LPWAN WG chairs while
    this document was developed.
@@ -1945,6 +1955,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               ESP, and uncompressed", RFC 3095, DOI 10.17487/RFC3095,
               July 2001, <https://www.rfc-editor.org/info/rfc3095>.
 
+
+
+Farrell                  Expires August 3, 2018                [Page 35]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    [RFC3315]  Droms, R., Ed., Bound, J., Volz, B., Lemon, T., Perkins,
               C., and M. Carney, "Dynamic Host Configuration Protocol
               for IPv6 (DHCPv6)", RFC 3315, DOI 10.17487/RFC3315, July
@@ -1954,13 +1971,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Thubert, "Network Mobility (NEMO) Basic Support Protocol",
               RFC 3963, DOI 10.17487/RFC3963, January 2005,
               <https://www.rfc-editor.org/info/rfc3963>.
-
-
-
-Farrell                  Expires August 3, 2018                [Page 35]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    [RFC4301]  Kent, S. and K. Seo, "Security Architecture for the
               Internet Protocol", RFC 4301, DOI 10.17487/RFC4301,
@@ -1997,16 +2007,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               (CRL) Profile", RFC 5280, DOI 10.17487/RFC5280, May 2008,
               <https://www.rfc-editor.org/info/rfc5280>.
 
-   [RFC6282]  Hui, J., Ed. and P. Thubert, "Compression Format for IPv6
-              Datagrams over IEEE 802.15.4-Based Networks", RFC 6282,
-              DOI 10.17487/RFC6282, September 2011, <https://www.rfc-
-              editor.org/info/rfc6282>.
-
-   [RFC6775]  Shelby, Z., Ed., Chakrabarti, S., Nordmark, E., and C.
-              Bormann, "Neighbor Discovery Optimization for IPv6 over
-              Low-Power Wireless Personal Area Networks (6LoWPANs)",
-              RFC 6775, DOI 10.17487/RFC6775, November 2012,
-              <https://www.rfc-editor.org/info/rfc6775>.
 
 
 
@@ -2018,6 +2018,17 @@ Farrell                  Expires August 3, 2018                [Page 36]
 Internet-Draft   Low Power Wide Area Networking Overview    January 2018
 
 
+   [RFC6282]  Hui, J., Ed. and P. Thubert, "Compression Format for IPv6
+              Datagrams over IEEE 802.15.4-Based Networks", RFC 6282,
+              DOI 10.17487/RFC6282, September 2011, <https://www.rfc-
+              editor.org/info/rfc6282>.
+
+   [RFC6775]  Shelby, Z., Ed., Chakrabarti, S., Nordmark, E., and C.
+              Bormann, "Neighbor Discovery Optimization for IPv6 over
+              Low-Power Wireless Personal Area Networks (6LoWPANs)",
+              RFC 6775, DOI 10.17487/RFC6775, November 2012,
+              <https://www.rfc-editor.org/info/rfc6775>.
+
    [RFC6961]  Pettersen, Y., "The Transport Layer Security (TLS)
               Multiple Certificate Status Request Extension", RFC 6961,
               DOI 10.17487/RFC6961, June 2013, <https://www.rfc-
@@ -2027,6 +2038,11 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014, <https://www.rfc-
               editor.org/info/rfc7252>.
+
+   [RFC7452]  Tschofenig, H., Arkko, J., Thaler, D., and D. McPherson,
+              "Architectural Considerations in Smart Object Networking",
+              RFC 7452, DOI 10.17487/RFC7452, March 2015,
+              <https://www.rfc-editor.org/info/rfc7452>.
 
    [RFC7668]  Nieminen, J., Savolainen, T., Isomaki, M., Patil, B.,
               Shelby, Z., and C. Gomez, "IPv6 over BLUETOOTH(R) Low
@@ -2038,10 +2054,25 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               DOI 10.17487/RFC8200, July 2017, <https://www.rfc-
               editor.org/info/rfc8200>.
 
+   [RFC8240]  Tschofenig, H. and S. Farrell, "Report from the Internet
+              of Things Software Update (IoTSU) Workshop 2016",
+              RFC 8240, DOI 10.17487/RFC8240, September 2017,
+              <https://www.rfc-editor.org/info/rfc8240>.
+
    [I-D.farrell-lpwan-lora-overview]
               Farrell, S. and A. Yegin, "LoRaWAN Overview", draft-
               farrell-lpwan-lora-overview-01 (work in progress), October
               2016.
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 37]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
 
    [I-D.minaburo-lpwan-gap-analysis]
               Minaburo, A., Gomez, C., Toutain, L., Paradells, J., and
@@ -2062,17 +2093,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Garcia, D., Lopez, R., Kandasamy, A., and A. Pelov,
               "LoRaWAN Authentication in Diameter", draft-garcia-dime-
               diameter-lorawan-00 (work in progress), May 2016.
-
-
-
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 37]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    [I-D.garcia-radext-radius-lorawan]
               Garcia, D., Lopez, R., Kandasamy, A., and A. Pelov,
@@ -2101,6 +2121,15 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               Radio Access (E-UTRA); Packet Data Convergence Protocol
               (PDCP) specification (Not yet available)", 2016.
 
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 38]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    [TGPP36331]
               3GPP, "TS 36.331 v13.2.0 Evolved Universal Terrestrial
               Radio Access (E-UTRA); Radio Resource Control (RRC);
@@ -2122,13 +2151,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
    [fcc_ref]  "FCC CFR 47 Part 15.247 Telecommunication Radio Frequency
               Devices - Operation within the bands 902-928 MHz,
               2400-2483.5 MHz, and 5725-5850 MHz.", June 2016.
-
-
-
-Farrell                  Expires August 3, 2018                [Page 38]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    [etsi_ref]
               "ETSI EN 300-220 (Parts 1 and 2): Electromagnetic
@@ -2153,6 +2175,17 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               2015, <https://www.lora-alliance.org/portals/0/specs/
               LoRaWAN%20Specification%201R0.pdf>.
 
+
+
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 39]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    [ANSI-4957-000]
               ANSI, TIA-4957.000, "Architecture Overview for the Smart
               Utility Network", May 2013, <https://global.ihs.com/
@@ -2175,16 +2208,6 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
               November 2016,
               <https://www.ietf.org/proceedings/97/slides/slides-97-
               lpwan-35-wi-sun-presentation-00.pdf>.
-
-
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 39]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    [IEEE-802-15-4]
               "IEEE Standard for Low-Rate Wireless Personal Area
@@ -2212,6 +2235,13 @@ A.1.  From -00 to -01
 
    o  WG clearly want to keep the RF details.
 
+
+
+Farrell                  Expires August 3, 2018                [Page 40]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
    o  Various changes made to remove/resolve a number of editorial notes
       from -00 (in some cases as per suggestions from Ana Minaburo)
 
@@ -2233,14 +2263,6 @@ A.2.  From -01 to -02
       in
 
    o  Reflected list discussion wrt terminology and "end-device"
-
-
-
-
-Farrell                  Expires August 3, 2018                [Page 40]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
 
    o  Merged PR's: #3...
 
@@ -2267,6 +2289,15 @@ A.5.  From -04 to -05
 
    o  Handled Alper Yegin's WGLC review.
 
+
+
+
+
+Farrell                  Expires August 3, 2018                [Page 41]
+
+Internet-Draft   Low Power Wide Area Networking Overview    January 2018
+
+
 A.6.  From -05 to -06
 
    o  More Alper comments:-)
@@ -2291,13 +2322,6 @@ A.8.  From -07 to -08
       20180118 IESG ballot comments from Warren: nits handled, two
       possible bits of text still needed.
 
-
-
-Farrell                  Expires August 3, 2018                [Page 41]
-
-Internet-Draft   Low Power Wide Area Networking Overview    January 2018
-
-
       Some more AB comments handled.  Still need to check over 7452 and
       8240 to see if issues from those need to be discussed here.
 
@@ -2305,6 +2329,13 @@ Internet-Draft   Low Power Wide Area Networking Overview    January 2018
       Duffy:-)
 
       Mirja's AD ballot comments handled.
+
+      Added a sentence in intro trying to say what's "special" about
+      LPWAN compared to other constrained networks.  (As suggested by
+      Warren.)
+
+      Added text @ start of gap analysis referring to RFCs 7252 and
+      8240, as suggested by a few folks (AB, Warren, Mirja)
 
 Author's Address
 
@@ -2315,37 +2346,6 @@ Author's Address
 
    Phone: +353-1-896-2354
    Email: stephen.farrell@cs.tcd.ie
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
