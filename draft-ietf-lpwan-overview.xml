@@ -6,6 +6,8 @@
 <!ENTITY I-D.ratilainen-lpwan-nb-iot SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.ratilainen-lpwan-nb-iot">
 <!ENTITY I-D.garcia-dime-diameter-lorawan SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.garcia-dime-diameter-lorawan">
 <!ENTITY I-D.garcia-radext-radius-lorawan SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.garcia-radext-radius-lorawan">
+<!ENTITY I-D.hong-6lo-use-cases SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.hong-6lo-use-cases">
+
 
 ]>
 
@@ -16,7 +18,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-08">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-09">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -402,7 +404,8 @@ protocols over the LoRaWAN MAC layer.</t>
 <c> 6 s </c>
 
 <c>868MHz Default channels</c> 
-<c>3 (868.1,868.2,868.3), data rate: 0.3-5 kbps</c>
+<c>3 (868.1,868.2,868.3), 
+data rate: 0.3-50kbps</c>
 
 </texttable>
 
@@ -780,17 +783,17 @@ restrictions allowing up to a 100% duty-cycle.</t>
     <figure align="center" anchor="nbiot-diag" title="3GPP network architecture">
        <artwork align="left"><![CDATA[
 +--+
-|UE| \              +------+      +------+
-+--+  \             | MME  |------| HSS  |
-       \          / +------+      +------+
-+--+    \+-----+ /      |
-|UE| ----| eNB |-       |
-+--+    /+-----+ \      |
-       /          \ +--------+
-      /            \|        |    +------+     Service PDN
-+--+ /              |  S-GW  |----| P-GW |---- e.g. Internet
-|UE|                |        |    +------+
-+--+                +--------+
+|UE| \                 +------+      +------+
++--+  \                | MME  |------| HSS  |
+       \             / +------+      +------+
++--+    \+--------+ /      |
+|UE| ----| eNodeB |-       |
++--+    /+--------+ \      |
+       /             \ +--------+
+      /               \|        |    +------+     Service PDN
++--+ /                 |  S-GW  |----| P-GW |---- e.g. Internet
+|UE|                   |        |    +------+
++--+                   +--------+
            ]]></artwork>
      </figure>
 
@@ -1473,7 +1476,7 @@ This can enable use of more "chatty" protocols for some aspects of Wi-SUN.
 <t>Several technologies that exhibit significant constraints in various
 dimensions have exploited the 6LoWPAN suite of specifications <xref
 target='RFC4944'/>, <xref target='RFC6282'/>, <xref target='RFC6775'/> to
-support IPv6 [I-D.hong-6lo-use-cases]. However, the constraints of LPWANs,
+support IPv6 <xref target="I-D.hong-6lo-use-cases"/>. However, the constraints of LPWANs,
 often more extreme than those typical of technologies that have (re)used
 6LoWPAN, constitute a challenge for the 6LoWPAN suite in order to enable IPv6
 over LPWAN.  LPWANs are characterized by device constraints (in terms of
@@ -1482,7 +1485,7 @@ constraints, such as: </t>
 
 <t> <list style="symbols">
 
-<t>very low layer two payload size (from ~10 to ~100 bytes),</t>
+<t>tiny layer two payload size (from ~10 to ~100 bytes),</t>
 
 <t>very low bit rate (from ~10 bit/s to ~100 kbit/s), and </t>
 
@@ -1518,6 +1521,8 @@ been derived from link layer identifiers <xref target='RFC4944'/> . This allows
 optimizations such as header compression. Nevertheless, recent guidance has
 given advice on the fact that, due to privacy concerns, 6LoWPAN devices should
 not be configured to embed their link layer addresses in the IID by default.
+<xref target="RFC8065"/> provides guidance on better methods for generating
+IIDs.
 </t>
 
 </section>
@@ -1979,6 +1984,7 @@ Jiazi Yi,
 Mirja Kühlewind, 
 Paul Duffy, 
 Russ Housley,
+Samita Chakrabarti,
 Thad Guidry,
 Warren Kumari,
 for comments.</t>
@@ -2020,6 +2026,7 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
    <?rfc include='reference.RFC.7252'?>
    <?rfc include='reference.RFC.7452'?>
    <?rfc include='reference.RFC.7668'?>
+   <?rfc include='reference.RFC.8065'?>
    <?rfc include='reference.RFC.8200'?>
    <?rfc include='reference.RFC.8240'?>
     &I-D.farrell-lpwan-lora-overview;
@@ -2028,6 +2035,7 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
 	&I-D.ratilainen-lpwan-nb-iot;
 	&I-D.garcia-dime-diameter-lorawan;
 	&I-D.garcia-radext-radius-lorawan;
+	&I-D.hong-6lo-use-cases;
      <reference anchor="TGPP36300" target="http://www.3gpp.org/ftp/Specs/2016-09/Rel-14/36_series/">
        <front>
          <title>TS 36.300 v13.4.0 Evolved Universal Terrestrial Radio Access (E-UTRA) and Evolved Universal Terrestrial Radio Access Network (E-UTRAN); Overall description; Stage 2</title>
@@ -2411,6 +2419,16 @@ called Grammerly and sending me it's report.</t>
 	<t>Added nbiot-ov reference for those who'd like a more polished presentation
 			of NB-IoT</t>
 	
+
+	</list></t>
+	</section>
+
+	<section title="From -08 to -09">
+	<t><list style="symbold">
+
+	<t>Changes due to IoT-DIR review from Samita Chakrabarti: 
+			fixed error on max rate between tables 1 and 2; s/eNb/eNodeB/; fixed 
+			references to hong-6lo-use-cases; added RFC8065 reference</t>
 
 	</list></t>
 	</section>

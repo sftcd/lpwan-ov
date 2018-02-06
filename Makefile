@@ -3,7 +3,7 @@ XML2RFC=xml2rfc
 
 DATE=`date +%s`
 
-all: core upload
+all: core 
 
 contribs: 
 	$(XML2RFC) draft-pretend-contribs.xml draft-pretend-contribs-00.txt
