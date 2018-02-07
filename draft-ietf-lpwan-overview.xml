@@ -18,7 +18,7 @@
 <?rfc toc="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes" ?>
-<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-09">
+<rfc category="info" ipr="trust200902" docName="draft-ietf-lpwan-overview-10">
 <front>
    <title abbrev="Low Power Wide Area Networking Overview">
      LPWAN Overview 
@@ -1823,6 +1823,8 @@ and will prove challenging to handle in LPWANs with bounded bandwidth.</t>
 
 <section anchor="contribs" title="Contributors">
 
+<t>[[RFC editor: Please fix names below for I18N.]]</t>
+
 <t>As stated above this document is mainly a collection of
 content developed by the full set of contributors listed 
 below. The main input documents and
@@ -1903,6 +1905,15 @@ text from that draft is also used elsewhere above.</t>
    Email: josep.paradells@entel.upc.edu
 
 
+   Charles E. Perkins
+   Futurewei
+   2330 Central Expressway
+   Santa Clara  95050
+   Unites States
+
+   Email: charliep@computer.org
+
+
    Benoit Ponsard
    SIGFOX
    425 rue Jean Rostand
@@ -1970,7 +1981,7 @@ for the excellent text. Errors in the handling of that are
 solely the editor's fault.
 </t>
 
-<t>[[RFC editor: Please surnames below for I18N, at least Mirja's does
+<t>[[RFC editor: Please fix names below for I18N, at least Mirja's does
 		need fixing.]]</t>
 
 	<t>In addition to the contributors above, thanks are due 
@@ -2297,6 +2308,8 @@ network. <eref target="https://connectcentre.ie/pervasive-nation/"/>
 	</references>
 	<section title="Changes">
 
+	<t>[[RFC editor: Please remove this before publication]]</t>
+
 	<section title="From -00 to -01">
 
 	<t><list style="symbols">
@@ -2429,6 +2442,14 @@ called Grammerly and sending me it's report.</t>
 	<t>Changes due to IoT-DIR review from Samita Chakrabarti: 
 			fixed error on max rate between tables 1 and 2; s/eNb/eNodeB/; fixed 
 			references to hong-6lo-use-cases; added RFC8065 reference</t>
+
+	</list></t>
+	</section>
+
+	<section title="From -09 to -10">
+	<t><list style="symbold">
+
+	<t>Added Charlie Perkins as contributor - was supposed to have been done ages ago - editor forgot;-)</t>
 
 	</list></t>
 	</section>
